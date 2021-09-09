@@ -1,15 +1,15 @@
 <template>
-  <hello-world />
+  <slider-layout />
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+  import SliderLayout from '../components/SliderLayout'
 
   export default {
     name: 'Home',
 
     components: {
-      HelloWorld,
+      SliderLayout,
     },
   }
 </script>

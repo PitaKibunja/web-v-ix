@@ -13,7 +13,7 @@
 
 </template>
 <script>
-import UtilityLinks from '../components/UtilityLinks.vue'
+import UtilityLinks from './UtilityLinks.vue'
   export default {
       components:{
           UtilityLinks

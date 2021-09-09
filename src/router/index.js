@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Slider from '../components/Slider.vue'
+import SliderLayout from '../components/SliderLayout.vue'
 import Utility from '../components/UtilityLinks.vue'
+import Institution from '../components/InstitutionPage.vue'
+import SInst from '../components/SingleInst.vue'
 
 Vue.use(VueRouter)
 
@@ -12,6 +14,16 @@ const routes = [
     name: 'Home',
     component: Home
   },
+   {
+    path: '/institution',
+    name: 'Institution',
+    component: Institution
+  },
+  {
+    path: '/sInst:inst',
+    name: 'SInst',
+    component: SInst
+  },
   {
     path: '/utility',
     name: 'Home',
@@ -19,8 +31,8 @@ const routes = [
   },
   {
     path: '/slider',
-    name: 'Slider',
-    component: Slider
+    name: 'SliderLayout',
+    component: SliderLayout
   },
   {
     path: '/about',
