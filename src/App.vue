@@ -61,7 +61,7 @@
    </v-app-bar>
  </div>
 
-    <v-main style="padding:0px;">
+    <v-main style="padding:0px; background: lightblue ">
       <router-view/>
     </v-main>
   </v-app>
