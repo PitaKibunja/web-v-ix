@@ -1,26 +1,17 @@
 <template>
   <v-app>
     <v-app-bar
-      app
       color="primary"
+      app
       dark
       flat
+      style="height:45px"
       
     >
       <div class="d-flex">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          dark
-          
-          src="../src/assets/tveta_logo.png"
-          transition="scale-transition"
-          width="40"
-        />
+       
             <v-toolbar-title class="text-uppercase grey--text">
-                <span class="font-weight-light white--text">TVET </span>
-                <span class="font-weight-light white--text">Authority</span>
+              <h5 > Call Us Today! Tel: +254-20 2392140 | Cell: +254 700 015 440|info@tveta.go.ke</h5>
             </v-toolbar-title>
       </div>
  <v-spacer></v-spacer>
@@ -39,17 +30,30 @@
         <!-- <v-icon>mdi-open-in-new</v-icon> -->
       </v-btn>
     </v-app-bar>   
- <div class="mt-15 mb-0">
-   <v-app-bar class="mb-0">
-
-
+ <div class="mt-12 mb-0">
+   <v-app-bar  class="mb-0" style="height:50px">
+      <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          dark
+          
+          src="../src/assets/tveta_logo.png"
+          transition="scale-transition"
+          width="40"
+        />
+    <v-menu
+      open-on-hover
+      top
+      offset-y
+    >
     <v-tabs
       v-model="tab"
       background-color="white"
       class="pl-10 text-center "
     >
       <v-tab
-        v-for="item in items"
+        v-for="item in items1"
         :key="item.tab"
         
         class="font-weight-light grey--text"
@@ -57,13 +61,25 @@
         {{ item.tab }}
         
       </v-tab>
-    </v-tabs>
+       </v-tabs>
+       <v-list>
+        <v-list-item
+          v-for="(item, index) in items"
+          :key="index"
+           link
+        >
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+   
+    </v-menu>
    </v-app-bar>
  </div>
 
     <v-main style="padding:0px; background: lightblue ">
       <router-view/>
     </v-main>
+    
   </v-app>
 </template>
 
@@ -76,7 +92,13 @@ export default {
         return{
             drawer:false,
             tab: null,
-            items: [
+              items: [
+        { title: 'Click Me' },
+        { title: 'Click Me' },
+        { title: 'Click Me' },
+        { title: 'Click Me 2' },
+      ],
+            items1: [
               { tab: 'Home', content: 'Tab 1 Content' },
               { tab: 'About', content: 'Tab 2 Content' },
               { tab: 'Services', content: 'Tab 3 Content' },
