@@ -9,9 +9,25 @@
     <v-card
       flat
       tile
-      class="indigo lighten-1 white--text text-center"
+      class="dark lighten-1 white--text text-center"
     >
-
+<v-divider></v-divider>
+        <v-card
+      class="d-flex justify-center mb-6"
+      :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
+      flat
+      tile
+    >
+      <v-card
+        v-for="n in 3"
+        :key="n"
+        class="pa-4"
+        outlined
+        tile
+      >
+        justify-center
+      </v-card>
+    </v-card>
       <v-divider></v-divider>
       <v-card-text>
         <v-btn
@@ -27,34 +43,41 @@
       </v-card-text>
         <v-divider></v-divider>
         <v-row>
-          <v-col  class="text-center pl-10">
-            <h1>Related Links</h1>
-           <div class="text-center pl-10">
-              <v-row>Commision for University</v-row>
-            <v-row>Ministry of Education</v-row>
-            <v-row>TVET CDACC</v-row>
-            <v-row>KNQA</v-row>
-            <v-row>KUCCPS</v-row>
-            <v-row>KNEC</v-row>
-            <v-row>NITA</v-row>
-            <v-row>KICD</v-row>
-            <v-row>KATTI</v-row>
-           </div>
+           <v-col >
+            <h4 class="pt-2">RELATED LINKS</h4>
+            <div class="pl-5px">
+                <div class="d-flex flex-column mb-6">
+            <v-card
+              v-for="n in links"
+              :key="n"
+              class="pa-2"
+              tile>
+              <router-link to="" style="">
+                {{ n }}
+              </router-link>
+            </v-card>
+            </div>
+            </div>
           </v-col>
-          <v-col >
-            <h1>Contact Us</h1>
-            <v-row>Utaliii House 8th Floor, Utalii Street</v-row>
-            <v-row>P.O. Box 35625 - 00100</v-row>
-            <v-row>Phone:+254 20 239 2140</v-row>
-            <v-row>Cell: +254 700 015 440</v-row>
-            <v-row>Email:info@tveta.go.ke</v-row>
-            <v-row>Web: www.tveta.go.ke</v-row>
+          <v-col class="pt-10">
+            <h4 >CONTACT US</h4>
+            <div class="pl-5px">
+                <div class="d-flex flex-column mb-6">
+            <v-card
+              v-for="n in contacts"
+              :key="n"
+              class="pa-2"
+              tile>
+                {{ n }}
+            </v-card>
+            </div>
+            </div>
           </v-col>
-            <v-col >
-            <h1>Location</h1>
-            <v-row>
-              <img src="https://maps.gstatic.com/mapfiles/embed/images/google4.png" style="width: 52px;">
-            </v-row>
+              <v-col >
+                <h1>Location</h1>
+                  <v-row>
+                    <img src="../assets/logo.png" style="width: 52px;">
+                  </v-row>
           </v-col>
         </v-row>
         <v-divider></v-divider>
@@ -66,7 +89,7 @@ Education and Training Board established under section
 
       <v-divider></v-divider>
 
-      <v-card-text class="white--text">
+      <v-card-text class="yellow white--text">
         Copyright  {{ new Date().getFullYear() }} — <strong> TVETA | All Rights Reserved |</strong>
       </v-card-text>
     </v-card>
@@ -76,6 +99,25 @@ Education and Training Board established under section
   export default {
     data: () => ({
        selectedItem: 1,
+       links:[
+          'Commission for University',
+          'Ministry of Education',
+          'TVET CDACC',
+          'KNQA',
+          'KUCCPS',
+          'KNEC',
+          'NITA',
+          'KICD',
+          'KATTI'
+       ],
+       contacts:[
+         'Utaliii House 8th Floor, Utalii Street',
+         'P.O. Box 35625 - 00100',
+         'Phone:+254 20 239 2140',
+         'Cell: +254 700 015 440',
+         'Email:info@tveta.go.ke',
+         'Web: www.tveta.go.ke'
+       ],
       items: [
         { text: 'Real-Time', icon: 'mdi-clock' },
         { text: 'Audience', icon: 'mdi-account' },
