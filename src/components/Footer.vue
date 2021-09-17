@@ -13,19 +13,20 @@
     >
 <v-divider></v-divider>
         <v-card
-      class="d-flex justify-center mb-6"
+      class="d-flex justify-center mb-0"
+      style="height:25%;"
       :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
       flat
       tile
     >
+
       <v-card
-        v-for="n in 3"
+        v-for="n in partners"
         :key="n"
-        class="pa-4"
-        outlined
-        tile
+        class="green pa-12"
+        
       >
-        justify-center
+         <img src="../assets/2030.jpg" size="24px" style="width: 45%; height:50%;">
       </v-card>
     </v-card>
       <v-divider></v-divider>
@@ -134,6 +135,11 @@ Education and Training Board established under section
         'center',
         'end',
       ],
+      partners:[
+        '2030.jpg',
+        'unevoc.jpg',
+        'hof.png'
+      ]
     }),
   }
 </script>
