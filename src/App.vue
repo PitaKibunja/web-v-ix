@@ -76,7 +76,7 @@
    </v-app-bar>
  </div>
 
-    <v-main style="padding:0px; background: lightblue ">
+    <v-main style="padding:0px; background: white ">
       <router-view/>
     </v-main>
     <Footer/>
