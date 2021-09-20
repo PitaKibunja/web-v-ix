@@ -1,24 +1,29 @@
 <template>
+<div class="container">
+  <v-row class="mt-4">
   <v-card
-    class="mx-auto pa-4"
+    class="mx-1 pa-1"
     color="#26c6da"
     dark
-    max-width="250"
+    max-width="280"
+    v-for="media in medias"
+   :key="media"
+   style="height:auto;"
 
-   styl="height:40px;"
   >
-    <v-card-title>
+<v-col>
+   <v-card-title>
       <v-icon
         large
         left
       >
-        mdi-twitter
+        {{ media.icon }}
       </v-icon>
-      <span class="text-h6 font-weight-light">Twitter</span>
+      <span class="text-h6 font-weight-light">{{media.name}}</span>
     </v-card-title>
 
-    <v-card-text class="text-h5 font-weight-bold">
-      "Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well."
+    <v-card-text class="text font-weight-bold">
+     {{ media.content }}
     </v-card-text>
 
     <v-card-actions>
@@ -40,7 +45,7 @@
           justify="end"
         >
           <v-icon class="mr-1">
-            mdi-heart
+           {{media.icol}}
           </v-icon>
           <span class="subheading mr-2">256</span>
           <span class="mr-1">·</span>
@@ -51,12 +56,23 @@
         </v-row>
       </v-list-item>
     </v-card-actions>
+</v-col>
+   
   </v-card>
+  </v-row>
+</div>
+
 </template>
 <script>
   export default {
     data: () => ({
+      medias: [
+        {icon:'mdi-facebook',name:'Facebook',icol:'mdi-thumb-up-outline',content:"Facebook Latest Content goes here"},
+        {icon:'mdi-twitter', name:'Twitter',icol:'mdi-heart' ,content:"Twitter Latest content goes here all of it"},
+        {icon:'mdi-instagram', name:'Instagram',icol:'mdi-heart' ,content:"Instagram Latest content goes here all of it"},
+        {icon:'mdi-youtube', name:'Youtube', icol:'mdi-youtube-subscription' ,content:"Youtube Latest content goes here all of it"}
+      ]
       //
-    }),
+    })
   }
 </script>

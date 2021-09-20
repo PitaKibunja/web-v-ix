@@ -26,10 +26,7 @@
         style="height: auto;"
         class="pt-3 mb-5"
       >
-        <v-col
-        v-for="n in 4"
-        :key="n"
-        >
+        <v-col>
             <Media/>
         </v-col>
       </v-row>

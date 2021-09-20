@@ -8,10 +8,12 @@
     ></v-carousel-item>
   </v-carousel>
   <v-card-text>
+    <v-spaceer></v-spaceer>
         <v-btn
           v-for="link in links"
           :key="link"
-          class="  justify-space-between mb-6 mx-16 primary--text"
+          class="  justify-space-between mt-2 mb-6 mx-16 primary--text"
+          color="#26c6da"
           icon
           
         >

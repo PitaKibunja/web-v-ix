@@ -41,7 +41,7 @@
   >
     <v-img
       src="../../assets/ws.jpg"
-      style=" height:auto; width:100px;padding:2px;margin:10px; "
+      style=" height:20px; width:50px;padding:2px;margin:10px; "
     ></v-img>
 </v-card>
 </v-row>
