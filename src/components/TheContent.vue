@@ -1,0 +1,58 @@
+<template>
+      <div>
+    <v-container
+        align-center
+      class="grey lighten-5 mb-5"
+    >
+         
+    <span>News and Updates</span>
+          <v-divider></v-divider>
+      <v-row
+        :align="align"
+        no-gutters
+        style="height: auto;"
+      >
+        <v-col
+        v-for="n in 3"
+        :key="n"
+        >
+            <News/>
+        </v-col>
+      </v-row>         
+    <span>Visit our Media Center</span>
+          <v-divider></v-divider>
+      <v-row
+        :align="center"
+        no-gutters
+        style="height: auto;"
+        class="pt-3"
+      >
+        <v-col
+        v-for="n in 3"
+        :key="n"
+        >
+            <Media/>
+        </v-col>
+      </v-row>
+    </v-container>
+
+    
+  </div>
+</template>
+<script>
+import News from '../components/cards/News.vue'
+import Media from '../components/cards/Media.vue'
+  export default {
+      components:{
+          News,
+          Media
+      },
+    data: () => ({
+      alignments: [
+        'start',
+        'center',
+        'end',
+      ],
+    }),
+  }
+</script>
