@@ -9,18 +9,35 @@
   </v-carousel>
   <v-card-text>
         <v-btn
-          v-for="icon in icons"
-          :key="icon"
-          class="mx-4 white--text"
+          v-for="link in links"
+          :key="link"
+          class="  justify-space-between mb-6 mx-16 primary--text"
           icon
+          
         >
-          <v-icon size="24px">
-            {{ icon }}
+        <div class="ml-10 pb-8 pt-13">
+          <v-btn
+            elevation="2"
+            fab
+            color="primary"
+            small
+          >
+                    <v-icon size="35px">
+            {{ link.icon }}
           </v-icon>
+          </v-btn>
+
+         <div class="mx-14 pt-3">
+               {{ link.text }}
+         </div>
+    
+        
+          </div>
         </v-btn>
       </v-card-text>
   <!-- Create the cards -->
     <!-- <UtilityLinks /> -->
+    <v-divider></v-divider>
 </div>
 
 </template>
@@ -33,11 +50,28 @@
 
     data () {
       return {
+          links: [
+       
+       { text: 'Support', icon: 'mdi-face-agent' },
+        { text: 'Standards', icon: 'mdi-flag' },
+        { text: 'Complaints', icon: 'mdi-thumb-down' },  
+         
+         { text: 'MIS', icon: 'mdi-login' },  
+        { text: 'FAQs', icon: 'mdi-frequently-asked-questions' },
+
+         { text: 'Strategic Plan', icon: 'mdi-strategy' },
+         { text: 'Standards Charter', icon: 'mdi-strategy' },
+
+
+
+      ],
               icons: [
         'mdi-facebook',
         'mdi-twitter',
         'mdi-linkedin',
         'mdi-instagram',
+        'mdi-face-agent',
+        'mdi-strategy',
       ],
         items: [
           {

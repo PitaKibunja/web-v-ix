@@ -12,23 +12,7 @@
       class="dark lighten-1 white--text text-center"
     >
 <v-divider></v-divider>
-        <v-card
-      class="d-flex justify-center mb-0"
-      style="height:25%;"
-      :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-      flat
-      tile
-    >
 
-      <v-card
-        v-for="n in partners"
-        :key="n"
-        class="green pa-12"
-        
-      >
-         <img src="../assets/2030.jpg" size="24px" style="width: 45%; height:50%;">
-      </v-card>
-    </v-card>
       <v-divider></v-divider>
       <v-card-text>
         <v-btn
