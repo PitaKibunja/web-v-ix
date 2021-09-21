@@ -28,11 +28,11 @@
     ></v-img>
 </v-card><v-card
     class="mx-auto pb-0"
-    max-width="300"
+    max-width="400"
   >
     <v-img
       src="../../assets/2030.jpg"
-      style=" height:auto; width:200px;padding:2px;margin:5px; "
+      style=" height:auto; width:200px;padding-top:2px;margin:1px; "
     ></v-img>
 </v-card>
 <v-card

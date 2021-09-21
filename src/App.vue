@@ -1,67 +1,9 @@
 <template>
   <v-app>
-    <v-app-bar
-      color="primary"
-      app
-      dark
-      flat
-      style="height:40px"
-      
-    >
-      <div class="d-flex">
-        <v-spacer></v-spacer>
-              <span class="text-h12 pt-0 font-weight-light">Call Us Today! Tel: +254-20 2392140 | Cell: +254 700 015 440|info@tveta.go.ke</span>
-             <span>Staff Portal</span>
-             <span>Staff Portal</span>
-             <span>Staff Portal</span>
-             <span>Staff Portal</span>
-      </div>
-
- <div>
- </div>
-     
-      
-       <v-spacer></v-spacer>
- 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-       
-        <!-- <v-icon>mdi-open-in-new</v-icon> -->
-      </v-btn>
-    </v-app-bar>   
- <div class="mt-12 mb-0" style="background:grey;">
-   <v-app-bar  class="mb-0" style="height:50px">
-      <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          s
-          
-          src="../src/assets/tveta_logo.png"
-          transition="scale-transition"
-          width="40"
-        />
-    <v-tabs
-      v-model="tab"
-      background-color="white"
-      class="pl-10 text-center "
-    >
-      <v-tab
-        v-for="item in items1"
-        :key="item.tab"
-        
-        class="font-weight-light primary--text"
-      >
-        {{ item.tab }}
-        
-      </v-tab>
-       </v-tabs>
-   </v-app-bar>
- </div>
-
+    <v-row class="container-fluid">
+      <v-col class="mb-6"><TopBar/></v-col>
+      <v-col class="mt-6"><TopNav/></v-col>
+    </v-row>
     <v-main style="padding:0px; background: white ">
       <router-view/>
     </v-main>
@@ -71,10 +13,14 @@
 
 <script>
 import Footer from './components/Footer.vue'
+import TopBar from './components/TopBar.vue'
+import TopNav from './components/TopNav.vue'
 export default {
   name: 'App',
   components:{
-    Footer
+    Footer,
+    TopBar,
+    TopNav
   },
 
     data(){
