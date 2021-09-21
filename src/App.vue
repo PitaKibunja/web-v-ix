@@ -5,16 +5,18 @@
       app
       dark
       flat
-      style="height:45px"
+      style="height:40px"
       
     >
       <div class="d-flex">
-       
-            <v-toolbar-title class="text-uppercase grey--text">
-              <h5 > Call Us Today! Tel: +254-20 2392140 | Cell: +254 700 015 440|info@tveta.go.ke</h5>
-            </v-toolbar-title>
+        <v-spacer></v-spacer>
+              <span class="text-h12 pt-0 font-weight-light">Call Us Today! Tel: +254-20 2392140 | Cell: +254 700 015 440|info@tveta.go.ke</span>
+             <span>Staff Portal</span>
+             <span>Staff Portal</span>
+             <span>Staff Portal</span>
+             <span>Staff Portal</span>
       </div>
- <v-spacer></v-spacer>
+
  <div>
  </div>
      
@@ -30,23 +32,18 @@
         <!-- <v-icon>mdi-open-in-new</v-icon> -->
       </v-btn>
     </v-app-bar>   
- <div class="mt-12 mb-0">
+ <div class="mt-12 mb-0" style="background:grey;">
    <v-app-bar  class="mb-0" style="height:50px">
       <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
           contain
-          dark
+          s
           
           src="../src/assets/tveta_logo.png"
           transition="scale-transition"
           width="40"
         />
-    <v-menu
-      open-on-hover
-      top
-      offset-y
-    >
     <v-tabs
       v-model="tab"
       background-color="white"
@@ -56,23 +53,12 @@
         v-for="item in items1"
         :key="item.tab"
         
-        class="font-weight-light grey--text"
+        class="font-weight-light primary--text"
       >
         {{ item.tab }}
         
       </v-tab>
        </v-tabs>
-       <v-list>
-        <v-list-item
-          v-for="(item, index) in items"
-          :key="index"
-           link
-        >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-   
-    </v-menu>
    </v-app-bar>
  </div>
 

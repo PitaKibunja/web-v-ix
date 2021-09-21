@@ -6,6 +6,7 @@
       :key="i"
       :src="item.src"
     ></v-carousel-item>
+    
   </v-carousel>
   <v-card-text>
     <v-spaceer></v-spaceer>
