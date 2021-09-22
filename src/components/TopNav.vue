@@ -1,10 +1,10 @@
 <template>
     <div class="mt-10  pt-0 mb-0" style="background:white;">
    <v-app-bar app class="pt-1">
-       <v-card width="90" class="my-0">
+       <v-card width="90" class="my-0 pt-0">
                  <v-img
           alt="Vuetify Logo"
-          class="shrink  mt-8"
+          class="shrink  mt-4"
           contains
           
           src="../../src/assets/tveta_logo.png"

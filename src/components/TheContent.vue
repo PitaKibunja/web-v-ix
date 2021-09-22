@@ -6,6 +6,7 @@
          
     <span>News and Updates</span>
           <v-divider></v-divider>
+          
       <v-row
         :align="center"
         no-gutters

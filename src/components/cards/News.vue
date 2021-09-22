@@ -11,7 +11,7 @@
         indeterminate
       ></v-progress-linear>
     </template>
-
+  
     <v-img
       height="100"
       src="https://cdn.vuetifyjs.com/images/cards/cooking.png"

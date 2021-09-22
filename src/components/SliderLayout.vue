@@ -6,7 +6,9 @@
       :key="i"
       :src="item.src"
     ></v-carousel-item>
-    
+    <v-card class="my-10">
+      <span>Jobs</span>
+    </v-card>
   </v-carousel>
   <v-card-text>
     <v-spaceer></v-spaceer>
@@ -14,11 +16,11 @@
           v-for="link in links"
           :key="link"
           class="  justify-space-between mt-2 mb-6 mx-16 primary--text"
-          color="#26c6da"
+          color="primary"
           icon
           
         >
-        <div class="ml-10 pb-8 pt-13">
+        <div class="ml-10 pb-8 pt-8">
           <v-btn
             elevation="2"
             fab
@@ -55,9 +57,9 @@
       return {
           links: [
        
-       { text: 'Support', icon: 'mdi-face-agent' },
+       { text: 'Customer Care', icon: 'mdi-face-agent' },
         { text: 'Standards', icon: 'mdi-flag' },
-        { text: 'Complaints', icon: 'mdi-thumb-down' },  
+          
          
          { text: 'MIS', icon: 'mdi-login' },  
         { text: 'FAQs', icon: 'mdi-frequently-asked-questions' },
