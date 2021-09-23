@@ -12,14 +12,7 @@
         no-gutters
         style="height: auto;"
       >
-
-        <v-col
-        v-for="n in 4"
-        :key="n"
-        >
-            <News/>
-        </v-col>
-              
+           <NewsTab/>        
       </v-row>     
       <v-row>
         
@@ -73,16 +66,18 @@
   </div>
 </template>
 <script>
-import News from '../components/cards/News.vue'
+
 import Media from '../components/cards/Media.vue'
 import Partners from '../components/cards/Partners.vue'
 import ReadMore from '../components/Buttons/ReadMore.vue'
+import NewsTab from '../components/navs/NewsTab.vue'
   export default {
       components:{
-          News,
+       
           Media,
            Partners,
-           ReadMore
+           ReadMore,
+           NewsTab
       },
     data: () => ({
       alignments: [
