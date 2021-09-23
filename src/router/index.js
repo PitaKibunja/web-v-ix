@@ -4,6 +4,8 @@ import Home from '../views/Home.vue'
 import SliderLayout from '../components/SliderLayout.vue'
 import Utility from '../components/UtilityLinks.vue'
 import Institution from '../components/InstitutionPage.vue'
+// import Assistant from '../components/cards/Assistant.vue'
+import AllNews from '../views/AllNews.vue'
 import SInst from '../components/SingleInst.vue'
 
 Vue.use(VueRouter)
@@ -19,6 +21,16 @@ const routes = [
     name: 'Institution',
     component: Institution
   },
+  {
+    path:'/allnews',
+    name: 'All News',
+    component:AllNews
+  },
+  // {
+  //   path:'/assistant',
+  //   name:'Assistant',
+  //   component:Assistant
+  // },
   {
     path: '/sInst:inst',
     name: 'SInst',

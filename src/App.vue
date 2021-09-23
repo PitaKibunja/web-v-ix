@@ -6,6 +6,7 @@
     </v-row>
     <v-main style="padding:0px; background: white ">
       <router-view/>
+      <Assistant/>
     </v-main>
     <Footer/>
   </v-app>
@@ -15,12 +16,14 @@
 import Footer from './components/Footer.vue'
 import TopBar from './components/TopBar.vue'
 import TopNav from './components/TopNav.vue'
+import Assistant from './components/Assistant.vue'
 export default {
   name: 'App',
   components:{
     Footer,
     TopBar,
-    TopNav
+    TopNav,
+    Assistant
   },
 
     data(){

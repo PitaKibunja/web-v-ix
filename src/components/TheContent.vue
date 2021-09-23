@@ -1,7 +1,7 @@
 <template>
       <div>
     <v-container
-      class="grey lighten-5 mb-5"
+      class="grey lighten-5 mb-8"
     >
          
     <span>News and Updates</span>
@@ -12,13 +12,37 @@
         no-gutters
         style="height: auto;"
       >
+
         <v-col
         v-for="n in 4"
         :key="n"
         >
             <News/>
         </v-col>
-      </v-row>         
+              
+      </v-row>     
+      <v-row>
+        
+        </v-row>   
+
+        <v-container class="grey lighten-5">
+          <v-card
+      class="d-flex justify-center mb-6"
+      :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
+      flat
+      tile
+    >
+      <v-card
+        class="pa-2"
+        flat
+        tile
+      >
+        <ReadMore/>
+      </v-card>
+    </v-card>
+          
+          </v-container> 
+
     <span>Visit our Media Center</span>
           <v-divider></v-divider>
       <v-row
@@ -52,11 +76,13 @@
 import News from '../components/cards/News.vue'
 import Media from '../components/cards/Media.vue'
 import Partners from '../components/cards/Partners.vue'
+import ReadMore from '../components/Buttons/ReadMore.vue'
   export default {
       components:{
           News,
           Media,
-           Partners
+           Partners,
+           ReadMore
       },
     data: () => ({
       alignments: [
