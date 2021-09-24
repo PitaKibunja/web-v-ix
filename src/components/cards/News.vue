@@ -1,19 +1,20 @@
 <template>
   <v-card
     :loading="loading"
-    class="mx-auto my-12"
+    class="mx-12 my-12"
     max-width="250"
+    
   >
     <template slot="progress">
       <v-progress-linear
         color="deep-purple"
-        height="5"
+        
         indeterminate
       ></v-progress-linear>
     </template>
   
     <v-img
-      height="100"
+      height="150"
       src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
     ></v-img>
 

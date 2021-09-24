@@ -1,10 +1,11 @@
 <template>
-  <v-card width="100%" >
+  <v-card >
     <v-toolbar
       color="white"
-     class="ml-16"
+     class="ma-4 pt-0"
+
       flat 
-      
+      align="center"
     >
 
 
@@ -19,7 +20,7 @@
             :key="item"
            
           >
-          <span class="text-center justify-center p-6" >
+          <span class="text-center justify-center p-4" >
              {{ item }}
           </span>
            
@@ -40,10 +41,11 @@
         style="height: auto;"
       >
         <v-col
-        v-for="n in 4"
+        v-for="n in 12"
         :key="n"
         >
             <News/>
+
         </v-col>
               
       </v-row> 

@@ -1,41 +1,35 @@
 <template>
-<v-container fluid>
-  <v-card
-      class="d-flex justify-center mb-6"
-      :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-      flat
-      tile
-    >
-      <v-card
+<v-container>
+  <v-row cols="12 " class="d-flex justify-center mb-2  pt-4">
+     <div class="font-weight-medium">
+                 <h2>Media Center</h2>      
+                    </div>
+   </v-row>
+  <v-divider></v-divider> 
+  <v-row class="d-flex justify-center mb-1  pa-3">
+        <v-col
+          cols="12"
+          sm="6"
+          md="3"
+        >
        
-        class="pa-2"
-        outlined
-        tile
-      >
-        <v-row>
-          <v-col>
-            <v-row>
-              <v-row class="mx-10">  <span>Search Media Center</span></v-row>
           <v-text-field
             placeholder="Search"
-           append-outer-icon="mdi-magnify"
-           class="ml-4 pt-4"
-           dense
-           max-width="10"
-            filled
+            prepend-inner-icon="mdi-magnify"
+           
+            dense
           ></v-text-field>
-     
-            </v-row>
-            <v-row>
-                  <NewsTab/>
-            </v-row>
-          </v-col>
-        </v-row>   
+        </v-col>
+    </v-row>   
+ 
+  <v-row class="pt-0"> <NewsTab/></v-row> 
+          <!-- </v-col> -->
+        <!-- </v-row>    -->
         <v-row>
           
         </v-row>
-      </v-card>
-    </v-card>
+
+   
 </v-container>
   <!-- <v-container class="grey lighten-5">
     <v-col>
@@ -112,3 +106,9 @@ import NewsTab from '../components/navs/NewsTab.vue'
     }),
   }
 </script>
+<style scoped lang="sass">
+.v-input.expanding-search 
+  .v-input__slot
+     &::before,&::after
+       border-color: transparent
+</style>
