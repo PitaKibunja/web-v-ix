@@ -1,5 +1,5 @@
 <template>
-<div>
+<base-layout>
 <v-row class="mt-4">
     <v-card
     class="mx-auto pb-0"
@@ -45,9 +45,8 @@
     ></v-img>
 </v-card>
 </v-row>
-</div>
     
-         
+</base-layout>        
 </template>
 <script>
 export default {

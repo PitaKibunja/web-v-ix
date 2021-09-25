@@ -1,5 +1,6 @@
 <template>
-  <v-card
+<router-link to="allnews/singlePost">
+    <v-card
     :loading="loading"
     class="mx-12 my-12"
     max-width="250"
@@ -27,6 +28,7 @@
     <v-divider class="mx-4"></v-divider>
 
   </v-card>
+</router-link>
 </template>
 <script>
 

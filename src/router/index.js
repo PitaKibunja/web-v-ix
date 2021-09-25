@@ -6,6 +6,7 @@ import Utility from '../components/UtilityLinks.vue'
 import Institution from '../components/InstitutionPage.vue'
 // import Assistant from '../components/cards/Assistant.vue'
 import AllNews from '../views/AllNews.vue'
+import SingleNews from '../views/SingleNews.vue'
 import SInst from '../components/SingleInst.vue'
 
 Vue.use(VueRouter)
@@ -24,7 +25,14 @@ const routes = [
   {
     path:'/allnews',
     name: 'All News',
-    component:AllNews
+    component: AllNews,
+    children:[
+      //display a single post when it's clicked
+      {
+        path:'/singlePost',
+        component:SingleNews
+      }
+    ]
   },
   // {
   //   path:'/assistant',

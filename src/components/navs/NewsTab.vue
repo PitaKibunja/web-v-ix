@@ -1,11 +1,12 @@
 <template>
+
   <v-card >
     <v-toolbar
       color="white"
-     class="ma-4 pt-0"
-
+     class=" pt-0"
+      center-active
       flat 
-      align="center"
+      
     >
 
 
