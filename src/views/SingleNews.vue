@@ -1,5 +1,5 @@
 <template>
-v    <v-container fluid class="d-flex justify-center mb-2  ma-2 " >
+   <v-container fluid class="d-flex justify-center mb-2  ma-2 " >
         
     <v-row no-gutters class="mt-10">
       <v-col
@@ -12,7 +12,7 @@ v    <v-container fluid class="d-flex justify-center mb-2  ma-2 " >
           outlined
           tile
         >
-          <h5>a image</h5>
+           <Post/>
           <h5>text here</h5>
         </v-card>
       </v-col>
@@ -32,3 +32,11 @@ v    <v-container fluid class="d-flex justify-center mb-2  ma-2 " >
    </v-container>
 
 </template>
+<script>
+import Post from '../components/Posts/Post.vue'
+export default {
+components:{
+  Post
+}
+}
+</script>

@@ -25,14 +25,12 @@ const routes = [
   {
     path:'/allnews',
     name: 'All News',
-    component: AllNews,
-    children:[
-      //display a single post when it's clicked
-      {
-        path:'/singlePost',
-        component:SingleNews
-      }
-    ]
+    component: AllNews
+  },
+  {
+      path:'/singlePost',
+      name:'Single Post',
+      component:SingleNews
   },
   // {
   //   path:'/assistant',
