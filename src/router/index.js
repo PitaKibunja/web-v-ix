@@ -25,7 +25,7 @@ const routes = [
   {
     path:'/allnews',
     name: 'All News',
-    component: AllNews
+    component: AllNews,
   },
   {
       path:'/singlePost',

@@ -42,7 +42,7 @@
         style="height: auto;"
       >
         <v-col
-        v-for="n in 12"
+        v-for="n in 4"
         :key="n"
         >
             <News/>

@@ -1,9 +1,9 @@
 <template>
-<router-link to="allnews/singlePost">
+<router-link to="singlePost">
     <v-card
     :loading="loading"
-    class="mx-12 my-12"
-    max-width="250"
+    class="mx-11 my-11"
+    max-width="200"
     
   >
     <template slot="progress">

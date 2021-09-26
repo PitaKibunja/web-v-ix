@@ -6,40 +6,11 @@
       :key="i"
       :src="item.src"
     ></v-carousel-item>
-    <v-card class="my-10">
-      <span>Jobs</span>
-    </v-card>
   </v-carousel>
-  <v-card-text>
-    <v-spaceer></v-spaceer>
-        <v-btn
-          v-for="link in links"
-          :key="link"
-          class="  justify-space-between mt-2 mb-6 mx-16 primary--text"
-          color="primary"
-          icon
-          
-        >
-        <div class="ml-10 pb-8 pt-8">
-          <v-btn
-            elevation="2"
-            fab
-            color="primary"
-            small
-          >
-                    <v-icon size="35px">
-            {{ link.icon }}
-          </v-icon>
-          </v-btn>
+  <div class="ml-2 mt-1 mb-4">
+    <LinkShortcut/>
+  </div>
 
-         <div class="mx-14 pt-3">
-               {{ link.text }}
-         </div>
-    
-        
-          </div>
-        </v-btn>
-      </v-card-text>
   <!-- Create the cards -->
     <!-- <UtilityLinks /> -->
     <v-divider></v-divider>
@@ -48,9 +19,11 @@
 </template>
 <script>
 // import UtilityLinks from './UtilityLinks.vue'
+import LinkShortcut from './navs/LinkShortcut.vue'
   export default {
       components:{
           // UtilityLinks
+          LinkShortcut
       },
 
     data () {
@@ -65,7 +38,7 @@
         { text: 'FAQs', icon: 'mdi-frequently-asked-questions' },
 
          { text: 'Strategic Plan', icon: 'mdi-strategy' },
-         { text: 'Standards Charter', icon: 'mdi-strategy' },
+         { text: 'Service Charter', icon: 'mdi-strategy' },
 
 
 
