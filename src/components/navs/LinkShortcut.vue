@@ -149,10 +149,10 @@
       ],
         items: [
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
+            src: '../../assets/Dku.jpg',
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
+            src: '../../assets/',
           },
           {
             src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',

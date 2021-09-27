@@ -1,6 +1,6 @@
 <template>
 <div>
-      <v-carousel class="mt-0 pt-0" :show-arrows="false">
+      <v-carousel cycle class="mt-0 pt-0" :show-arrows="false">
     <v-carousel-item
       v-for="(item,i) in items"
       :key="i"
@@ -53,10 +53,10 @@ import LinkShortcut from './navs/LinkShortcut.vue'
       ],
         items: [
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
+            src: '../assets/slider/iso.jpg',
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
+           src: '../assets/slider/Dku.jpg',
           },
           {
             src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
