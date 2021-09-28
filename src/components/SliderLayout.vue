@@ -8,23 +8,56 @@
       :src="item.src"
     ></v-carousel-item>
   </v-carousel>
+  <v-card class="mx-4 mb-4" color="sucess" style="position:absolute;float:right;top:75px;z-index:400">
+    <v-card class="mx-auto" max-width="400" outlined>
+          <v-card-actions>
+      <v-btn
+        outlined
+        rounded
+        text
+      >
+        Careers and Job Adverts
+      </v-btn>
+      
+    </v-card-actions>
+    </v-card>
+  </v-card>
+  <v-card class="mx-4 my-4" dark color="primary" style="position:absolute;float:right;top:200px;z-index:400">
+    <v-card class="mx-auto" max-width="400" outlined>
+          <v-card-actions>
+      <v-btn
+        outlined
+        rounded
+       elevation="2"
+       color="yellow"
+      
+      >
+        TVET Authority Tenders
+      </v-btn>
+      
+    </v-card-actions>
+    </v-card>
+  </v-card>
+ <!-- <v-card class="mx-10" style="position:absolute;float:right;top:75px;z-index:400">
+        <v-card
+    class="mx-auto"
+    max-width="344"
+    outlined
+  >
+    <v-card-actions>
+      <v-btn
+        outlined
+        rounded
+        text
+      >
+        Careers
+      </v-btn>
+      
+    </v-card-actions>
+  </v-card>
+<v-card>
 
-
-<v-card class="mx-10" style="position:absolute;float:right;top:75px;z-index:400">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ -->
 
 
   <div class="ml-2 mt-1 mb-4">
