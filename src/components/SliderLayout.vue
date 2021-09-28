@@ -16,7 +16,13 @@
         rounded
         text
       >
+       <v-badge
+          color="green"
+          content="2"
+        >
         Careers and Job Adverts
+        </v-badge>
+        
       </v-btn>
       
     </v-card-actions>
@@ -32,7 +38,13 @@
        color="yellow"
       
       >
+        
+           <v-badge
+          color="green"
+          content="6"
+        >
         TVET Authority Tenders
+        </v-badge>
       </v-btn>
       
     </v-card-actions>
