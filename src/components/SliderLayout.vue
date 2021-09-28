@@ -10,7 +10,7 @@
   </v-carousel>
 
 
-
+<v-card class="mx-10" style="position:absolute;float:right;top:75px;z-index:400">
 
 
 
