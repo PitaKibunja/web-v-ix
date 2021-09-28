@@ -8,6 +8,7 @@ import Institution from '../components/InstitutionPage.vue'
 import AllNews from '../views/AllNews.vue'
 import SingleNews from '../views/SingleNews.vue'
 import SInst from '../components/SingleInst.vue'
+import AllInst from '../components/Institutions/AllInstitutions.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/institution',
     name: 'Institution',
     component: Institution
+  },
+  {
+    path: '/Allinstitution',
+    name: 'AllInstitution',
+    component: AllInst
   },
   {
     path:'/allnews',
