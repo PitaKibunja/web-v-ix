@@ -3,11 +3,11 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import SliderLayout from '../components/SliderLayout.vue'
 import Utility from '../components/UtilityLinks.vue'
-import Institution from '../components/InstitutionPage.vue'
+import Institution from '../components/Institutions/SingleInstitutions.vue'
 // import Assistant from '../components/cards/Assistant.vue'
 import AllNews from '../views/AllNews.vue'
 import SingleNews from '../views/SingleNews.vue'
-import SInst from '../components/SingleInst.vue'
+import SInst from '../components/Institutions/SingleInstitutions.vue'
 import AllInst from '../components/Institutions/AllInstitutions.vue'
 
 Vue.use(VueRouter)
