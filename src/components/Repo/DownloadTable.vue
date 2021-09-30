@@ -35,8 +35,9 @@
             <v-btn
             class="ma-2"
             outlined
-            color="indigo"
+            color="blue"
             >
+            <v-icon>mdi-download</v-icon>
             Download
             </v-btn>
           </td>
