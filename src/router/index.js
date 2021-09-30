@@ -9,6 +9,7 @@ import AllNews from '../views/AllNews.vue'
 import SingleNews from '../views/SingleNews.vue'
 import SInst from '../components/SingleInst.vue'
 import AllInst from '../components/Institutions/AllInstitutions.vue'
+import Downloads from '../components/Repo/Downloads.vue'
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,11 @@ const routes = [
     path: '/institution',
     name: 'Institution',
     component: Institution
+  },
+  {
+    path: '/downloads',
+    name: 'Downloads',
+    component:Downloads
   },
   {
     path: '/Allinstitution',

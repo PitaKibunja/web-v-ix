@@ -16,6 +16,7 @@
         v-model="search"
         append-icon="mdi-magnify"
         label="Search"
+        dense
         single-line
         hide-details
       ></v-text-field>
