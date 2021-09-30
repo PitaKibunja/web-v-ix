@@ -15,7 +15,10 @@
         v-model="search"
         append-icon="mdi-magnify"
         label="Search"
+<<<<<<< HEAD
         style="width:100px;"
+=======
+>>>>>>> 24cafa81641d61fe58579a34ffbe3384320d8ec0
         dense
         single-line
         hide-details
