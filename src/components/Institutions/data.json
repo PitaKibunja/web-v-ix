@@ -1,0 +1,17 @@
+{
+    "name": "Kaimbaga Institute",
+    regno:'TVETA/PRIVATE/TVC/0045',
+    county:'Kiambu',
+    regdate:'22-09-2021',
+    expdate:'22-09-2026',
+    category:'TVC',
+    type:'PRIVATE',
+    details:'Details',
+    courses:[
+        {course:'Food Technology',body:'KNEC',level:'Diploma',enrollment:'300'},
+        {course:'Hairdressing & Beauty',body:'TVETA-CDACC',level:'Craft',enrollment:'20'},
+        {course:'Information Technology',body:'KNEC',level:'Diploma',enrollment:'30'},
+        {course:'Business Adminstration',body:'PEARSON',level:'Diploma',enrollment:'100'},
+        {course:'Tour and Travel',body:'KNEC',level:'Diploma',enrollment:'300'},
+    ]
+  }

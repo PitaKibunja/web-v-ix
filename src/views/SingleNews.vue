@@ -14,7 +14,6 @@
         >
            <Post/>
            <v-divider></v-divider>
-          <p>By James Momanyi | August 27th, 2021 | Latest News, News and Events <a href="#">Comments 0</a></p>
         </v-card>
       </v-col>
       <v-col

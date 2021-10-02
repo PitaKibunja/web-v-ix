@@ -30,6 +30,14 @@
         {{ item.tab }}
         
       </v-tab>
+                <v-text-field
+                class="pt-4 mb-1 mr-2"
+            placeholder="Search"
+            outlined
+            dense
+            prepend-inner-icon="mdi-magnify"
+            
+          ></v-text-field>
        </v-tabs>
    </v-app-bar>
  </div>

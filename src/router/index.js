@@ -9,7 +9,9 @@ import AllNews from '../views/AllNews.vue'
 import SingleNews from '../views/SingleNews.vue'
 import SInst from '../components/Institutions/SingleInstitutions.vue'
 import AllInst from '../components/Institutions/AllInstitutions.vue'
+import Trainers from '../components/Trainers/TrainersRegister.vue'
 import Downloads from '../components/Repo/Downloads.vue'
+import Search from '../components/cards/Search.vue'
 
 Vue.use(VueRouter)
 
@@ -23,6 +25,14 @@ const routes = [
     path: '/institution',
     name: 'Institution',
     component: Institution
+  },{
+    path: '/search',
+    name: 'Search',
+    component: Search
+  },{
+    path: '/trainers',
+    name: 'Trainers',
+    component: Trainers
   },
   {
     path: '/downloads',
