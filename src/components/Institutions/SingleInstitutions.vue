@@ -27,7 +27,7 @@
    </v-card-title>
   <v-divider></v-divider> 
 <v-card class="pt-4 mb-4" dense>
-    <v-simple-table  style="  border: 1px solid black;
+    <v-simple-table  style="  border: 1px solid green;
   border-collapse: collapse;">
     <template v-slot:default>
           <tbody  style="  border: 1px solid black;
@@ -82,8 +82,8 @@
     <v-divider></v-divider> 
   <v-card class="pt-4 mb-4">
 <template>
-  <v-simple-table  style="  border: 1px solid black;
-  border-collapse: collapse;">
+  <v-simple-table  style="  border: 1px solid green;
+  border-collapse: collapse; padding-top:0;">
     <template v-slot:default>
       <thead>
         <tr>

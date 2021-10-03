@@ -1,86 +1,73 @@
 <template>
-    <div class="mt-10  pt-0 mb-0" style="background:white;">
-   <v-app-bar app class="pt-1">
-       <v-card width="90" class="my-0 pt-0">
-                 <v-img
-          alt="Vuetify Logo"
-          class="shrink  mt-4"
-          contains
-          
-          src="../../src/assets/tveta_logo.png"
-          transition="scale-transition"
-          width="100"
-          
-        />
-        
-       </v-card>
+  
+  <v-app>
+    <v-navigation-drawer v-model="sidebar" app>
+      <v-list>
+        <v-list-tile
+          v-for="item in menuItems"
+          :key="item.title"
+          :to="item.path">
+          <v-list-tile-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>{{ item.title }}</v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
 
-    <v-tabs
-      v-model="tab"
-      background-color="primary"
+    <v-toolbar app>
+      <span class="hidden-sm-and-up">
+        <v-toolbar-side-icon @click="sidebar = !sidebar">
+        </v-toolbar-side-icon>
+      </span>
+      <v-toolbar-title>
+        <router-link to="/" tag="span" style="cursor: pointer">
+          {{ appTitle }}
+        </router-link>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-xs-only">
+        <v-btn
+          flat
+          v-for="item in menuItems"
+          :key="item.title"
+          :to="item.path">
+          <v-icon left dark>{{ item.icon }}</v-icon>
+          {{ item.title }}
+        </v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
     
-      class="pl-0 text-center "
-    >
-      <v-tab
-        v-for="item in items1"
-        :key="item.tab"
-        
-        class="font-weight-light white--text"
-      >
-        {{ item.tab }}
-        
-      </v-tab>
-                <v-text-field
-                class="pt-4 mb-1 mr-2"
-            placeholder="Search"
-            outlined
-            dense
-            prepend-inner-icon="mdi-magnify"
-            
-          ></v-text-field>
-       </v-tabs>
-   </v-app-bar>
- </div>
-</template>
-<script>
-   export default {
-    data(){
-        return{
-            drawer:false,
-            tab: null,
-              items: [
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me 2' },
-      ],
-            items1: [
-              { tab: 'Home', content: 'Tab 1 Content' },
-              { tab: 'About', content: 'Tab 2 Content' },
-              { tab: 'Services', content: 'Tab 3 Content' },
-              { tab: 'Media Center', content: 'Tab 4 Content' },
-              { tab: 'Institutions', content: 'Tab 5 Content' },
-              { tab: 'Trainers', content: 'Tab 6 Content' },
-              { tab: 'Carricular', content: 'Tab 7 Content' },
-              { tab: 'Downloads', content: 'Tab 8 Content' }
-            ],
-              items2: [
-              { tab: 'Contact us', content: 'Tab 1 Content' },
-              { tab: 'MIS Portal', content: 'Tab 2 Content' },
-              { tab: 'Staff Portal', content: 'Tab 3 Content' },
-              { tab: 'Mail', content: 'Tab 4 Content' },
-              { tab: 'Tenders', content: 'Tab 5 Content' },
-              { tab: 'Careers', content: 'Tab 6 Content' },
-              { tab: 'FAQs', content: 'Tab 7 Content' },
-             
-            ],
-            links:[
-                {icon:'mdi-view-dashboard',text:'Dashboard', route:'/'},
-                {icon:'mdi-folder',text:'My Projects', route:'/projects'},
-                {icon:'mdi-microsoft-teams',text:'Team', route:'/team'}
-            ]
-        }
-    },
-};
+    <v-content>
+      <router-view></router-view>
+    </v-content>
+    
+  </v-app>
 
+</template>
+
+<script>
+//import HelloWorld from "./components/HelloWorld";
+
+export default {
+  name: "App",
+  data(){
+    return {
+      appTitle: 'Awesome App',
+      sidebar: false,
+      menuItems: [
+          { title: 'Home', path: '/home', icon: 'mdi-home' },
+          { title: 'Sign Up', path: '/signup', icon: 'mdi-face' },
+          { title: 'Sign In', path: '/signin', icon: 'mdi-lock_open' },
+          { title: 'Sign In', path: '/signin', icon: 'mdi-lock_open' },
+          { title: 'Sign In', path: '/signin', icon: 'mdi-lock_open' },
+          { title: 'Sign In', path: '/signin', icon: 'mdi-lock_open' },
+          { title: 'Sign In', path: '/signin', icon: 'mdi-lock_open' }
+     ]
+    }
+  },
+};
 </script>
+<style>
+
+</style>
