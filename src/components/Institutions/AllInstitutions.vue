@@ -1,11 +1,15 @@
 <template>
 
 <v-container >
-  <v-row cols="12 " class="d-flex justify-left mb-1 ml-4  pt-4">
+  
+  <v-card  elevation="2">
+   <v-card-title>
+    <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
      <div class="font-weight-medium">
-                 <h2>TVET Institutions</h2>      
+                 <h3>TVET Institutions<v-icon class="mb-5" color="green">mdi-check-circle-outline</v-icon> </h3>      
                     </div>
    </v-row>
+    </v-card-title>
   <v-divider></v-divider> 
  <template>
   <v-card>
@@ -27,6 +31,7 @@
     ></v-data-table>
   </v-card>
 </template>
+  </v-card>
       
 
    

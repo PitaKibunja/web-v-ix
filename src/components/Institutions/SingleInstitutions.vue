@@ -1,10 +1,10 @@
 <template>
     <v-container >
         <v-card>
-        <v-divider></v-divider>
-  <v-row cols="12 " class="d-flex justify-left mb-1 ml-4  pt-4">
+        <v-card-title>
+  <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-1">
      <div class="font-weight-medium">
-         <v-row class="mb-2 pt-4">
+         <v-row class="mb-1 pt-4">
              <v-spacer></v-spacer>
                 <v-btn
                     class=" mb-0"
@@ -19,37 +19,13 @@
                     </v-icon>
                     </v-btn>
            
-                 <h2 class="ml-4 pt-2">Kaimbaga Institute of Technology</h2>
+                 <h3 class="ml-4 pt-2">Kaimbaga Institute of Technology<v-icon class="mb-5"  color="green">mdi-check-circle-outline</v-icon> </h3>
                   </v-row>      
                     </div>
 
    </v-row>
+   </v-card-title>
   <v-divider></v-divider> 
-  <!-- Create the first table -->
-  
-<!-- <table style="width:100%
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 5px;
-  text-align: left;
-}">
-  <tr>
-    <th>Name:</th>
-    <td>Bill Gates</td>
-  </tr>
-  <tr>
-    <th>Telephone:</th>
-    <td>555 77 854</td>
-  </tr>
-  <tr>
-    <th>Telephone:</th>
-    <td>555 77 855</td>
-  </tr>
-</table> -->
-
 <v-card class="pt-4 mb-4" dense>
     <v-simple-table  style="  border: 1px solid black;
   border-collapse: collapse;">
