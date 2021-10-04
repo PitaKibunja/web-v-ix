@@ -15,12 +15,12 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-toolbar app>
+    <v-toolbar app color="primary">
       <span class="hidden-sm-and-up">
         <v-toolbar-side-icon @click="sidebar = !sidebar">
         </v-toolbar-side-icon>
       </span>
-      <v-toolbar-title>
+      <v-toolbar-title color="primary">
         <router-link to="/" tag="span" style="cursor: pointer">
           {{ appTitle }}
         </router-link>
@@ -57,7 +57,7 @@ export default {
       sidebar: false,
       menuItems: [
           { title: 'Home', path: '/home', icon: 'mdi-home' },
-          { title: 'Sign Up', path: '/signup', icon: 'mdi-face' },
+          { title: '', path: '/signup', icon: 'mdi-face' },
           { title: 'Sign In', path: '/signin', icon: 'mdi-lock_open' },
           { title: 'Sign In', path: '/signin', icon: 'mdi-lock_open' },
           { title: 'Sign In', path: '/signin', icon: 'mdi-lock_open' },
