@@ -1,8 +1,46 @@
 <template>
   <v-app>
-    <v-row class="container-fluid">
-      <v-col class="mt-0"><TopNav/></v-col>
-    </v-row>
+<v-toolbar app color="primary" flat>
+  <v-card class=" pa-2">
+           <v-img width="100" src="./assets/tveta_logo.png" clas="mt-n16"></v-img>      
+  </v-card>
+      <span class="hidden-sm-and-up">
+        <v-toolbar-side-icon @click="sidebar = !sidebar">
+        </v-toolbar-side-icon>
+      </span>
+      <v-toolbar-title >
+        <router-link to="/" tag="span" style="cursor: pointer">
+          
+        </router-link>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-xs-only pa-2" >
+        <v-btn
+        color="primary"
+          flat
+          v-for="item in menuItems"
+          :key="item.title"
+          :to="item.path">
+          <v-icon left dark>{{ item.icon }}</v-icon>
+          {{ item.title }}
+        </v-btn>
+        
+      </v-toolbar-items>
+     
+      <v-card elevation="2">
+          <v-card-title>
+      
+      <v-text-field
+        v-model="search"
+        append-icon="mdi-magnify"
+        label="Search"
+        dense
+        single-line
+        hide-details
+      ></v-text-field>
+    </v-card-title>
+        </v-card>
+    </v-toolbar>
     <v-main style="padding:0px; background: white ">
       <router-view/>
       <Assistant/>
@@ -14,51 +52,30 @@
 <script>
 import Footer from './components/Footer.vue'
 // import TopBar from './components/TopBar.vue'
-import TopNav from './components/TopNav.vue'
+// import TopNav from './components/TopNav.vue'
 import Assistant from './components/Assistant.vue'
 export default {
   name: 'App',
   components:{
     Footer,
-    TopNav,
+    // TopNav,
     Assistant
   },
 
     data(){
         return{
-            drawer:false,
-            tab: null,
-              items: [
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me 2' },
-      ],
-            items1: [
-              { tab: 'Home', content: 'Tab 1 Content' },
-              { tab: 'About', content: 'Tab 2 Content' },
-              { tab: 'Services', content: 'Tab 3 Content' },
-              { tab: 'Media Center', content: 'Tab 4 Content' },
-              { tab: 'Institutions', content: 'Tab 5 Content' },
-              { tab: 'Trainers', content: 'Tab 6 Content' },
-              { tab: 'Carricular', content: 'Tab 7 Content' },
-              { tab: 'Downloads', content: 'Tab 8 Content' }
-            ],
-              items2: [
-              { tab: 'Contact us', content: 'Tab 1 Content' },
-              { tab: 'MIS Portal', content: 'Tab 2 Content' },
-              { tab: 'Staff Portal', content: 'Tab 3 Content' },
-              { tab: 'Mail', content: 'Tab 4 Content' },
-              { tab: 'Tenders', content: 'Tab 5 Content' },
-              { tab: 'Careers', content: 'Tab 6 Content' },
-              { tab: 'FAQs', content: 'Tab 7 Content' },
-             
-            ],
-            links:[
-                {icon:'mdi-view-dashboard',text:'Dashboard', route:'/'},
-                {icon:'mdi-folder',text:'My Projects', route:'/projects'},
-                {icon:'mdi-microsoft-teams',text:'Team', route:'/team'}
-            ]
+            appTitle: 'TVET Authority',
+      sidebar: false,
+      menuItems: [
+          { title: 'Home', path: '/', icon: 'mdi-home' },
+          { title: 'About us', path: '/signup', icon: 'mdi-face' },
+          { title: 'Services', path: '/signin', icon: 'mdi-lock_open' },
+          { title: 'Media Center', path: '/signin', icon: 'mdi-lock_open' },
+          { title: 'Institutions', path: '/signin', icon: 'mdi-lock_open' },
+          { title: 'Trainers', path: '/signin', icon: 'mdi-lock_open' },
+          { title: 'Curricula', path: '/signin', icon: 'mdi-lock_open' },
+          { title: 'Downloads', path: '/downloads', icon: 'mdi-lock_open' }
+     ]
         }
     },
 };

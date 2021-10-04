@@ -1,20 +1,5 @@
 <template>
-  
-  <v-app>
-    <v-navigation-drawer v-model="sidebar" app>
-      <v-list>
-        <v-list-tile
-          v-for="item in menuItems"
-          :key="item.title"
-          :to="item.path">
-          <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>{{ item.title }}</v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-
+ <div class="mr-4">
     <v-toolbar app color="primary">
       <span class="hidden-sm-and-up">
         <v-toolbar-side-icon @click="sidebar = !sidebar">
@@ -26,8 +11,9 @@
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-xs-only">
+      <v-toolbar-items class="hidden-xs-only pa-2" >
         <v-btn
+        color="primary"
           flat
           v-for="item in menuItems"
           :key="item.title"
@@ -35,14 +21,26 @@
           <v-icon left dark>{{ item.icon }}</v-icon>
           {{ item.title }}
         </v-btn>
+        
       </v-toolbar-items>
+     
+      <v-card>
+          <v-card-title>
+      
+      <v-text-field
+        v-model="search"
+        append-icon="mdi-magnify"
+        label="Search"
+        dense
+        single-line
+        hide-details
+      ></v-text-field>
+    </v-card-title>
+        </v-card>
     </v-toolbar>
+ </div>
     
-    <v-content>
-      <router-view></router-view>
-    </v-content>
-    
-  </v-app>
+
 
 </template>
 
@@ -53,16 +51,17 @@ export default {
   name: "App",
   data(){
     return {
-      appTitle: 'Awesome App',
+      appTitle: 'TVET Authority',
       sidebar: false,
       menuItems: [
-          { title: 'Home', path: '/home', icon: 'mdi-home' },
-          { title: '', path: '/signup', icon: 'mdi-face' },
-          { title: 'Sign In', path: '/signin', icon: 'mdi-lock_open' },
-          { title: 'Sign In', path: '/signin', icon: 'mdi-lock_open' },
-          { title: 'Sign In', path: '/signin', icon: 'mdi-lock_open' },
-          { title: 'Sign In', path: '/signin', icon: 'mdi-lock_open' },
-          { title: 'Sign In', path: '/signin', icon: 'mdi-lock_open' }
+          { title: 'Home', path: '/', icon: 'mdi-home' },
+          { title: 'About us', path: '/signup', icon: 'mdi-face' },
+          { title: 'Services', path: '/signin', icon: 'mdi-lock_open' },
+          { title: 'Media Center', path: '/signin', icon: 'mdi-lock_open' },
+          { title: 'Institutions', path: '/signin', icon: 'mdi-lock_open' },
+          { title: 'Trainers', path: '/signin', icon: 'mdi-lock_open' },
+          { title: 'Curricula', path: '/signin', icon: 'mdi-lock_open' },
+          { title: 'Downloads', path: '/downloads', icon: 'mdi-lock_open' }
      ]
     }
   },
