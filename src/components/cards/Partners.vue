@@ -4,6 +4,7 @@
     <v-card
     class="mx-auto pb-0"
     max-width="100"
+     flat
   >
     <v-img
       src="../../assets/kebs.jpg"
@@ -12,6 +13,7 @@
 </v-card><v-card
     class="mx-auto pb-0"
     max-width="200"
+     flat
   >
     <v-img
       src="../../assets/unevoc.jpg"
@@ -21,6 +23,7 @@
 </v-card><v-card
     class="mx-auto pb-0"
     max-width="100"
+     flat
   >
     <v-img
       src="../../assets/hof.png"
@@ -29,19 +32,23 @@
 </v-card><v-card
     class="mx-auto pb-0"
     max-width="400"
+     flat
   >
     <v-img
       src="../../assets/2030.jpg"
+      
       style=" height:auto; width:200px;padding-top:2px;margin:1px; "
     ></v-img>
 </v-card>
 <v-card
     class="mx-auto pb-0"
-    max-width="200"
+    max-width="300"
+    flat
   >
     <v-img
       src="../../assets/ws.jpg"
-      style=" height:20px; width:50px;padding:2px;margin:10px; "
+      class="ma-4 pa-2 ml-4"
+     width="100"
     ></v-img>
 </v-card>
 </v-row>

@@ -100,7 +100,7 @@
           text
           v-bind="attrs"
           v-on="on"
-          class="pa-4 ma-2"
+          class="pa-4 ma-2 mr-3"
         >
           <router-link to="/downloads" tag="span" style="cursor: pointer">
           Downloads

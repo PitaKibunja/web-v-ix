@@ -11,7 +11,7 @@
    <v-card-title>
     <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
      <div class="font-weight-medium">
-                 <h3>Media Center<v-icon class="mb-5" color="green">mdi-check-circle-outline</v-icon> </h3>      
+                 <h3>Media Center</h3>      
                     </div>
    </v-row>
     </v-card-title>
