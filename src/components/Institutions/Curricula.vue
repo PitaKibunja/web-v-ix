@@ -1,8 +1,8 @@
 <template>
-    <v-container>
+    <v-container class="mt-8">
         <v-card>
             <v-card-title>
-                 <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-4">
+                 <v-row cols="12 " class="d-flex justify-center mb-1">
      <div class="font-weight-medium">
                 
                  <h3> Approved CBET Curricula <v-icon class="mb-5" medium color="green">mdi-check-circle-outline</v-icon> </h3>      

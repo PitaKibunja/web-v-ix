@@ -1,42 +1,55 @@
 <template>
   <div>
-    <v-app-bar
+    <v-app-bar 
       color="primary accent-4"
-      dense
       dark
+      app
+      class="mb-2"
     >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-      <v-toolbar-title>TVET Authority</v-toolbar-title>
+      <v-toolbar-title>
+        <v-card width="100" color="white" class="mt-2">
+          <v-img class="ma-1" src="../assets/tveta_logo.png"></v-img>
+        </v-card>
+      </v-toolbar-title>
 
       <v-spacer></v-spacer>
       <template>
-  <div class="text-center">
+  <div class="text-center mr-8 justify-between">
+
     <v-menu
       open-on-hover
-      top
       offset-y
       tile
+            bottom
+      origin="center center"
+      transition="scale-transition"
+            :rounded="rounded"
+
+           v-for="navItem in links"
+          :key="navItem"
     >
-      <template v-slot:activator="{ on, attrs }">
+      
+      <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">
         <v-btn
-          color="primary"
-          dark
+          color="white lighten-4"
+          large  
+          text
           v-bind="attrs"
           v-on="on"
+          class="pa-4 ma-4"
         >
-          Dropdown
+          {{ navItem.navl }}
         </v-btn>
       </template>
 
       <v-list>
           <v-list-item
-            v-for="n in quick"
+            v-for="n in navItem.list"
             :key="n"
             @click="() => {}"
-            :to="n.link"
+            :to="n.linker"
           >
-            <v-list-item-title>{{ n.Staff }}</v-list-item-title>
+            <v-list-item-title>{{ n.submenu }}</v-list-item-title>
           </v-list-item>
         </v-list>
     </v-menu>
@@ -48,9 +61,16 @@
       </v-btn>
 
       <v-menu
+      open-on-hover
+      offset-y
+      tile
+      origin="center center"
+      transition="scale-transition"
+      :rounded="rounded"
         left
         bottom
       >
+      
         <template v-slot:activator="{ on, attrs }">
           <v-btn
             icon
@@ -66,7 +86,7 @@
             v-for="n in quick"
             :key="n"
             @click="() => {}"
-            :to="n.link"
+            :redirect="n.link"
           >
             <v-list-item-title>{{ n.Staff }}</v-list-item-title>
           </v-list-item>
@@ -84,11 +104,41 @@
         { title: 'Click Me' },
         { title: 'Click Me 2' },
       ],
+      links:[    //'Home','About us','Services','Institutions','Trainers','Curricula','Downloads'
+        {navl:'Home'},
+        {navl:'About Us',list:[
+          {submenu:'Who we are',linker:'/who'},
+          {submenu:'Leadership',linker:'/leadership'},
+          {submenu:'Location',linker:'/location'},
+          {submenu:'History',linker:'/history'},
+        ]},
+        {navl:'Services',list:[
+          {submenu:'Accreditation',linker:'accreditation'},
+          {submenu:'Compliance and Enforcement',linker:'/compliance'},
+          {submenu:'Outreach',linker:'/outreach'},
+          {submenu:'Standards Development',linker:'/standards'},
+          {submenu:'Research',linker:'/research'},
+          {submenu:'Policy and Strategy',linker:'/policy'},
+        ]},
+        {navl:'Institutions',list:[
+          {submenu:'Institution Registration',linker:'/reginstitutions'},
+          {submenu:'Registred Institutions',linker:'/Allinstitution'}
+        ]},
+        {navl:'Trainers',list:[
+          {submenu:'Trainer Registration',linker:'/trainerreg'},
+          {submenu:'Registred Trainers',linker:'/trainers'},
+        ]},
+        {navl:'Curricula',list:[
+          {submenu:'Approved Curricula',linker:'/curricula'},
+          {submenu:'Approved Short Courses',linker:'/shortcourses'},
+        ]},
+        {navl:'Downloads'},
+      ]
+      ,
       quick:[
-        {Staff:'Staff mail',link:'/'},
-        {Staff:'Staff Portal',link:'/institution'},
-        {Staff:'Staff Portal',link:'/downloads'},
-        {Staff:'Staff Portal',link:'/institution'},
+        {Staff:'Staff mail',link:'https://mail.tveta.go.ke/'},
+        {Staff:'Staff Portal',link:'https://staff.tveta.go.ke:8080/'},
+        {Staff:'Staff MIS',link:'https://mis.tveta.go.ke/#'},
       ]
     }),
   }
