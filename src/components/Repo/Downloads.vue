@@ -1,12 +1,16 @@
 <template>
-    <container>
-               <v-card 
-        class="pt-4 mb-6"
-        :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-        flat
-        tile
-        >
-        <v-card class="ma-8">
+<v-container class="mt-8">
+          <v-card elevation="2">
+            <v-card-title>
+                 <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
+     <div class="font-weight-medium">
+                
+                 <h3> Downloads<v-icon large medium color="green">mdi-briefcase-download-outline</v-icon> </h3>      
+                    </div>
+                    </v-row>
+            </v-card-title>
+            <v-divider></v-divider>
+                    <v-card class="ma-1">
             <v-toolbar
             color="white"
             class=" pt-0"
@@ -61,8 +65,9 @@
       </v-tab-item>
     </v-tabs-items>
   </v-card>
-        </v-card>
-    </container >
+          </v-card>
+</v-container>  
+ 
 </template>
 <script>
 import DownloadTable from './DownloadTable.vue'

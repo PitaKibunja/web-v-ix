@@ -1,16 +1,16 @@
 <template>
 
 <v-container class="mt-8">
-          <v-card>
+          <v-card elevation="2">
             <v-card-title>
-                 <v-row cols="12 " class="d-flex justify-center mb-1">
+                 <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
      <div class="font-weight-medium">
                 
                  <h3> TVET Registered and Licensed Trainers 2021 <v-icon class="mb-5" medium color="green">mdi-check-circle-outline</v-icon> </h3>      
                     </div>
                     </v-row>
             </v-card-title>
-          </v-card>
+        
   <v-divider></v-divider> 
  <template>
   <v-card>
@@ -34,7 +34,7 @@
 </template>
       
 
-   
+   </v-card>  
 </v-container>
 
 <!-- 

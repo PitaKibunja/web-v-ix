@@ -7,7 +7,7 @@
       class="mb-2"
     >
       <v-toolbar-title>
-        <v-card width="100" color="white" class="mt-2">
+        <v-card elevation="2" width="100" color="white" class="pt-4 " outlined raised :to="defacto.link">
           <v-img class="ma-1" src="../assets/tveta_logo.png"></v-img>
         </v-card>
       </v-toolbar-title>
@@ -15,7 +15,34 @@
       <v-spacer></v-spacer>
       <template>
   <div class="text-center mr-8 justify-between">
+        <v-menu
+      open-on-hover
+      offset-y
+      tile
+            bottom
+      origin="center center"
+      transition="scale-transition"
+            :rounded="rounded"
 
+          :key="navItem"
+    >
+     <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">  
+       <v-btn
+          color="white lighten-4"
+          large  
+          text
+          v-bind="attrs"
+          v-on="on"
+          class="pa-4 ma-2"
+          :to="defacto.link"
+        >
+        <v-icon>mdi-home</v-icon>
+          <router-link to="/" tag="span" style="cursor: pointer">
+          Home
+        </router-link>
+        </v-btn>
+      </template>
+        </v-menu>
     <v-menu
       open-on-hover
       offset-y
@@ -29,15 +56,16 @@
           :key="navItem"
     >
       
-      <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">
-        <v-btn
+      <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">  
+       <v-btn
           color="white lighten-4"
           large  
           text
           v-bind="attrs"
           v-on="on"
-          class="pa-4 ma-4"
+          class="pa-4 ma-2"
         >
+        <v-icon>{{ navItem.icon }}</v-icon>
           {{ navItem.navl }}
         </v-btn>
       </template>
@@ -54,6 +82,32 @@
         </v-list>
     </v-menu>
   </div>
+   <v-menu
+      open-on-hover
+      offset-y
+      tile
+            bottom
+      origin="center center"
+      transition="scale-transition"
+            :rounded="rounded"
+
+          :key="navItem"
+    >
+     <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">  
+       <v-btn
+          color="white lighten-4"
+          large  
+          text
+          v-bind="attrs"
+          v-on="on"
+          class="pa-4 ma-2"
+        >
+          <router-link to="/downloads" tag="span" style="cursor: pointer">
+          Downloads
+        </router-link>
+        </v-btn>
+      </template>
+        </v-menu>
 </template>
 
       <v-btn icon>
@@ -86,9 +140,9 @@
             v-for="n in quick"
             :key="n"
             @click="() => {}"
-            :redirect="n.link"
+            
           >
-            <v-list-item-title>{{ n.Staff }}</v-list-item-title>
+            <v-list-item-title :redirect="n.link">{{ n.Staff }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -98,14 +152,12 @@
 <script>
   export default {
     data: () => ({
-      items: [
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me 2' },
+      defacto: [
+        { title: 'Home' ,link:'/home'},
+        { title: 'Downloads',link:'/downloads'},
       ],
       links:[    //'Home','About us','Services','Institutions','Trainers','Curricula','Downloads'
-        {navl:'Home'},
+        
         {navl:'About Us',list:[
           {submenu:'Who we are',linker:'/who'},
           {submenu:'Leadership',linker:'/leadership'},
@@ -131,14 +183,18 @@
         {navl:'Curricula',list:[
           {submenu:'Approved Curricula',linker:'/curricula'},
           {submenu:'Approved Short Courses',linker:'/shortcourses'},
+        ]},  
+        {navl:'Media',list:[
+          {submenu:'News and Updates',linker:'/allnews'},
+          {submenu:'Gallery',linker:'/gallery'},
         ]},
-        {navl:'Downloads'},
+        
       ]
       ,
       quick:[
-        {Staff:'Staff mail',link:'https://mail.tveta.go.ke/'},
-        {Staff:'Staff Portal',link:'https://staff.tveta.go.ke:8080/'},
-        {Staff:'Staff MIS',link:'https://mis.tveta.go.ke/#'},
+        {Staff:'Staff mail',link:'https://mail.tveta.go.ke'},
+        {Staff:'Staff Portal',link:'https://staff.tveta.go.ke:8080'},
+        {Staff:'Staff MIS',link:'/institution'},
       ]
     }),
   }

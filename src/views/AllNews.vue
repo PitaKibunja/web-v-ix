@@ -1,10 +1,21 @@
 <template>
-<v-container>
+<!-- <v-container >
   <v-row cols="12 " class="d-flex justify-center mb-2  pt-4">
      <div class="font-weight-medium">
                  <h2>Media Center</h2>      
                     </div>
+   </v-row> -->
+   <v-container class="mt-8">
+  
+  <v-card  elevation="2">
+   <v-card-title>
+    <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
+     <div class="font-weight-medium">
+                 <h3>Media Center<v-icon class="mb-5" color="green">mdi-check-circle-outline</v-icon> </h3>      
+                    </div>
    </v-row>
+    </v-card-title>
+   
   <v-divider></v-divider> 
   <v-row class="d-flex justify-center mb-1  pa-3">
         <v-col
@@ -16,20 +27,20 @@
           <v-text-field
             placeholder="Search"
             prepend-inner-icon="mdi-magnify"
-           
+           max-width="300"
             dense
           ></v-text-field>
         </v-col>
     </v-row>   
  
-  <v-row class="pt-0"> <NewsTab/></v-row> 
+  <v-row class="pt-0 ma-2"> <NewsTab/></v-row> 
           <!-- </v-col> -->
         <!-- </v-row>    -->
         <v-row>
           
         </v-row>
 
-   
+    </v-card>
 </v-container>
   <!-- <v-container class="grey lighten-5">
     <v-col>
