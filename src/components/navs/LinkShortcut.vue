@@ -12,6 +12,7 @@
                     small
                     elevation="2"
                     color="primary"
+                    :to="link.where"
                     >
                     <v-icon size="30" dark>
                         {{ link.icon }}
@@ -38,7 +39,7 @@
           
          
          { text: 'TVET MIS', icon: 'mdi-login' },  
-        { text: 'FAQs', icon: 'mdi-frequently-asked-questions' },
+        { text: 'FAQs', icon: 'mdi-frequently-asked-questions' ,where:'/faqs'},
 
          { text: 'Strategic Plan', icon: 'mdi-file-document-multiple' },
          { text: 'Service Charter', icon: 'mdi-file-document-multiple' },
