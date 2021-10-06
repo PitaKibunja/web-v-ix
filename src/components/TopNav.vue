@@ -90,7 +90,6 @@
       origin="center center"
       transition="scale-transition"
             :rounded="rounded"
-
           :key="navItem"
     >
      <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">  
@@ -100,7 +99,7 @@
           text
           v-bind="attrs"
           v-on="on"
-          class="pa-4 ma-2 mr-3"
+          class="pa-2"
         >
           <router-link to="/downloads" tag="span" style="cursor: pointer">
           Downloads
