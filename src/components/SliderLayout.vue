@@ -20,7 +20,10 @@
           color="green"
           content="2"
         >
-        Careers and Job Adverts
+          <router-link to="/career" tag="span" style="cursor: pointer">
+          Careers and Job Adverts
+        </router-link>
+       
         </v-badge>
         
       </v-btn>
@@ -37,13 +40,17 @@
        elevation="2"
        color="yellow"
       
+      
       >
         
            <v-badge
           color="green"
           content="6"
         >
-        TVET Authority Tenders
+        <router-link to="/tenders" tag="span" style="cursor: pointer">
+          TVET Authority Tenders
+        </router-link>
+        
         </v-badge>
       </v-btn>
       

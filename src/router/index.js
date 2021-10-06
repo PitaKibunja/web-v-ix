@@ -12,6 +12,8 @@ import AllInst from '../components/Institutions/AllInstitutions.vue'
 import Curricula from '../components/Institutions/Curricula.vue'
 import Trainers from '../components/Trainers/TrainersRegister.vue'
 import Downloads from '../components/Repo/Downloads.vue'
+import Career from '../components/Repo/Career.vue'
+import Tenders from '../components/Repo/Tenders.vue'
 import Search from '../components/cards/Search.vue'
 
 Vue.use(VueRouter)
@@ -30,6 +32,14 @@ const routes = [
     path: '/search',
     name: 'Search',
     component: Search
+  },{
+    path: '/tenders',
+    name: 'Tenders',
+    component: Tenders
+  },{
+    path: '/career',
+    name: 'Career',
+    component: Career
   },{
     path: '/curricula',
     name: 'Curricula',
