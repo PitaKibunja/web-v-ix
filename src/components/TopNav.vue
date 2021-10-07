@@ -36,8 +36,8 @@
           class="pa-4 ma-2"
           :to="defacto.link"
         >
-        <v-icon>mdi-home</v-icon>
           <router-link to="/" tag="span" style="cursor: pointer">
+           <v-icon>mdi-home</v-icon>
           Home
         </router-link>
         </v-btn>
@@ -159,7 +159,7 @@
         
         {navl:'About Us',list:[
           {submenu:'Who we are',linker:'/who'},
-          {submenu:'Leadership',linker:'/leadership'},
+          {submenu:'Leadership',linker:'/management'},
           {submenu:'Location',linker:'/location'},
           {submenu:'History',linker:'/history'},
         ]},

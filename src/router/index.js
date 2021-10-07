@@ -14,6 +14,7 @@ import Trainers from '../components/Trainers/TrainersRegister.vue'
 import Downloads from '../components/Repo/Downloads.vue'
 import Career from '../components/Repo/Career.vue'
 import FAQ from '../components/FAQs/FAQ.vue'
+import Management from '../components/About/Management.vue'
 import Department from '../components/DepartmentsInfo/Department.vue'
 import Questions from '../components/FAQs/Questions.vue'
 import CareerDetails from '../components/Repo/CareerDetails.vue'
@@ -52,6 +53,10 @@ const routes = [
     path: '/department',
     name: 'Department',
     component: Department
+  },{
+    path: '/management',
+    name: 'Management',
+    component: Management
   },{
     path: '/faqs/questions',
     name: 'Questions',
