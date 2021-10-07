@@ -13,23 +13,16 @@
             <v-card>
                 <v-card-title>
                  <v-row cols="8" class="d-flex justify-center mb-1 ml-4  pt-2">
-                    <div class="font-weight-medium">
-                
-                 <h3>How can we assist you today?</h3>  <br/>    
-                    </div>
-                    </v-row>
-                    <v-row>
-                        <h6></h6>
-                    </v-row>
-                    <v-row  class="d-flex justify-between mb-1 ml-4  pt-2">
-                        <v-col >
+                    
+                      <h3 class="pt-4 ml-8">How can we assist you today?</h3>
+                      <v-spacer></v-spacer>
                             <v-text-field
                                 placeholder="Search"
                                 prepend-inner-icon="mdi-magnify"
-                                max-width="300"
-                                dense
+                                max-width="500"
+                                class="mr-8"
                                  ></v-text-field>
-                        </v-col>
+                       
                     </v-row>
             </v-card-title>
             </v-card>
