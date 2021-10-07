@@ -137,44 +137,44 @@
           {
             name: 'MIS Institution Registration',
             icon:'mdi-help',
-            link:'/questions'
+            link:'/faqs/questions'
           },{
             name: 'MIS Institution Registration',
             icon:'mdi-help',
-            link:'/questions'
+            link:'/faqs/questions'
           },{
             name: 'MIS Institution Registration ',
             icon:'mdi-help',
-            link:'/questions'
+            link:'/faqs/questions'
           },{
             name: 'MIS Institution Registration ',
             icon:'mdi-help',
-            link:'/questions'
+            link:'/faqs/questions'
           },
           {
             name: 'Trainer Registration Process',
             icon:'mdi-help',
-            link:'/questions'
+            link:'/faqs/questions'
           },
           {
             name: 'MIS Letter of No Objection',
             icon:'mdi-help',
-            link:'/questions'
+            link:'/faqs/questions'
           },
             {
             name: 'TVET Standards and Guidelines',
             icon:'mdi-help',
-            link:'/questions'
+            link:'/faqs/questions'
           },
             {
             name: 'Access to Outreach Services',
             icon:'mdi-help',
-            link:'/questions'
+            link:'/faqs/questions'
           },
             {
             name: 'TVET Trainers Employment',
             icon:'mdi-help',
-            link:'/questions'
+            link:'/faqs/questions'
           },
 
         ],

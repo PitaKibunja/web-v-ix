@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <TopNav/>
-    <v-main class="mt-4 pt-4" style="padding:0px; background: white ">
+    <v-main class="mt-4 pt-4" style="margin: 0px; padding:0px; background: white;  width: 100%">
       <router-view/>
       <Assistant/>
     </v-main>
