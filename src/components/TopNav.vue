@@ -158,7 +158,7 @@
       links:[    //'Home','About us','Services','Institutions','Trainers','Curricula','Downloads'
         
         {navl:'About Us',list:[
-          {submenu:'Who we are',linker:'/who'},
+          {submenu:'Who we are',linker:'/whoweare'},
           {submenu:'Leadership',linker:'/management'},
           {submenu:'Location',linker:'/location'},
           {submenu:'History',linker:'/history'},

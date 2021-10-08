@@ -211,33 +211,11 @@
         },
         {
           text: 'Leadership',
-          disabled: false,
+          disabled: true,
           href: '/management',
         }
       ],
-        Questions: [
-          {
-            quiz: 'What is the TVET MIS',
-            answer:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium voluptate aut ea, voluptatem ut aspernatur assumenda dignissimos excepturi nam earum iste laboriosam nemo reiciendis cupiditate ullam sint labore incidunt.', 
-          
-          },{
-            quiz: 'How to Register an exsisting Institution?',
-            answer:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium voluptate aut ea, voluptatem ut aspernatur assumenda dignissimos excepturi nam earum iste laboriosam nemo reiciendis cupiditate ullam sint labore incidunt.',
-            
-          },{
-            quiz: 'How to download Certificate from MIS Platform',
-            answer:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium voluptate aut ea, voluptatem ut aspernatur assumenda dignissimos excepturi nam earum iste laboriosam nemo reiciendis cupiditate ullam sint labore incidunt.',
-            
-          },{
-            quiz: 'How to handle Tickets on MIS platform',
-            answer:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium voluptate aut ea, voluptatem ut aspernatur assumenda dignissimos excepturi nam earum iste laboriosam nemo reiciendis cupiditate ullam sint labore incidunt.',
-            
-          },{
-            quiz: 'How to change Institution Location from the MIS',
-            answer:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium voluptate aut ea, voluptatem ut aspernatur assumenda dignissimos excepturi nam earum iste laboriosam nemo reiciendis cupiditate ullam sint labore incidunt.',
-            
-          }
-        ],
+        
       }
     },
   }

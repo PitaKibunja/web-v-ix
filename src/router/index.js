@@ -15,6 +15,8 @@ import Downloads from '../components/Repo/Downloads.vue'
 import Career from '../components/Repo/Career.vue'
 import FAQ from '../components/FAQs/FAQ.vue'
 import Management from '../components/About/Management.vue'
+import History from '../components/About/History.vue'
+import Who from '../components/About/Who.vue'
 import Department from '../components/DepartmentsInfo/Department.vue'
 import Questions from '../components/FAQs/Questions.vue'
 import CareerDetails from '../components/Repo/CareerDetails.vue'
@@ -57,6 +59,14 @@ const routes = [
     path: '/management',
     name: 'Management',
     component: Management
+  },{
+    path: '/history',
+    name: 'History',
+    component: History
+  },{
+    path: '/whoweare',
+    name: 'Who',
+    component: Who
   },{
     path: '/faqs/questions',
     name: 'Questions',
