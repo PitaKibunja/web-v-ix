@@ -164,12 +164,12 @@
           {submenu:'History',linker:'/history'},
         ]},
         {navl:'Services',list:[
-          {submenu:'Accreditation',linker:'accreditation'},
+          {submenu:'Accreditation',linker:'/accreditation'},
           {submenu:'Compliance and Enforcement',linker:'/compliance'},
           {submenu:'Outreach',linker:'/outreach'},
           {submenu:'Standards Development',linker:'/standards'},
           {submenu:'Research',linker:'/research'},
-          {submenu:'Policy and Strategy',linker:'/policy'},
+          {submenu:'Policy and Strategy',linker:'/strategyandpolicy'},
         ]},
         {navl:'Institutions',list:[
           {submenu:'Institution Registration',linker:'/reginstitutions'},

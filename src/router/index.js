@@ -18,6 +18,12 @@ import Management from '../components/About/Management.vue'
 import History from '../components/About/History.vue'
 import Who from '../components/About/Who.vue'
 import Department from '../components/DepartmentsInfo/Department.vue'
+import Accreditation from '../components/DepartmentsInfo/Accreditation.vue'
+import Compliance from '../components/DepartmentsInfo/Compliance.vue'
+import Outreach from '../components/DepartmentsInfo/Outreach.vue'
+import Strategy from '../components/DepartmentsInfo/Strategy.vue'
+import Research from '../components/DepartmentsInfo/Research.vue'
+import Standards from '../components/DepartmentsInfo/Standards.vue'
 import Questions from '../components/FAQs/Questions.vue'
 import CareerDetails from '../components/Repo/CareerDetails.vue'
 import Tenders from '../components/Repo/Tenders.vue'
@@ -55,6 +61,30 @@ const routes = [
     path: '/department',
     name: 'Department',
     component: Department
+  },{
+    path: '/compliance',
+    name: 'Compliance',
+    component: Compliance
+  },{
+    path: '/accreditation',
+    name: 'Accreditation',
+    component: Accreditation
+  },{
+    path: '/strategyandpolicy',
+    name: 'Strategy and Policy',
+    component: Strategy
+  },{
+    path: '/outreach',
+    name: 'Outreach',
+    component: Outreach
+  },{
+    path: '/research',
+    name: 'Research',
+    component: Research
+  },{
+    path: '/standards',
+    name: 'Standards',
+    component: Standards
   },{
     path: '/management',
     name: 'Management',
