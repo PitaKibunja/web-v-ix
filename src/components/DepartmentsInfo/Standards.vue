@@ -47,13 +47,12 @@
           {{ std.title }}
         </router-link>
       </p>
-      <p>
-           <v-row class="d-flex justify-center mb-1 pt-1" width="200" flat>
-         
-          <v-img small src="../../assets/tveta_logo.png"></v-img>
-          </v-row>
       
-      </p>
+        <v-row class="d-flex justify-center ma-1  pa-1">
+                       <v-card width="100" flat color="white">
+               <v-img  src="../../assets/tveta_logo.png"></v-img>
+           </v-card>
+        </v-row>
       <div class="text--primary">
              {{ std.content }}
       </div>
