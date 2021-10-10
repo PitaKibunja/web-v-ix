@@ -96,9 +96,9 @@
           href: '/',
         },
         {
-          text: 'Accreditation',
+          text: 'Institution Application Process',
           disabled: true,
-          href: '/accreditation',
+          href: '/reginstitutions',
         }
       ],
         departments: [

@@ -1,6 +1,6 @@
 <template>
 <div>
-  <v-container class="mt-2">
+  <v-container class="mt-2" fluid> 
     <v-card elevation="2">
       <v-card class="mb-4">
         <v-card-title>

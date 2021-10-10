@@ -6,12 +6,16 @@
       app
       class="mb-2"
     >
-      <v-toolbar-title>
+    
+    <v-toolbar-title>
         <v-card elevation="2" width="100" color="white" class="pt-4 " outlined raised :to="defacto.link">
           <v-img class="ma-1" src="../assets/tveta_logo.png"></v-img>
         </v-card>
       </v-toolbar-title>
-
+      <div class="d-flex justify-center">
+        <p class="text-h5 ml-2 pt-4">TVET</p><br/>
+        <p class="text-h5 ml-2 pt-4">Authority</p>
+      </div>      
       <v-spacer></v-spacer>
       <template>
   <div class="text-center mr-8 justify-between">
@@ -33,7 +37,7 @@
           text
           v-bind="attrs"
           v-on="on"
-          class="pa-4 ma-2"
+          class="pa-2 ma-2"
           :to="defacto.link"
         >
           <router-link to="/" tag="span" style="cursor: pointer">
@@ -83,7 +87,6 @@
     </v-menu>
   </div>
    <v-menu
-      open-on-hover
       offset-y
       tile
             bottom
@@ -99,7 +102,7 @@
           text
           v-bind="attrs"
           v-on="on"
-          class="pa-2"
+          class="pa-2 ma-2"
         >
           <router-link to="/downloads" tag="span" style="cursor: pointer">
           Downloads
@@ -160,7 +163,6 @@
         {navl:'About Us',list:[
           {submenu:'Who we are',linker:'/whoweare'},
           {submenu:'Leadership',linker:'/management'},
-          {submenu:'Location',linker:'/location'},
           {submenu:'History',linker:'/history'},
         ]},
         {navl:'Services',list:[
@@ -185,15 +187,14 @@
         ]},  
         {navl:'Media',list:[
           {submenu:'News and Updates',linker:'/allnews'},
-          {submenu:'Gallery',linker:'/gallery'},
+          
         ]},
         
       ]
       ,
       quick:[
         {Staff:'Staff mail',link:'https://mail.tveta.go.ke'},
-        {Staff:'Staff Portal',link:'https://staff.tveta.go.ke:8080'},
-        {Staff:'Staff MIS',link:'/institution'},
+        {Staff:'Staff Portal',link:'https://staff.tveta.go.ke:8080'}
       ]
     }),
   }

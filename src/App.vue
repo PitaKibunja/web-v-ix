@@ -2,8 +2,10 @@
   <v-app>
     <TopNav/>
     <v-main class="mt-4 pt-4" style="margin: 0px; padding:0px; background: white;  width: 100%">
+      <v-container fluid>
       <router-view/>
       <Assistant/>
+      </v-container>
     </v-main>
     <Footer/>
   </v-app>

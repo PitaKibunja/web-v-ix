@@ -53,7 +53,7 @@
                <v-img  src="../../assets/tveta_logo.png"></v-img>
            </v-card>
         </v-row>
-      <div class="text--primary">
+      <div class="text--primary ma-2 pa-2">
              {{ std.content }}
       </div>
           <div class="pt-2">
@@ -68,7 +68,7 @@
     <v-card-actions>
       <v-btn
         text
-        color="deep-purple accent-4"
+        color="primary accent-4"
       >
       <v-icon>mdi-cart-outline</v-icon>
         Buy Now 
@@ -80,7 +80,7 @@
     ></v-divider>
       <v-btn
         text
-        color="deep-purple accent-4"
+        color="primary accent-4"
       >
         Subscribe
       </v-btn>

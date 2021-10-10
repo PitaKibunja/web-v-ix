@@ -9,6 +9,8 @@ import AllNews from '../views/AllNews.vue'
 import SingleNews from '../views/SingleNews.vue'
 import SInst from '../components/Institutions/SingleInstitutions.vue'
 import AllInst from '../components/Institutions/AllInstitutions.vue'
+import InstReg from '../components/Institutions/InstitutionRegistration.vue'
+import TrainersReg from '../components/Institutions/TrainerRegistration.vue'
 import Curricula from '../components/Institutions/Curricula.vue'
 import Trainers from '../components/Trainers/TrainersRegister.vue'
 import Downloads from '../components/Repo/Downloads.vue'
@@ -53,6 +55,14 @@ const routes = [
     path: '/career',
     name: 'Career',
     component: Career
+  },{
+    path: '/reginstitutions',
+    name: 'InstReg',
+    component: InstReg
+  },{
+    path: '/trainerreg',
+    name: 'TrainersReg',
+    component: TrainersReg
   },{
     path: '/faqs',
     name: 'FAQS',
