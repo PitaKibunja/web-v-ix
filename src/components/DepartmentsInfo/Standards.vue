@@ -22,7 +22,7 @@
             <v-divider></v-divider>
             
             <div>
-                <h4 class="d-flex text-h6 justify-center">TVET fundamental standards and guidelines</h4>
+                <h4 class="d-flex text-h6 justify-center ma-1 pa-1">TVET fundamental standards and guidelines</h4>
             </div>
             <v-divider></v-divider>
             <v-container fluid>

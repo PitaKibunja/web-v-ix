@@ -6,7 +6,6 @@
       app
       class="mb-2"
     >
-    
     <v-toolbar-title>
         <v-card elevation="2" width="100" color="white" class="pt-4 " outlined raised :to="defacto.link">
           <v-img class="ma-1" src="../assets/tveta_logo.png"></v-img>
