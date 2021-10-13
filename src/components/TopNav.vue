@@ -11,10 +11,14 @@
           <v-img class="ma-1" src="../assets/tveta_logo.png"></v-img>
         </v-card>
       </v-toolbar-title>
-      <div class="d-flex justify-center">
+      <div class="d-flex justify-center mr-2">
         <p class="text-h5 ml-2 pt-4">TVET</p><br/>
         <p class="text-h5 ml-2 pt-4">Authority</p>
-      </div>      
+           <v-divider
+  
+      vertical
+    ></v-divider>
+      </div>     
       <v-spacer></v-spacer>
       <template>
   <div class="text-center mr-8 justify-between">
@@ -93,6 +97,7 @@
       transition="scale-transition"
             :rounded="rounded"
           :key="navItem"
+          
     >
      <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">  
        <v-btn
@@ -101,7 +106,7 @@
           text
           v-bind="attrs"
           v-on="on"
-          class="pa-2 ma-2"
+          class="pa-2 mr-12"
         >
           <router-link to="/downloads" tag="span" style="cursor: pointer">
           Downloads
@@ -113,17 +118,18 @@
 
       <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
+
       </v-btn>
 
       <v-menu
       open-on-hover
       offset-y
       tile
+      
       origin="center center"
       transition="scale-transition"
       :rounded="rounded"
-        left
-        bottom
+      bottom
       >
       
         <template v-slot:activator="{ on, attrs }">
@@ -131,6 +137,7 @@
             icon
             v-bind="attrs"
             v-on="on"
+            class="pa-2 mr-2 ml-2"
           >
             <v-icon>mdi-dots-vertical</v-icon>
           </v-btn>
