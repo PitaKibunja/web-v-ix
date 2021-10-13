@@ -1,51 +1,49 @@
 <template>
-<v-container fluid>
-  <v-footer dark>
-    <v-card
-      class="d-flex justify-space-between mb-6"
-      :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-      flat
-      tile
-    >
-      <v-card
-        v-for="resource in resources"
-        :key="resource.heading"
-        class="pa-4"
-        flat
-        tile
-      >
-       <h4 class="pt-2">{{ resource.heading }}</h4>
-        <v-card
-              v-for="info in resource.info"
-              :key="info.text"
-              class="pa-2"
-              tile>
-              <router-link to="">
-                {{info.text }}
-              </router-link>
-            </v-card>
-      </v-card>
-      
-    </v-card>
-    <v-divider class="ml-8" vertical></v-divider>
-    <v-container>
-       <v-card>
-        <v-card-title>
-                 <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
-                    <div class="font-weight-medium">
+  <v-container fluid>
+    <v-footer dark>
+      <v-row cols="12 " class="d-flex justify-start mb-1   pt-2">
+        <v-col>
+              <v-card 
+               class=""
+                :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
+                flat
+                tile
+                >
+                <v-row>
+             
+                                <v-card
+                  v-for="resource in resources"
+                  :key="resource.heading"
+                  class="d-flex justify-space-between mb-6 pa-4"
+                  flat
+                  tile
+                  dark
+                  >
+                    <h4 class="pt-2">{{ resource.heading }}</h4>
+                    <v-card
+                    v-for="info in resource.info"
+                    :key="info.text"
+                    class="pa-2"
+                    dark
+                    tile
+                    >
+                        <router-link to="">
+                            {{info.text }}
+                        </router-link>
+                    </v-card>
+                  </v-card>
                 
-                 <h3>Location</h3>      
-                    </div>
-                    </v-row>
-            </v-card-title>
-            <v-divider></v-divider>
-     </v-card>
-    </v-container>
-  </v-footer>
-      <v-card-text class="d-flex justify-center" color="#FFCE66">
-          Copyright {{ new Date().getFullYear() }} — <strong> TVETA | All Rights Reserved |</strong>
-        </v-card-text>
-</v-container>
+                </v-row>
+        
+              </v-card>
+            </v-col>
+        <v-col>
+          <p>Location goes here</p>
+          <div style="width: 100%"><iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=450&amp;hl=en&amp;q=Utalii%20House+(TVET%20Authority)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="http://www.gps.ie/">gps devices</a></iframe></div>
+        </v-col>
+      </v-row>
+    </v-footer>
+  </v-container>
 </template>
 <script>
   export default {
