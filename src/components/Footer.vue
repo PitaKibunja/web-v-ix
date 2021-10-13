@@ -1,75 +1,78 @@
 <template>
-  <v-footer
-    dark
-    padless
-  >
-  <v-row>
-
-  </v-row>
+<v-container fluid>
+  <v-footer dark>
     <v-card
+      class="d-flex justify-space-between mb-6"
+      :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
       flat
       tile
-      class="dark lighten-1 white--text text-center"
     >
-<v-divider></v-divider>
-        <v-divider></v-divider>
-        <v-row>
-           <v-col >
-            <h4 class="pt-2">RELATED LINKS</h4>
-            <div class="pl-5px">
-                <div class="d-flex flex-column mb-6">
-            <v-card
-              v-for="n in links"
-              :key="n"
+      <v-card
+        v-for="resource in resources"
+        :key="resource.heading"
+        class="pa-4"
+        flat
+        tile
+      >
+       <h4 class="pt-2">{{ resource.heading }}</h4>
+        <v-card
+              v-for="info in resource.info"
+              :key="info.text"
               class="pa-2"
               tile>
-              <router-link to="" style="">
-                {{ n }}
+              <router-link to="">
+                {{info.text }}
               </router-link>
             </v-card>
-            </div>
-            </div>
-          </v-col>
-          <v-col class="pt-10">
-            <h4 >CONTACT US</h4>
-            <div class="pl-5px">
-                <div class="d-flex flex-column mb-6">
-            <v-card
-              v-for="n in contacts"
-              :key="n"
-              class="pa-2"
-              tile>
-                {{ n }}
-            </v-card>
-            </div>
-            </div>
-          </v-col>
-              <v-col >
-                <h1>Location</h1>
-                  <v-row>
-                    <img src="../assets/logo.png" style="width: 52px;">
-                  </v-row>
-          </v-col>
-        </v-row>
-        <v-divider></v-divider>
-      <v-card-text class="white--text pt-10">
-      Authority" means the Technical and Vocational Educational and Training Authority established under section 6 "Board" means the Technical and Vocational
-Education and Training Board established under section
-8 of this Act;
-      </v-card-text>
-
-      <v-divider></v-divider>
-
-      <v-card-text class="yellow white--text">
-        Copyright  {{ new Date().getFullYear() }} — <strong> TVETA | All Rights Reserved |</strong>
-      </v-card-text>
+      </v-card>
+      
     </v-card>
+    <v-divider class="ml-8" vertical></v-divider>
+    <v-container>
+       <v-card>
+        <v-card-title>
+                 <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
+                    <div class="font-weight-medium">
+                
+                 <h3>Location</h3>      
+                    </div>
+                    </v-row>
+            </v-card-title>
+            <v-divider></v-divider>
+     </v-card>
+    </v-container>
   </v-footer>
+      <v-card-text class="d-flex justify-center" color="#FFCE66">
+          Copyright {{ new Date().getFullYear() }} — <strong> TVETA | All Rights Reserved |</strong>
+        </v-card-text>
+</v-container>
 </template>
 <script>
   export default {
     data: () => ({
        selectedItem: 1,
+       resources:[
+          {heading:'RELATED LINKS',info:[
+          {text: 'Commission for University',linker:'/whoweare'},
+          {text:'Ministry of Education',linker:'/management'},
+          {text:'TVET CDACC',linker:'/history'},
+          {text:'KNQA',linker:'/history'},
+          {text:'KUCCPS',linker:'/history'},
+          {text:'KNEC',linker:'/history'},
+          {text:'NITA',linker:'/history'},
+          {text:'KICD',linker:'/history'},
+          {text:'KATTI',linker:'/history'},
+        ]},   
+        
+        {heading:'CONTACT US',info:[
+          {text: 'Utaliii House 8th Floor, Utalii Street',linker:'/whoweare'},
+          {text:'P.O. Box 35625 - 00100',linker:'/management'},
+          {text:'Phone:+254 20 239 2140',linker:'/history'},
+          {text:'Cell: +254 700 015 440',linker:'/history'},
+          {text:'Web: www.tveta.go.ke',linker:'/history'},
+        ]}
+        
+       ],
        links:[
           'Commission for University',
           'Ministry of Education',

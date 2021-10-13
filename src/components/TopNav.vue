@@ -1,20 +1,22 @@
 <template>
   <div>
     <v-app-bar 
-      color="primary accent-4"
+      color="#0082C6"
       dark
       app
       class="mb-2"
     >
     <v-toolbar-title>
         <v-card elevation="2" width="100" color="white" class="pt-4 " outlined raised :to="defacto.link">
-          <v-img class="ma-1" src="../assets/tveta_logo.png"></v-img>
+          <v-img class="ml-0" src="../assets/tveta_logo.png"></v-img>
         </v-card>
       </v-toolbar-title>
-      <div class="d-flex justify-center ">
-        <p class="text-h5 ml-2 pt-4">TVET</p><br/>
-        <p class="text-h5 ml-2 pt-4">Authority</p>
-      </div>     
+        <div class="d-flex justify-start mb-2">
+          <v-container fluid>
+            <p class="text-h5 ml-4 pt-6 mb-n2">TVET</p>
+            <p class="text-h5 ml-1">Authority</p>
+          </v-container>
+      </div> 
       <v-spacer></v-spacer>
       <template>
   <div class="text-center justify-between">
@@ -36,7 +38,7 @@
           text
           v-bind="attrs"
           v-on="on"
-          class="pa-2 ma-2 mr-8"
+          class="pa-2 ma-2 mr-2"
           :to="defacto.link"
         >
           <router-link to="/" tag="span" style="cursor: pointer">
@@ -186,11 +188,11 @@
         {navl:'Curricula',list:[
           {submenu:'Approved Curricula',linker:'/curricula'},
           {submenu:'Approved Short Courses',linker:'/shortcourses'},
-        ]},  
+        ]},    
         {navl:'Media',list:[
-          {submenu:'Approved Curricula',linker:'/curricula'},
-          {submenu:'Approved Short Courses',linker:'/shortcourses'},
-        ]},  
+          {submenu:'News and Updates',linker:'/allnews'},
+          {submenu:'Gallery',linker:'/gallery'},
+        ]}
       
         
       ]

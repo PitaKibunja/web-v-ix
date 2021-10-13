@@ -8,7 +8,7 @@
   >
     <template slot="progress">
       <v-progress-linear
-        color="deep-purple"
+        color="#0082C6"
         
         indeterminate
       ></v-progress-linear>

@@ -1,5 +1,5 @@
 <template>
-<div>
+<v-container fluid>
       <v-carousel height="495" cycle class="mt-0 pt-0" :show-arrows="false">
     <v-carousel-item
       v-for="(item,i) in items"
@@ -8,7 +8,7 @@
       :src="item.src"
     ></v-carousel-item>
   </v-carousel>
-  <v-card class="mx-4 mb-4" color="sucess" style="position:absolute;float:right;top:75px;z-index:400">
+  <v-card class="mx-4 mb-4" color="#508F40" style="position:absolute;float:right;top:75px;z-index:400">
     <v-card class="mx-auto" max-width="400" outlined>
           <v-card-actions>
       <v-btn
@@ -17,7 +17,7 @@
         text
       >
        <v-badge
-          color="green"
+          color="#508F40"
           content="2"
         >
           <router-link to="/career" tag="span" style="cursor: pointer">
@@ -38,13 +38,13 @@
         outlined
         rounded
        elevation="2"
-       color="yellow"
+       color="#FFCE66"
       
       
       >
         
            <v-badge
-          color="green"
+          color="#508F40"
           content="6"
         >
         <router-link to="/tenders" tag="span" style="cursor: pointer">
@@ -79,14 +79,15 @@
  -->
 
 
-  <div class="ml-2 mt-1 mb-4">
+  <div class="ma-2 mb-4">
     <LinkShortcut/>
   </div>
 
   <!-- Create the cards -->
     <!-- <UtilityLinks /> -->
     <v-divider></v-divider>
-</div>
+
+</v-container>
 
 </template>
 <script>

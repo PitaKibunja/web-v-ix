@@ -11,7 +11,7 @@
                     dark
                     small
                     elevation="2"
-                    color="primary"
+                    color="#0082C6"
                     :to="link.where"
                     >
                     <v-icon size="30" dark>
@@ -35,15 +35,14 @@
           links: [
        
        { text: 'Customer Care', icon: 'mdi-face-agent' },
-        { text: 'Standards', icon: 'mdi-flag' },
+        { text: 'Standards', icon: 'mdi-flag', where:'/standards'},
           
          
-         { text: 'TVET MIS', icon: 'mdi-login' },  
+         { text: 'TVET MIS', icon: 'mdi-login',where:'https://mis.tveta.go.ke/' },  
         { text: 'FAQs', icon: 'mdi-frequently-asked-questions' ,where:'/faqs'},
 
          { text: 'Strategic Plan', icon: 'mdi-file-document-multiple' },
          { text: 'Service Charter', icon: 'mdi-file-document-multiple' },
-         { text: 'TVET Act 2013', icon: 'mdi-gavel' },
 
 
 

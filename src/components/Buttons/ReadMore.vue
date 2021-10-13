@@ -3,7 +3,7 @@
     
       <v-btn
       rounded
-      color="primary"
+      color="#0082C6"
       dark
       to="/allnews"
     >
