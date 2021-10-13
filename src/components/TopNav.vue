@@ -36,7 +36,7 @@
           text
           v-bind="attrs"
           v-on="on"
-          class="pa-2 ma-2"
+          class="pa-2 ma-2 mr-8"
           :to="defacto.link"
         >
           <router-link to="/" tag="span" style="cursor: pointer">
@@ -66,7 +66,7 @@
           text
           v-bind="attrs"
           v-on="on"
-          class="pa-4 ma-2"
+          class="pa-4 ma-2 mr-2"
         >
         <v-icon>{{ navItem.icon }}</v-icon>
           {{ navItem.navl }}
@@ -102,7 +102,7 @@
           text
           v-bind="attrs"
           v-on="on"
-          class="pa-2"
+          class="pa-2 mr-4"
         >
           <router-link to="/downloads" tag="span" style="cursor: pointer">
           Downloads
@@ -184,6 +184,10 @@
           {submenu:'Registred Trainers',linker:'/trainers'},
         ]},
         {navl:'Curricula',list:[
+          {submenu:'Approved Curricula',linker:'/curricula'},
+          {submenu:'Approved Short Courses',linker:'/shortcourses'},
+        ]},  
+        {navl:'Media',list:[
           {submenu:'Approved Curricula',linker:'/curricula'},
           {submenu:'Approved Short Courses',linker:'/shortcourses'},
         ]},  
