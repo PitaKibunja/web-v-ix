@@ -11,17 +11,13 @@
           <v-img class="ma-1" src="../assets/tveta_logo.png"></v-img>
         </v-card>
       </v-toolbar-title>
-      <div class="d-flex justify-center mr-2">
+      <div class="d-flex justify-center ">
         <p class="text-h5 ml-2 pt-4">TVET</p><br/>
         <p class="text-h5 ml-2 pt-4">Authority</p>
-           <v-divider
-  
-      vertical
-    ></v-divider>
       </div>     
       <v-spacer></v-spacer>
       <template>
-  <div class="text-center mr-8 justify-between">
+  <div class="text-center justify-between">
         <v-menu
       open-on-hover
       offset-y
@@ -106,7 +102,7 @@
           text
           v-bind="attrs"
           v-on="on"
-          class="pa-2 mr-12"
+          class="pa-2"
         >
           <router-link to="/downloads" tag="span" style="cursor: pointer">
           Downloads
@@ -137,7 +133,7 @@
             icon
             v-bind="attrs"
             v-on="on"
-            class="pa-2 mr-2 ml-2"
+          
           >
             <v-icon>mdi-dots-vertical</v-icon>
           </v-btn>
@@ -191,10 +187,7 @@
           {submenu:'Approved Curricula',linker:'/curricula'},
           {submenu:'Approved Short Courses',linker:'/shortcourses'},
         ]},  
-        {navl:'Media',list:[
-          {submenu:'News and Updates',linker:'/allnews'},
-          
-        ]},
+      
         
       ]
       ,

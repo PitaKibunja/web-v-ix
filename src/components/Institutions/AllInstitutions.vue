@@ -24,11 +24,68 @@
         hide-details
       ></v-text-field>
     </v-card-title>
-    <v-data-table
+    <!-- <v-data-table
       :headers="headers"
-      :items="Institutions"
       :search="search"
-    ></v-data-table>
+    >
+    
+    </v-data-table> -->
+    <v-card class="  mb-8  pt-2" >
+      <v-simple-table fixed-header height="500" class="pa-4 ma-2">
+    <template v-slot:default>
+      <thead>
+        <tr>
+          <th class="text-left">
+          SN
+          </th>
+          <th class="text-left">
+          Institution Name
+          </th>
+          <th class="text-left">
+           TVETA Reg. No
+          </th>
+            <th class="text-left">
+            County
+          </th>
+        <th class="text-left">
+            Reg.Date
+          </th>
+        <th class="text-left">
+           Expiry Date
+          </th> 
+          <th class="text-left">
+           Category
+          </th> 
+          <th class="text-left">
+           Type
+          </th> 
+          <th class="text-left">
+           Details
+          </th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="(institute,i) in Institutions"
+          :key="institute.name"
+        >
+          <td>{{ i }}</td>
+          <td>{{ institute.name }}</td>
+          <td>{{ institute.regno }}</td>
+          <td>{{ institute.county }}</td>
+          <td>{{ institute.regdate }}</td>
+          <td>{{ institute.expdate }}</td>
+          <td>{{ institute.category }}</td>
+          <td>{{ institute.type }}</td>
+          <td > <router-link :to="instituteLink">{{ institute.details }}</router-link></td>
+          <td>
+          </td>
+        </tr>
+      </tbody>
+    </template>
+  </v-simple-table>
+  </v-card>
   </v-card>
 </template>
   </v-card>
@@ -49,6 +106,7 @@
     data () {
       return {
         search: '',
+        instituteLink:'/institution',
         headers: [
           {
             text: 'SN',
