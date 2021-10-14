@@ -34,7 +34,7 @@
       return {
           links: [
        
-       { text: 'Customer Care', icon: 'mdi-face-agent' },
+       { text: 'Customer Care', icon: 'mdi-face-agent' ,where:'/customercare' },
         { text: 'Standards', icon: 'mdi-flag', where:'/standards'},
           
          

@@ -24,6 +24,7 @@ import Accreditation from '../components/DepartmentsInfo/Accreditation.vue'
 import Compliance from '../components/DepartmentsInfo/Compliance.vue'
 import Outreach from '../components/DepartmentsInfo/Outreach.vue'
 import Strategy from '../components/DepartmentsInfo/Strategy.vue'
+import CustomerCare from '../components/Customer/CustomerCare.vue'
 import Research from '../components/DepartmentsInfo/Research.vue'
 import Standards from '../components/DepartmentsInfo/Standards.vue'
 import Questions from '../components/FAQs/Questions.vue'
@@ -163,6 +164,10 @@ const routes = [
     path: '/slider',
     name: 'SliderLayout',
     component: SliderLayout
+  },  {
+    path: '/customercare',
+    name: 'CustomerCare',
+    component: CustomerCare
   },
   {
     path: '/about',

@@ -1,0 +1,211 @@
+<template>
+    <v-container class="mt-8">
+          <v-card elevation="2">
+               
+            <v-card-title>
+                 <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
+                    <div class="font-weight-medium">
+                
+                 <h3>Customer Care</h3>      
+                    </div>
+                    </v-row>
+            </v-card-title>
+            <v-divider></v-divider>
+            <div class="text-blue d-flex justify-center mb-1 ml-4  pt-2">
+                        <p class="text-justify gold--text">
+                        Call Us Today! Tel: +254-20 2392140 | Cell: +254 700 015 440 | info@tveta.go.ke
+                    </p>
+                    </div>
+            <v-divider></v-divider>
+            <div>
+               
+                            <v-breadcrumbs :items="linkss">
+                        <template v-slot:divider>
+                            <v-icon>mdi-chevron-right</v-icon>
+                        </template>
+                    </v-breadcrumbs>
+    
+            </div>
+            
+            <v-divider></v-divider>
+            <v-container>
+             <v-row no-gutters>
+                 <v-col
+                cols="12"
+                sm="6"
+                md="8"
+                 >
+                <v-card
+                class="pa-2"
+                outlined
+                tile
+                >
+                <v-card-title>
+                        <v-row cols="12 " class="d-flex justify-center mb-1 ma-1  pt-2">
+                            <div class="font-weight-medium">
+                            <p class="font-weight-medium mb-0">
+                                Customer Feedback
+                            </p>
+                            <v-divider></v-divider>
+                            </div>
+                            </v-row>
+                    </v-card-title>
+                    <v-container>
+                        <v-card class="ma-4 pa-4">
+                            <template>
+                                <v-form
+                                    ref="form"
+                                    v-model="valid"
+                                    lazy-validation
+                                >
+                                
+                                    <v-select
+                                    v-model="select"
+                                    :items="items"
+                                    :rules="[v => !!v || 'Item is required']"
+                                    label="Type of Feedback"
+                                    required
+                                    ></v-select>
+
+                                    <v-text-field
+                                    v-model="name"
+                                    :counter="10"
+                                    :rules="nameRules"
+                                    label="Name*"
+                                    required
+                                    ></v-text-field>
+
+                                    <v-text-field
+                                    v-model="email"
+                                    :rules="emailRules"
+                                    label="E-mail*"
+                                    required
+                                    ></v-text-field>
+                                    <v-textarea
+                                        clearable
+                                        clear-icon="mdi-close-circle"
+                                        label="Message"
+                                        
+                                        ></v-textarea>
+
+                                    <v-checkbox
+                                    v-model="checkbox"
+                                    :rules="[v => !!v || 'You must agree to continue!']"
+                                    label="Do you agree?"
+                                    required
+                                    ></v-checkbox>
+
+                                    <v-btn
+                                    :disabled="!valid"
+                                    color="#508F40"
+                                    class="mr-4"
+                                    @click="validate"
+                                    >
+                                    Submit
+                                    </v-btn>
+                                </v-form>
+                                </template>
+                        </v-card>
+                    </v-container>
+                    <v-divider></v-divider>
+                    </v-card>  
+                 </v-col>
+                 <v-col class="ml-4 pb-4">
+                     <v-card>
+                            <v-card-title class="justify center">
+                                    <div class="font-weight-medium">
+                                    <p class="font-weight-medium mb-0">
+                                      CONTACT US
+                                    </p>
+                                    </div>
+                            </v-card-title>
+                            <v-divider></v-divider>
+                           <v-card-text>
+                                    <v-list-item two-line>
+                                    <v-list-item-content>
+                                        <v-list-item-title>Utaliii House 8th Floor, Utalii Street</v-list-item-title>
+                                        <v-list-item-title>P.O. Box 35625 - 00100</v-list-item-title>
+                                        <v-list-item-title>Phone:+254 20 239 2140</v-list-item-title>
+                                        <v-list-item-title>Cell: +254 700 015 440</v-list-item-title>
+                                        <v-list-item-title>Web: www.tveta.go.ke</v-list-item-title>
+                                    </v-list-item-content>
+                                    </v-list-item>
+                            </v-card-text>
+                          <v-container no-gutters>
+                                <v-card>
+                            <v-card-title>
+                                    <div class="font-weight-medium">
+                                    <p class="font-weight-medium mb-0">
+                                      Google Maps Location
+                                    </p>
+                                    </div>
+                            </v-card-title>
+                                 <div style="width: 100%"><iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=450&amp;hl=en&amp;q=Utalii%20House+(TVET%20Authority)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="http://www.gps.ie/">gps devices</a></iframe></div>
+                            </v-card>
+                          </v-container>
+                            
+
+                     </v-card>
+                 </v-col>
+             </v-row>
+            </v-container>
+          </v-card>
+    </v-container>
+</template>
+<script>
+  export default {
+    data () {
+      return {
+          valid: true,
+      name: '',
+      nameRules: [
+        v => !!v || 'Name is required',
+        v => (v && v.length <= 10) || 'Name must be less than 10 characters',
+      ],
+      email: '',
+      emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+      ],
+      select: null,
+      items: [
+            'General Feedback',
+          'Corruption Reporting',
+          'Complain'
+      ],
+      checkbox: false,
+
+          linkss: [
+        {
+          text: 'Home',
+          disabled: false,
+          href: '/',
+        },
+        {
+          text: 'Customer Care',
+          disabled: true,
+          href: '/customercare',
+        }
+      ],
+        departments: [
+          {
+            dep: 'Accreditation',
+            mandate:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium voluptate aut ea, voluptatem ut aspernatur assumenda dignissimos excepturi nam earum iste laboriosam nemo reiciendis cupiditate ullam sint labore incidunt.', 
+          
+          }
+        ],
+      }
+    },
+    methods: {
+      validate () {
+        this.$refs.form.validate()
+      },
+      reset () {
+        this.$refs.form.reset()
+      },
+      resetValidation () {
+        this.$refs.form.resetValidation()
+      },
+    },
+  }
+</script>
