@@ -2,43 +2,47 @@
   <v-container fluid>
     <v-footer dark>
       <v-row cols="12 " class="d-flex justify-start mb-1   pt-2">
-        <v-col>
-              <v-card 
-               class=""
-                :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-                flat
-                tile
-                >
-                <v-row>
-             
-                                <v-card
-                  v-for="resource in resources"
-                  :key="resource.heading"
-                  class="d-flex justify-space-between mb-6 pa-4"
-                  flat
-                  tile
-                  dark
-                  >
-                    <h4 class="pt-2">{{ resource.heading }}</h4>
-                    <v-card
-                    v-for="info in resource.info"
-                    :key="info.text"
-                    class="pa-2"
-                    dark
-                    tile
-                    >
-                        <router-link to="">
-                            {{info.text }}
-                        </router-link>
-                    </v-card>
-                  </v-card>
-                
-                </v-row>
-        
+        <v-col cols="8">
+          <v-row>
+            <v-col>
+              <v-card class="mx-auto">
+                <v-card-title>
+                  <h4 class="pt-2">RELATED LINKS</h4>
+                </v-card-title>
+                 <v-list-item>
+                  <v-list-item-content >
+                    <router-link class="pa-1 ma-1" to="add"><v-list-item-title>Ministry of Education</v-list-item-title></router-link>
+                    <router-link class="pa-1 ma-1" to="add"><v-list-item-title>Commission for University</v-list-item-title></router-link>
+                    <router-link class="pa-1 ma-1" to="add"><v-list-item-title>TVET CDACC</v-list-item-title></router-link>
+                    <router-link class="pa-1 ma-1" to="add"><v-list-item-title>KUCCPS</v-list-item-title></router-link>
+                    <router-link class="pa-1 ma-1" to="add"><v-list-item-title>NITA</v-list-item-title></router-link>
+                    <router-link class="pa-1 ma-1" to="add"><v-list-item-title>KNQA</v-list-item-title></router-link>
+                    <router-link class="pa-1 ma-1" to="add"><v-list-item-title>KNEC</v-list-item-title></router-link>
+                    <router-link class="pa-1 ma-1" to="add"><v-list-item-title>KICD</v-list-item-title></router-link>
+                    <router-link class="pa-1 ma-1" to="add"><v-list-item-title>KATTI</v-list-item-title></router-link>
+                  </v-list-item-content>
+                </v-list-item>
+              </v-card>
+            </v-col>    
+            <v-col>
+              <v-card>
+                        <v-card-title>
+                  <h4 class="pa-1">CONTACT US</h4>
+                </v-card-title>
+                 <v-list-item>
+                  <v-list-item-content >
+                    <router-link class="pa-2 ma-2" to="add"><v-list-item-title>Utaliii House 8th Floor, Utalii Street</v-list-item-title></router-link>
+                    <router-link class="pa-2 ma-2" to="add"><v-list-item-title>P.O. Box 35625 - 00100</v-list-item-title></router-link>
+                    <router-link class="pa-2 ma-2" to="add"><v-list-item-title>Phone:+254 20 239 2140</v-list-item-title></router-link>
+                    <router-link class="pa-2 ma-2" to="add"><v-list-item-title>Cell: +254 700 015 440</v-list-item-title></router-link>
+                    <router-link class="pa-2 ma-2" to="add"><v-list-item-title>Web: www.tveta.go.ke</v-list-item-title></router-link>
+                  </v-list-item-content>
+                </v-list-item>
               </v-card>
             </v-col>
-        <v-col>
-          <p>Location goes here</p>
+          </v-row>
+        </v-col>
+        <v-col cols="4">
           <div style="width: 100%"><iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=450&amp;hl=en&amp;q=Utalii%20House+(TVET%20Authority)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="http://www.gps.ie/">gps devices</a></iframe></div>
         </v-col>
       </v-row>
