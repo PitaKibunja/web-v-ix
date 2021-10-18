@@ -111,7 +111,7 @@
                     </v-card>  
                  </v-col>
                  <v-col class="ml-4 pb-4">
-                     <v-card>
+                     <v-card max-width="360">
                             <v-card>
                               <v-card-title class="justify center">
                                     <div class="font-weight-medium">
@@ -122,24 +122,24 @@
                             </v-card-title>
                             </v-card>
                             <v-divider></v-divider>
-                            <v-card v-for="location in locations" :key="location.area" tile class="mb-0 pt-n4">
+                            <v-card  v-for="location in locations" :key="location.area" tile class="mx-auto " >
                                <v-card-title class="justify center">
                                     
                                     <p class="font-weight-medium justify-center">
-                                      {{ location.area }} <v-icon color="green">mdi-contacts</v-icon>
+                                      {{ location.area }} <router-link to=""><v-icon color="#0082C6">mdi-map-marker</v-icon></router-link>
                                       <v-divider></v-divider>
                                     </p>
                                     
                                     
-                            </v-card-title>
-                                <v-card-text >
+                            </v-card-title >
+                                <v-card-text class="text-justify">
                                     <v-list-item one-line v-for="address in location.list" :key="address.house">
                                     <v-list-item-content class="pa-0 ma-0">
                                         <v-list-item-title>{{ address.house }}</v-list-item-title>
                                         <v-list-item-title>{{ address.box }}</v-list-item-title>
                                         <v-list-item-title>{{ address.phone }}</v-list-item-title>
                                         <v-list-item-title>{{ address.cell }}</v-list-item-title>
-                                        <v-list-item-title>{{ address.phone }}</v-list-item-title>
+                                        <v-list-item-title class="mb-0">{{ address.phone }}</v-list-item-title>
                                     </v-list-item-content>
                                     </v-list-item>
                             </v-card-text>
@@ -155,7 +155,7 @@
   export default {
     data () {
       return {
-        locations:[
+            locations:[
            {area:'Nairobi',list:[
           {house:'Utaliii House 8th Floor, Utalii Street'},
           {box:'P.O. Box 35625 - 00100'},
@@ -164,21 +164,21 @@
           {web:'Web: www.tveta.go.ke'},
         ]},
         {area:'Kisumu',list:[
-          {house:'Kenya Re Insurance building'},
+          {house:'Kenya Re Insurance building 2nd Floor Wing B, Oginga Odinga Street'},
           {box:'P.O. Box 35625 - 00100'},
           {phone:'Phone:+254 20 239 2140'},
           {cell:'Cell: +254 700 015 440'},
           {web:'Web: www.tveta.go.ke'},
         ]},
         {area:'Eldoret',list:[
-          {house:'KVDA Plaza'},
+          {house:'KVDA Plaza 7th Floor Southern Wing, Oloo street'},
           {box:'P.O. Box 35625 - 00100'},
           {phone:'Phone:+254 20 239 2140'},
           {cell:'Cell: +254 700 015 440'},
           {web:'Web: www.tveta.go.ke'},
         ]}, 
          {area:'Mombasa',list:[
-          {house:'NSSF building'},
+          {house:'NSSF building Ground Floor, Nkurumah Road'},
           {box:'P.O. Box 35625 - 00100'},
           {phone:'Phone:+254 20 239 2140'},
           {cell:'Cell: +254 700 015 440'},

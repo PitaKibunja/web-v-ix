@@ -5,12 +5,12 @@
         <v-col cols="8">
           <v-row>
             <v-col>
-              <v-card class="mx-auto">
-                <v-card-title>
+              <v-container class="mx-auto">
+                
                   <h4 class="pt-2">RELATED LINKS</h4>
-                </v-card-title>
+               
                  <v-list-item>
-                  <v-list-item-content >
+                  <v-list-item-content text-color="white">
                     <router-link class="pa-1 ma-1" to="add"><v-list-item-title>Ministry of Education</v-list-item-title></router-link>
                     <router-link class="pa-1 ma-1" to="add"><v-list-item-title>Commission for University</v-list-item-title></router-link>
                     <router-link class="pa-1 ma-1" to="add"><v-list-item-title>TVET CDACC</v-list-item-title></router-link>
@@ -22,23 +22,22 @@
                     <router-link class="pa-1 ma-1" to="add"><v-list-item-title>KATTI</v-list-item-title></router-link>
                   </v-list-item-content>
                 </v-list-item>
-              </v-card>
+              </v-container>
             </v-col>    
             <v-col>
-              <v-card>
-                        <v-card-title>
-                  <h4 class="pa-1">CONTACT US</h4>
-                </v-card-title>
+              <v-container>
+                        
+                  <h4 class="d-flex justify-start">CONTACT US</h4>
                  <v-list-item>
-                  <v-list-item-content >
-                    <router-link class="pa-2 ma-2" to="add"><v-list-item-title>Utaliii House 8th Floor, Utalii Street</v-list-item-title></router-link>
-                    <router-link class="pa-2 ma-2" to="add"><v-list-item-title>P.O. Box 35625 - 00100</v-list-item-title></router-link>
-                    <router-link class="pa-2 ma-2" to="add"><v-list-item-title>Phone:+254 20 239 2140</v-list-item-title></router-link>
-                    <router-link class="pa-2 ma-2" to="add"><v-list-item-title>Cell: +254 700 015 440</v-list-item-title></router-link>
-                    <router-link class="pa-2 ma-2" to="add"><v-list-item-title>Web: www.tveta.go.ke</v-list-item-title></router-link>
+                  <v-list-item-content>
+                   <v-list-item-title class="pa-1 ma-1">Utaliii House 8th Floor, Utalii Street</v-list-item-title>
+                   <v-list-item-title class="pa-1 ma-1">P.O. Box 35625 - 00100</v-list-item-title>
+                    <v-list-item-title class="pa-1 ma-1">Phone:+254 20 239 2140</v-list-item-title>
+                    <v-list-item-title class="pa-1 ma-1">Cell: +254 700 015 440</v-list-item-title>
+                    <v-list-item-title class="pa-1 ma-1">Web: www.tveta.go.ke</v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
-              </v-card>
+              </v-container>
             </v-col>
           </v-row>
         </v-col>
