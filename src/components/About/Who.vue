@@ -33,8 +33,8 @@
           outlined
           tile
         >
-        <v-card-title>
-                 <v-row cols="12 " class="d-flex justify-center mb-1 ma-1  pt-2">
+        <v-card-title class="" color="#0082C6">
+                 <v-row cols="12 " class="  d-flex justify-center mb-1 ma-1  pt-2">
                     <div class="font-weight-medium">
                       <p class="font-weight-medium mb-0">
                           Mission Statements
@@ -45,9 +45,9 @@
             </v-card-title>
             <v-divider></v-divider>
 
-                                <v-container fluid class="ma-4">
+                                <v-container fluid class="ma-4" >
                                 <v-card
-                        class="d-flex justify-space-between mb-6 pt-4 "
+                        class=" d-flex justify-space-between mb-6 pt-4 "
                         :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
                         flat
                         tile
@@ -56,7 +56,7 @@
                         <v-card
                             v-for="n in statements"
                             :key="n"
-                            class="d-flex justify-center  pa-1 ma-1"
+                            class="#0082C6 d-flex justify-center  pa-1 ma-1"
                             elevation="2"
                             tile
                             
@@ -65,14 +65,14 @@
                         <v-container fluid no-gutters>
                           <v-card-title>
                             
-                        <v-row color="grey darken-2" cols="12 " class="d-flex justify-center pa-4">
+                        <v-row color="grey darken-2" cols="12 " class="darkblue lighten-4 d-flex justify-center pa-4">
                             <h5>{{ n.text }} <v-divider></v-divider> </h5> 
                             
                     </v-row>     
                     </v-card-title>
               <v-container>
                       
-                             <v-row cols="12 " class="d-flex text-justify ma-1  pa-1">
+                             <v-row cols="12 " class="yellow lighten-4 d-flex text-justify ma-1  pa-1">
                             <p>{{ n.content }}</p>
                     </v-row>
                     
@@ -90,12 +90,12 @@
         md="4"
       >
         <v-card
-          class="mb-8"
+          class="mb-8 darkblue"
           height="482"
           
         >
          <v-divider></v-divider>
-            <v-card-title class="mb-2">
+            <v-card-title class="green lighten-4  mb-2">
                  <v-row cols="12 " class="d-flex justify-center mb-1 ma-1  pt-2">
                     <div class="font-weight-medium">
                       <p class="font-weight-medium mb-0">
@@ -112,6 +112,7 @@
     <v-expansion-panel
       v-for="location in locations"
       :key="location"
+      class="yellow lighten-4"
     >
       <v-expansion-panel-header>{{ location.location }}</v-expansion-panel-header>
       <v-expansion-panel-content>
@@ -126,8 +127,8 @@
     </v-row>
   
    <v-divider></v-divider>
-      <v-card>
-    <v-card-title>
+      <v-card >
+    <v-card-title class="green lighten-4 ">
                         <v-row cols="12 " class="d-flex justify-center mb-1 ma-1  pt-2">
                             <div class="font-weight-medium">
                 
@@ -140,7 +141,7 @@
                       <v-divider></v-divider>
                     </div>
                     <v-container fluid no-gutters>
-                                   <v-container>
+                                   <v-container class="yellow lighten-5">
                       
                              <v-row cols="12 " class="d-flex text-justify ma-1  pa-1">
                             <p>
@@ -154,7 +155,7 @@ TVETA shall ensure that this quality policy is communicated, understood and appl
                     </v-container>
   </v-card>
       <v-card>
-      <v-card-title>
+      <v-card-title class="green lighten-4 ">
                         <v-row cols="12 " class="d-flex justify-center mb-1 ma-1  pt-2">
                             <div class="font-weight-medium">
                 
@@ -166,7 +167,7 @@ TVETA shall ensure that this quality policy is communicated, understood and appl
                     <div class="pt-2">
                       <v-divider></v-divider>
                     </div>
-                    <v-container fluid no-gutters>
+                    <v-container fluid no-gutters class="darkslateblue">
                                    <v-container>
                       
                              <v-row cols="12 " class="d-flex text-justify ma-1  pa-1">
