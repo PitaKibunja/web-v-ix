@@ -111,40 +111,39 @@
                     </v-card>  
                  </v-col>
                  <v-col class="ml-4 pb-4">
-                     <v-card>
-                            <v-card-title class="justify center">
+                     <v-card max-width="360">
+                            <v-card>
+                              <v-card-title class="justify center">
                                     <div class="font-weight-medium">
                                     <p class="font-weight-medium mb-0">
-                                      CONTACT US
+                                      CONTACT US 
                                     </p>
                                     </div>
                             </v-card-title>
+                            </v-card>
                             <v-divider></v-divider>
-                           <v-card-text>
-                                    <v-list-item two-line>
-                                    <v-list-item-content>
-                                        <v-list-item-title>Utaliii House 8th Floor, Utalii Street</v-list-item-title>
-                                        <v-list-item-title>P.O. Box 35625 - 00100</v-list-item-title>
-                                        <v-list-item-title>Phone:+254 20 239 2140</v-list-item-title>
-                                        <v-list-item-title>Cell: +254 700 015 440</v-list-item-title>
-                                        <v-list-item-title>Web: www.tveta.go.ke</v-list-item-title>
+                            <v-card  v-for="location in locations" :key="location.area" tile class="mx-auto " >
+                               <v-card-title class="justify center">
+                                    
+                                    <p class="font-weight-medium justify-center">
+                                      {{ location.area }} <router-link to=""><v-icon color="#0082C6">mdi-map-marker</v-icon></router-link>
+                                      <v-divider></v-divider>
+                                    </p>
+                                    
+                                    
+                            </v-card-title >
+                                <v-card-text class="text-justify">
+                                    <v-list-item one-line v-for="address in location.list" :key="address.house">
+                                    <v-list-item-content class="pa-0 ma-0">
+                                        <v-list-item-title>{{ address.house }}</v-list-item-title>
+                                        <v-list-item-title>{{ address.box }}</v-list-item-title>
+                                        <v-list-item-title>{{ address.phone }}</v-list-item-title>
+                                        <v-list-item-title>{{ address.cell }}</v-list-item-title>
+                                        <v-list-item-title class="mb-0">{{ address.phone }}</v-list-item-title>
                                     </v-list-item-content>
                                     </v-list-item>
                             </v-card-text>
-                          <v-container no-gutters>
-                                <v-card>
-                            <v-card-title>
-                                    <div class="font-weight-medium">
-                                    <p class="font-weight-medium mb-0">
-                                      Google Maps Location
-                                    </p>
-                                    </div>
-                            </v-card-title>
-                                 <div style="width: 100%"><iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=450&amp;hl=en&amp;q=Utalii%20House+(TVET%20Authority)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="http://www.gps.ie/">gps devices</a></iframe></div>
                             </v-card>
-                          </v-container>
-                            
-
                      </v-card>
                  </v-col>
              </v-row>
@@ -156,6 +155,36 @@
   export default {
     data () {
       return {
+            locations:[
+           {area:'Nairobi',list:[
+          {house:'Utaliii House 8th Floor, Utalii Street'},
+          {box:'P.O. Box 35625 - 00100'},
+          {phone:'Phone:+254 20 239 2140'},
+          {cell:'Cell: +254 700 015 440'},
+          {web:'Web: www.tveta.go.ke'},
+        ]},
+        {area:'Kisumu',list:[
+          {house:'Kenya Re Insurance building 2nd Floor Wing B, Oginga Odinga Street'},
+          {box:'P.O. Box 35625 - 00100'},
+          {phone:'Phone:+254 20 239 2140'},
+          {cell:'Cell: +254 700 015 440'},
+          {web:'Web: www.tveta.go.ke'},
+        ]},
+        {area:'Eldoret',list:[
+          {house:'KVDA Plaza 7th Floor Southern Wing, Oloo street'},
+          {box:'P.O. Box 35625 - 00100'},
+          {phone:'Phone:+254 20 239 2140'},
+          {cell:'Cell: +254 700 015 440'},
+          {web:'Web: www.tveta.go.ke'},
+        ]}, 
+         {area:'Mombasa',list:[
+          {house:'NSSF building Ground Floor, Nkurumah Road'},
+          {box:'P.O. Box 35625 - 00100'},
+          {phone:'Phone:+254 20 239 2140'},
+          {cell:'Cell: +254 700 015 440'},
+          {web:'Web: www.tveta.go.ke'},
+        ]},
+        ],
           valid: true,
       name: '',
       nameRules: [

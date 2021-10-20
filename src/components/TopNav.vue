@@ -191,7 +191,7 @@
         ]},    
         {navl:'Media',list:[
           {submenu:'News and Updates',linker:'/allnews'},
-          {submenu:'Gallery',linker:'/gallery'},
+          
         ]}
       
         
