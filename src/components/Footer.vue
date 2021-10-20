@@ -5,13 +5,12 @@
         <v-col cols="8">
           <v-row>
             <v-col>
-              <v-container class="mx-auto">
+              <v-container>
                 
                   <h4 class="pt-2">RELATED LINKS</h4>
                
                  <v-list-item>
-<<<<<<< HEAD
-                  <v-list-item-content >
+                  <v-list-item-content text-color="white">
                     <router-link class="pa-1 ma-1" style="text-decoration: none; color: inherit;" to="add"><v-list-item-title>Ministry of Education</v-list-item-title></router-link>
                     <router-link class="pa-1 ma-1" style="text-decoration: none; color: inherit;" to="add"><v-list-item-title>Commission for University</v-list-item-title></router-link>
                     <router-link class="pa-1 ma-1" style="text-decoration: none; color: inherit;" to="add"><v-list-item-title>TVET CDACC</v-list-item-title></router-link>
@@ -21,18 +20,6 @@
                     <router-link class="pa-1 ma-1" style="text-decoration: none; color: inherit;" to="add"><v-list-item-title>KNEC</v-list-item-title></router-link>
                     <router-link class="pa-1 ma-1" style="text-decoration: none; color: inherit;" to="add"><v-list-item-title>KICD</v-list-item-title></router-link>
                     <router-link class="pa-1 ma-1" style="text-decoration: none; color: inherit;" to="add"><v-list-item-title>KATTI</v-list-item-title></router-link>
-=======
-                  <v-list-item-content text-color="white">
-                    <router-link class="pa-1 ma-1" to="add"><v-list-item-title>Ministry of Education</v-list-item-title></router-link>
-                    <router-link class="pa-1 ma-1" to="add"><v-list-item-title>Commission for University</v-list-item-title></router-link>
-                    <router-link class="pa-1 ma-1" to="add"><v-list-item-title>TVET CDACC</v-list-item-title></router-link>
-                    <router-link class="pa-1 ma-1" to="add"><v-list-item-title>KUCCPS</v-list-item-title></router-link>
-                    <router-link class="pa-1 ma-1" to="add"><v-list-item-title>NITA</v-list-item-title></router-link>
-                    <router-link class="pa-1 ma-1" to="add"><v-list-item-title>KNQA</v-list-item-title></router-link>
-                    <router-link class="pa-1 ma-1" to="add"><v-list-item-title>KNEC</v-list-item-title></router-link>
-                    <router-link class="pa-1 ma-1" to="add"><v-list-item-title>KICD</v-list-item-title></router-link>
-                    <router-link class="pa-1 ma-1" to="add"><v-list-item-title>KATTI</v-list-item-title></router-link>
->>>>>>> 06e409ae6601d55793e7ce76cc6986f346757cac
                   </v-list-item-content>
                 </v-list-item>
               </v-container>

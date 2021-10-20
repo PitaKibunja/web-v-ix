@@ -2,7 +2,7 @@
     <v-container class="mt-8">
           <v-card elevation="2" class="mb-2">
                
-            <v-card-title>
+            <v-card-title class="white--text custom-color">
                  <v-row cols="12 " class="d-flex justify-center mb-1 ma-1  pt-2">
                     <div class="font-weight-medium">
                       <p class="font-weight-medium mb-0">
@@ -29,11 +29,11 @@
         md="8"
       >
         <v-card
-          class="pa-2"
+          class="body-color pa-2"
           outlined
           tile
         >
-        <v-card-title class="" color="#0082C6">
+        <v-card-title class="white--text custom-color">
                  <v-row cols="12 " class="  d-flex justify-center mb-1 ma-1  pt-2">
                     <div class="font-weight-medium">
                       <p class="font-weight-medium mb-0">
@@ -63,9 +63,9 @@
                             
                         >
                         <v-container fluid no-gutters>
-                          <v-card-title>
+                          <v-card-title >
                             
-                        <v-row color="grey darken-2" cols="12 " class="darkblue lighten-4 d-flex justify-center pa-4">
+                        <v-row color="grey darken-2" cols="12 " class="d-flex justify-center pa-4">
                             <h5>{{ n.text }} <v-divider></v-divider> </h5> 
                             
                     </v-row>     
@@ -90,12 +90,12 @@
         md="4"
       >
         <v-card
-          class="mb-8 darkblue"
+          class="body-color mb-8"
           height="482"
           
         >
          <v-divider></v-divider>
-            <v-card-title class="green lighten-4  mb-2">
+            <v-card-title class="custom-color white--text mb-2">
                  <v-row cols="12 " class="d-flex justify-center mb-1 ma-1  pt-2">
                     <div class="font-weight-medium">
                       <p class="font-weight-medium mb-0">
@@ -112,7 +112,7 @@
     <v-expansion-panel
       v-for="location in locations"
       :key="location"
-      class="yellow lighten-4"
+      class="pa-1 ma-1"
     >
       <v-expansion-panel-header>{{ location.location }}</v-expansion-panel-header>
       <v-expansion-panel-content>
@@ -127,8 +127,8 @@
     </v-row>
   
    <v-divider></v-divider>
-      <v-card >
-    <v-card-title class="green lighten-4 ">
+      <v-card class="body-color">
+    <v-card-title class="white--text custom-color ">
                         <v-row cols="12 " class="d-flex justify-center mb-1 ma-1  pt-2">
                             <div class="font-weight-medium">
                 
@@ -141,7 +141,7 @@
                       <v-divider></v-divider>
                     </div>
                     <v-container fluid no-gutters>
-                                   <v-container class="yellow lighten-5">
+                                   <v-container class="white--text">
                       
                              <v-row cols="12 " class="d-flex text-justify ma-1  pa-1">
                             <p>
@@ -154,8 +154,8 @@ TVETA shall ensure that this quality policy is communicated, understood and appl
               </v-container>
                     </v-container>
   </v-card>
-      <v-card>
-      <v-card-title class="green lighten-4 ">
+      <v-card class="body-color">
+      <v-card-title class="white--text custom-color">
                         <v-row cols="12 " class="d-flex justify-center mb-1 ma-1  pt-2">
                             <div class="font-weight-medium">
                 
@@ -167,7 +167,7 @@ TVETA shall ensure that this quality policy is communicated, understood and appl
                     <div class="pt-2">
                       <v-divider></v-divider>
                     </div>
-                    <v-container fluid no-gutters class="darkslateblue">
+                    <v-container fluid no-gutters class="white--text">
                                    <v-container>
                       
                              <v-row cols="12 " class="d-flex text-justify ma-1  pa-1">
@@ -254,3 +254,11 @@ TVETA shall ensure that this quality policy is communicated, understood and appl
     },
   }
 </script>
+<style scoped>
+.custom-color {
+  background-color: #00547F;
+}
+.body-color{
+  background-color:#508F40;
+}
+</style>

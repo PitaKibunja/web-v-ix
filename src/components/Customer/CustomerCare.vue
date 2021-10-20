@@ -1,8 +1,8 @@
 <template>
     <v-container class="mt-8">
-          <v-card elevation="2">
+          <v-card elevation="2" >
                
-            <v-card-title>
+            <v-card-title class="custom-color white--text" >
                  <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
                     <div class="font-weight-medium">
                 
@@ -40,17 +40,17 @@
                 outlined
                 tile
                 >
-                <v-card-title>
-                        <v-row cols="12 " class="d-flex justify-center mb-1 ma-1  pt-2">
+                <v-card-title class="custom-color">
+                        <v-row cols="12 " class="d-flex justify-center mb-1 ma-1  pt-2" dark>
                             <div class="font-weight-medium">
-                            <p class="font-weight-medium mb-0">
+                            <p class="white--text font-weight-medium mb-0">
                                 Customer Feedback
                             </p>
                             <v-divider></v-divider>
                             </div>
                             </v-row>
                     </v-card-title>
-                    <v-container>
+                    <v-container class="body-color">
                         <v-card class="ma-4 pa-4">
                             <template>
                                 <v-form
@@ -113,20 +113,20 @@
                  <v-col class="ml-4 pb-4">
                      <v-card max-width="360">
                             <v-card>
-                              <v-card-title class="justify center">
+                              <v-card-title class="custom-color justify center">
                                     <div class="font-weight-medium">
-                                    <p class="font-weight-medium mb-0">
+                                    <p class="white--text font-weight-medium mb-0">
                                       CONTACT US 
                                     </p>
                                     </div>
                             </v-card-title>
                             </v-card>
                             <v-divider></v-divider>
-                            <v-card  v-for="location in locations" :key="location.area" tile class="mx-auto " >
+                            <v-card  v-for="location in locations" :key="location.area" tile class="body-color white--text mx-auto " >
                                <v-card-title class="justify center">
                                     
                                     <p class="font-weight-medium justify-center">
-                                      {{ location.area }} <router-link to=""><v-icon color="#0082C6">mdi-map-marker</v-icon></router-link>
+                                      {{ location.area }} <router-link to=""><v-icon color="white">mdi-map-marker</v-icon></router-link>
                                       <v-divider></v-divider>
                                     </p>
                                     
@@ -134,7 +134,7 @@
                             </v-card-title >
                                 <v-card-text class="text-justify">
                                     <v-list-item one-line v-for="address in location.list" :key="address.house">
-                                    <v-list-item-content class="pa-0 ma-0">
+                                    <v-list-item-content class="white--text pa-0 ma-0">
                                         <v-list-item-title>{{ address.house }}</v-list-item-title>
                                         <v-list-item-title>{{ address.box }}</v-list-item-title>
                                         <v-list-item-title>{{ address.phone }}</v-list-item-title>
@@ -238,3 +238,11 @@
     },
   }
 </script>
+<style scoped>
+.custom-color {
+  background-color: #00547F;
+}
+.body-color{
+  background-color:#508F40;
+}
+</style>
