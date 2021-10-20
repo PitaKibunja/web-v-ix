@@ -2,7 +2,7 @@
     <v-container class="mt-8">
           <v-card elevation="2">
                
-            <v-card-title>
+            <v-card-title class="ttitle white--text">
                  <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
                     <div class="font-weight-medium">
                 
@@ -22,7 +22,7 @@
             <v-divider></v-divider>
                     
             <v-divider></v-divider>
-            <v-container fluid class="ma-2 pa-2">
+            <v-container class="bady white--text">
                 <p>The Authority accredits institutions and approves managers of institutions and new programmes.</p>
                 <p class="text-h6">Business registration certificate</p>
                 <div class="d-flex justify-start ml-4 pa-2">

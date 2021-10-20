@@ -12,16 +12,18 @@
 
         <v-tabs
           v-model="tab"
+          class="bady white--text d-flex justify-center"
           align-with-title
+
         >
-          <v-tabs-slider color="yellow"></v-tabs-slider>
+          <v-tabs-slider color="supu"></v-tabs-slider>
 
           <v-tab
             v-for="item in items"
             :key="item"
-           
+           dark
           >
-          <span class="text-center justify-center p-4" >
+          <span class="white--text text-center justify-center p-4" >
              {{ item }}
           </span>
            
@@ -42,7 +44,7 @@
         style="height: auto;"
       >
         <v-col
-        v-for="n in 4"
+        v-for="n in 8"
         :key="n"
         >
             <News/>

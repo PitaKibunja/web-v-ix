@@ -1,11 +1,11 @@
 <template>
 <v-container class="mt-8">
           <v-card elevation="2">
-            <v-card-title>
+            <v-card-title class="ttitle white--text">
                  <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
      <div class="font-weight-medium">
                 
-                 <h3> Downloads<v-icon large medium color="green">mdi-briefcase-download-outline</v-icon> </h3>      
+                 <h3> Downloads<v-icon large medium color="supu" class="ml-2">mdi-briefcase-download-outline</v-icon> </h3>      
                     </div>
                     </v-row>
             </v-card-title>
@@ -23,15 +23,19 @@
             <v-tabs
             v-model="tab"
             align-with-title
+            class="bady white--text d-flex justify-center"
+            max-width="400"
             >
-          <v-tabs-slider color="yellow"></v-tabs-slider>
+          <v-tabs-slider color="supu"></v-tabs-slider>
 
           <v-tab
             v-for="item in items"
             :key="item"
+            
+            dark
            
           >
-          <span class="text-center p-4" >
+          <span class=" text-center p-4" >
              <v-icon>{{ item.icon }}</v-icon>{{ item.text }}
           </span>
            

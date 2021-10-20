@@ -1,7 +1,7 @@
 <template>
     <v-container class="mt-8">
         <v-card>
-        <v-card-title>
+        <v-card-title class="ttitle white--text">
   <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-1">
      <div class="font-weight-medium">
          <v-row class="mb-1 pt-4">
@@ -19,15 +19,15 @@
                     </v-icon>
                     </v-btn>
            
-                 <h3 class="ml-4 pt-2">Kaimbaga Institute of Technology<v-icon class="mb-5"  color="green">mdi-check-circle-outline</v-icon> </h3>
+                 <h3 class="ml-4 pt-2">Kaimbaga Institute of Technology<v-icon class="mb-5"  color="green accent-5">mdi-check-circle-outline</v-icon> </h3>
                   </v-row>      
                     </div>
 
    </v-row>
    </v-card-title>
   <v-divider></v-divider> 
-<v-card class="pt-4 mb-4" dense>
-    <v-simple-table  style="  border: 1px solid green;
+<v-card class="supu pt-4 mb-4" dense>
+    <v-simple-table class=""  style="  border: 1px solid green;
   border-collapse: collapse;">
     <template v-slot:default>
           <tbody  style="  border: 1px solid black;
@@ -74,13 +74,16 @@
   </v-simple-table>
 </v-card>
   <!-- The second table goes here -->
-  <v-row cols="12 " class="d-flex justify-left mb-1 ml-4  pt-4">
-     <div class="font-weight-medium">
+
+    <v-divider></v-divider> 
+  <v-card class="white--text mb-4">
+    <v-card-title  class="bady white--text" >
+        <v-row cols="12 " class="bady white--text d-flex justify-left  pt-4">
+     <div class=" font-weight-medium">
                  <h3>Licensed Courses</h3>      
     </div>
    </v-row>
-    <v-divider></v-divider> 
-  <v-card class="pt-4 mb-4">
+    </v-card-title>
 <template>
   <v-simple-table  style="  border: 1px solid green;
   border-collapse: collapse; padding-top:0;">

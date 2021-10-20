@@ -3,7 +3,7 @@
 <v-container class="mt-8">
   
   <v-card  elevation="2">
-   <v-card-title>
+   <v-card-title class="ttitle white--text">
     <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
      <div class="font-weight-medium">
                  <h3>TVET Institutions<v-icon class="mb-5" color="green">mdi-check-circle-outline</v-icon> </h3>      
@@ -33,7 +33,7 @@
     <v-card class="  mb-8  pt-2" >
       <v-simple-table fixed-header height="500" class="pa-4 ma-2">
     <template v-slot:default>
-      <thead>
+      <thead >
         <tr>
           <th class="text-left">
           SN

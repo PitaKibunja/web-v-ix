@@ -2,7 +2,7 @@
     <v-container class="mt-8">
           <v-card elevation="2">
                
-            <v-card-title>
+            <v-card-title class="ttitle white--text">
                  <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
                     <div class="font-weight-medium">
                 
@@ -21,21 +21,21 @@
             
             <v-divider></v-divider>
             
-            <div>
+            <div class="bady white--text">
                 <h4 class="d-flex text-h6 justify-center ma-1 pa-1">TVET fundamental standards and guidelines</h4>
             </div>
             <v-divider></v-divider>
-            <v-container fluid>
+            <v-container fluid class="supu">
                <v-container fluid>
-                      <v-row cols="12 " class="d-flex justify-start mb-1 ml-4  pt-2">
+                      <v-row cols="12 " class="d-flex justify-start mb-1 ml-4">
                       <v-card
                          class="mx-auto ma-2 pa-1"
                          max-width="344"
                          
                          v-for="std in standards" :key="std"
                  >
-    <v-card-text>
-      <div>
+    <v-card-text >
+      <div >
             <v-row>
               <v-col cols="6" class="mt-4">{{ std.code }}</v-col>
             </v-row>

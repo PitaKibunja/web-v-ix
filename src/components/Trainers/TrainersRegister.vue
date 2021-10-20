@@ -2,7 +2,7 @@
 
 <v-container class="mt-8">
           <v-card elevation="2">
-            <v-card-title>
+            <v-card-title class="ttitle white--text">
                  <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
      <div class="font-weight-medium">
                 
@@ -14,7 +14,7 @@
   <v-divider></v-divider> 
  <template>
   <v-card>
-    <v-card-title>
+    <v-card-title class="bady accent-5 white--text">
       <v-spacer></v-spacer>
       <v-text-field
         v-model="search"
@@ -23,6 +23,7 @@
         dense
         single-line
         hide-details
+        dark
       ></v-text-field>
     </v-card-title>
     <v-data-table

@@ -2,7 +2,7 @@
     <v-container class="mt-8">
           <v-card elevation="2" class="mb-2">
                
-            <v-card-title>
+            <v-card-title class="ttitle white--text">
                  <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
                     <div class="font-weight-medium">
                 
@@ -22,7 +22,7 @@
                    <v-divider></v-divider>
                    <v-container fluid>
                       <v-card>
-                                    <v-card-title>
+                                    <v-card-title class="ttitle white--text">
                  <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
                     <div class="font-weight-medium">
                 
@@ -33,7 +33,7 @@
             <v-divider></v-divider>
                       </v-card>
                      <v-card
-                        class="d-flex justify-space-between mb-6 pt-4"
+                        class="bady white--text d-flex justify-space-between mb-6 pt-4"
                         :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
                         flat
                         tile
@@ -108,7 +108,7 @@
                         </v-card>
                    </v-container>
                     <v-container fluid>
-                      <v-card>
+                      <v-card class="bady white--text">
                                     <v-card-title>
                  <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
                     <div class="font-weight-medium">
@@ -120,7 +120,7 @@
             <v-divider></v-divider>
                       </v-card>
                      <v-card
-                        class="d-flex justify-space-between mb-6 pt-4"
+                        class="bady white--text d-flex justify-space-between mb-6 pt-4"
                         :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
                         flat
                         tile

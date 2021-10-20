@@ -2,7 +2,7 @@
     <v-container class="mt-8">
           <v-card elevation="2" class="mb-2">
                
-            <v-card-title>
+            <v-card-title class="ttitle white--text">
                  <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
                     <div class="font-weight-medium">
                 
@@ -20,15 +20,8 @@
                     </v-breadcrumbs>
             </div>
             <v-divider></v-divider>
-             <v-container>
+             <v-container class="bady">
             <v-card class="ma-4 pa-4" >
-                <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
-                <v-card width="200">
-                <v-card-title >
-                    <v-img class="ma-1" src="../../assets/tveta_logo.png"></v-img>
-                </v-card-title>
-                </v-card>
-                </v-row>
                 
                     <p class="text--primary size-1rem text-justify pt-8">
                         The Technical and Vocational Education and Training Authority (TVETA) is a public corporate agency established under the Technical and Vocational Education and Training (TVET) Act No. 29 of 2013 to regulate and coordinate training in the country through licensing, registration and accreditation of programs, institutions andtrainers. Section 7 of the Act, 2013 gives the powers and functions of the Authority to regulate and coordinate training; inspect, license and register and accredit training institutions; accredit and inspect programmes and courses; promote access and relevance of training programmes; determine the national technical and vocational training objectives; assure quality and relevance in programmes of training among other functions.

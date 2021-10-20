@@ -1,7 +1,6 @@
 <template>
     <v-container class="mt-8">
           <v-card elevation="2" class="mb-2">
-               
             <v-card-title class="white--text custom-color">
                  <v-row cols="12 " class="d-flex justify-center mb-1 ma-1  pt-2">
                     <div class="font-weight-medium">
@@ -29,12 +28,14 @@
         md="8"
       >
         <v-card
-          class="body-color pa-2"
+          class="body-color  mb-8"
           outlined
           tile
+          height="483"
+
         >
         <v-card-title class="white--text custom-color">
-                 <v-row cols="12 " class="  d-flex justify-center mb-1 ma-1  pt-2">
+                 <v-row cols="12 " class="  d-flex justify-center mb-1 ma-2">
                     <div class="font-weight-medium">
                       <p class="font-weight-medium mb-0">
                           Mission Statements
@@ -56,7 +57,7 @@
                         <v-card
                             v-for="n in statements"
                             :key="n"
-                            class="#0082C6 d-flex justify-center  pa-1 ma-1"
+                            class="d-flex justify-center  pa-1 ma-1"
                             elevation="2"
                             tile
                             
@@ -88,6 +89,7 @@
       <v-col
         cols="6"
         md="4"
+        
       >
         <v-card
           class="body-color mb-8"
@@ -96,7 +98,7 @@
         >
          <v-divider></v-divider>
             <v-card-title class="custom-color white--text mb-2">
-                 <v-row cols="12 " class="d-flex justify-center mb-1 ma-1  pt-2">
+                 <v-row cols="12 " class="d-flex justify-center mb-1 ma-1  pt-1">
                     <div class="font-weight-medium">
                       <p class="font-weight-medium mb-0">
                           Locations
@@ -112,7 +114,7 @@
     <v-expansion-panel
       v-for="location in locations"
       :key="location"
-      class="pa-1 ma-1"
+      class="pa-1 ma-1 ml-1 "
     >
       <v-expansion-panel-header>{{ location.location }}</v-expansion-panel-header>
       <v-expansion-panel-content>

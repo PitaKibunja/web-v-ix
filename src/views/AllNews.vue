@@ -8,8 +8,8 @@
    <v-container class="mt-8">
   
   <v-card  elevation="2">
-   <v-card-title>
-    <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
+   <v-card-title class="ttitle white--text">
+     <v-row cols="12 " class="d-flex justify-center mb-1">
      <div class="font-weight-medium">
                  <h3>Media Center</h3>      
                     </div>
@@ -17,28 +17,22 @@
     </v-card-title>
    
   <v-divider></v-divider> 
-  <v-row class="d-flex justify-center mb-1  pa-3">
-        <v-col
-          cols="12"
-          sm="6"
-          md="3"
-        >
+  <v-card>
+    <v-card-title class=" d-flex justify-center ma-1 pa-4">
+<v-row>
+      
        
           <v-text-field
             placeholder="Search"
             prepend-inner-icon="mdi-magnify"
-           max-width="300"
             dense
           ></v-text-field>
-        </v-col>
-    </v-row>   
- 
-  <v-row class="pt-0 ma-2"> <NewsTab/></v-row> 
-          <!-- </v-col> -->
-        <!-- </v-row>    -->
-        <v-row>
-          
-        </v-row>
+        
+    </v-row>  
+    </v-card-title>
+      <NewsTab/>
+  </v-card>
+   
 
     </v-card>
 </v-container>
