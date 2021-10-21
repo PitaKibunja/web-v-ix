@@ -113,11 +113,115 @@
       </template>
         </v-menu>
 </template>
+<template>
+  <v-row justify="center">
+    <v-dialog
+      v-model="dialog"
+      max-width="600px"
+    >
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn
+          icon
+          v-bind="attrs"
+          v-on="on"
+        >
+          <v-icon>mdi-magnify</v-icon>
+        </v-btn>
+      </template>
+        <v-card elevation="4">
+                  <v-container class="supu" fixed>
+                     <v-card-title class=" d-flex justify-center ma-1 pt-4">
+                <v-row>
+                  <v-text-field
+                    placeholder="Search"
+                    prepend-inner-icon="mdi-magnify"
+                    dense
+                  ></v-text-field>
+            </v-row> 
+              </v-card-title>
+                  </v-container>
+            <v-divider></v-divider> 
+            <v-card>
+              <v-container fluid>
+                
+                  <div class="" v-for="i in 8" :key="i">
+                  <v-card  class="ma-2 pa-2">
+                    
+                    <v-card-title>TVETA CDACC</v-card-title>
+                    <v-divider></v-divider>
+                    <v-card-text>
+                      <v-container fluid no-gutters>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga alias quo rem, beatae ea officia ipsum deserunt facere, nobis sequi omnis voluptas. Nemo blanditiis nam, excepturi enim laboriosam esse harum.</p>
+                      </v-container>
+                    </v-card-text>
+                    
+                  </v-card>
+                 </div>
+                
+                 <v-container fluid class="d-flex justify-center">
+                    <h4>No recent searches</h4>
+                  </v-container>
+              </v-container>
+            </v-card>
+        </v-card>
+    </v-dialog>
+  </v-row>
+</template>
 
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
 
-      </v-btn>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <v-menu
       open-on-hover
@@ -158,6 +262,7 @@
 <script>
   export default {
     data: () => ({
+      searchbar:false,
       defacto: [
         { title: 'Home' ,link:'/home'},
         { title: 'Downloads',link:'/downloads'},
@@ -202,5 +307,11 @@
         {Staff:'Staff Portal',link:'https://staff.tveta.go.ke:8080'}
       ]
     }),
+    methods:{
+      popSearch(){
+        this.searchbar=!this.searchbar
+        console.log(this.searchbar)
+      }
+    }
   }
 </script>
