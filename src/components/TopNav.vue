@@ -145,17 +145,22 @@
               <v-container fluid>
                 
                   <div class="" v-for="i in 8" :key="i">
-                  <v-card  class="ma-2 pa-2">
-                    
-                    <v-card-title>TVETA CDACC</v-card-title>
-                    <v-divider></v-divider>
-                    <v-card-text>
-                      <v-container fluid no-gutters>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga alias quo rem, beatae ea officia ipsum deserunt facere, nobis sequi omnis voluptas. Nemo blanditiis nam, excepturi enim laboriosam esse harum.</p>
-                      </v-container>
-                    </v-card-text>
-                    
-                  </v-card>
+                    <router-link class="pa-1 ma-1" style="text-decoration: none; color: inherit;" to="search">
+                    <v-card  class="ma-2 pa-2">
+                            
+                            <v-card-title>Lorem</v-card-title>
+                            <v-divider></v-divider>
+                            <v-card-text>
+                              <v-container fluid no-gutters>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga alias quo rem, beatae ea officia ipsum deserunt facere, nobis sequi omnis voluptas. Nemo blanditiis nam, excepturi enim laboriosam esse harum.</p>
+                              </v-container>
+                            </v-card-text>
+                            
+                          </v-card>
+                    </router-link>
+                 
+       
+                  
                  </div>
                 
                  <v-container fluid class="d-flex justify-center">
