@@ -134,13 +134,15 @@
                             </v-card-title >
                                 <v-card-text class="text-justify">
                                     <v-list-item one-line v-for="address in location.list" :key="address.house">
-                                    <v-list-item-content class="white--text pa-0 ma-0">
-                                        <v-list-item-title>{{ address.house }}</v-list-item-title>
+                                    <v-container>
+                                      <v-list-item-content class="white--text pa-0 ma-0">
+                                        <v-list-item-title class="text-wrap">{{ address.house }}</v-list-item-title>
                                         <v-list-item-title>{{ address.box }}</v-list-item-title>
                                         <v-list-item-title>{{ address.phone }}</v-list-item-title>
                                         <v-list-item-title>{{ address.cell }}</v-list-item-title>
                                         <v-list-item-title class="mb-0">{{ address.phone }}</v-list-item-title>
                                     </v-list-item-content>
+                                    </v-container>
                                     </v-list-item>
                             </v-card-text>
                             </v-card>

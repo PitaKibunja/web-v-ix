@@ -1,7 +1,7 @@
 <template>
     <v-container class="mt-8">
           <v-card elevation="2" class="mb-2">
-            <v-card-title class="white--text custom-color">
+            <v-card-title class="white--text ttitle">
                  <v-row cols="12 " class="d-flex justify-center mb-1 ma-1  pt-2">
                     <div class="font-weight-medium">
                       <p class="font-weight-medium mb-0">
@@ -28,7 +28,7 @@
         md="8"
       >
         <v-card
-          class="body-color  mb-8"
+          class="body-color  mb-8 ma-2"
           outlined
           tile
           height="483"
@@ -73,7 +73,7 @@
                     </v-card-title>
               <v-container>
                       
-                             <v-row cols="12 " class="yellow lighten-4 d-flex text-justify ma-1  pa-1">
+                             <v-row cols="12 " class="d-flex text-justify ma-1  pa-1">
                             <p>{{ n.content }}</p>
                     </v-row>
                     
@@ -98,7 +98,7 @@
         >
          <v-divider></v-divider>
             <v-card-title class="custom-color white--text mb-2">
-                 <v-row cols="12 " class="d-flex justify-center mb-1 ma-1  pt-1">
+                 <v-row cols="12 " class="d-flex justify-center mb-1">
                     <div class="font-weight-medium">
                       <p class="font-weight-medium mb-0">
                           Locations
@@ -114,7 +114,8 @@
     <v-expansion-panel
       v-for="location in locations"
       :key="location"
-      class="pa-1 ma-1 ml-1 "
+      class="pa-1 "
+      max-width="200"
     >
       <v-expansion-panel-header>{{ location.location }}</v-expansion-panel-header>
       <v-expansion-panel-content>

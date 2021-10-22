@@ -31,7 +31,7 @@
           <v-tab
             v-for="item in items"
             :key="item"
-            
+            class="white--text"
             dark
            
           >
