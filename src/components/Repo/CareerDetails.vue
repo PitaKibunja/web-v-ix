@@ -1,7 +1,7 @@
 <template>
     <v-container class="mt-8">
           <v-card elevation="2">
-            <v-card-title>
+            <v-card-title class="ttitle white--text">
                  <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
                     <div class="font-weight-medium">
                 
@@ -25,8 +25,8 @@
                   <v-col cols="9" no-gutters>
                      <v-container>
                         <v-card >
-                           <v-card-title>
-                              <v-row  class="d-flex justify-start mb-1  pt-1">
+                           <v-card-title class="bady">
+                              <v-row  class="bady white--text d-flex justify-start mb-1  pt-1">
                                  <div class="font-weight-medium ma-1 pa-1">
                               
                               <h4> Assistant Manager – Digital Communication (#AM-SPIA-21)</h4> <h3></h3>    
@@ -81,26 +81,26 @@
                      </v-container>
                   </v-col>
                   <v-col>
-                     <v-container fluid>
+                     <v-container fluid >
                         <v-card
-                     class="mx-auto"
+                     class=" mx-auto"
                      max-width="300"
                      tile
                   >
-                     <v-list>
+                     <v-list class="bady">
                   
-                  <h3 class="ml-2"> More Careers</h3>  
+                  <h3 class="white--text ml-2 d-flex justify-center"> More Careers</h3>  
                   <v-divider></v-divider>
                   <v-list-item-group
-                  
+                  class="supu"
                   color="primary"
                   >
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
         >
-          <v-list-item-content>
-            <router-link :to="item.link"><v-list-item-title v-text="item.text"></v-list-item-title></router-link>
+          <v-list-item-content >
+            <router-link :to="item.link" style="text-decoration: none; color: inherit;"><v-list-item-title class="black--text" v-text="item.text"></v-list-item-title></router-link>
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>
@@ -122,6 +122,9 @@ export default {
         { text: 'Assistant Director-ICT', link: '/careerdetails' },
         { text: 'HR-Intern', link: '/careerdetails'},
         { text: 'ICT-Officer', link: '/careerdetails' },
+        { text: 'Accreditation-Officer', link: '/careerdetails' },
+        { text: 'Admin-Intern', link: '/careerdetails' },
+        { text: 'Admin', link: '/careerdetails' },
       ],
           linkss: [
         {
