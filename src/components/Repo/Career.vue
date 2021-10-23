@@ -1,7 +1,7 @@
 <template>
     <v-container class="mt-8">
           <v-card elevation="2">
-            <v-card-title>
+            <v-card-title class="ttitle white--text">
                  <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
                     <div class="font-weight-medium">
                 
@@ -11,10 +11,10 @@
             </v-card-title>
             <v-divider></v-divider>
            
-                <v-card dense>
+                <v-card dense class="supu">
                     <v-divider></v-divider>
                      <v-card-actions  v-for="n in 10" :key="n" >
-                         <v-container fluid>
+                         <v-container fluid >
                              <v-card elevation="2" dense color="grey lighten-5" class="d-flex justify-center " outlined no-gutters>
                              <v-row class="d-flex justify-center ma-2 pt-2"  outlined>
                                <v-col>
