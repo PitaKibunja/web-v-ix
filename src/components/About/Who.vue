@@ -215,16 +215,21 @@ TVETA shall ensure that this quality policy is communicated, understood and appl
           locations:[
             {
               location:'Nairobi',
-              details:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium voluptate aut ea, voluptatem ut aspernatur assumenda dignissimos excepturi nam earum iste laboriosam nemo reiciendis cupiditate ullam sint labore incidunt.'
+              details:[
+                {building:'Utaliii House 8th Floor, Utalii Street'},
+                {box:'35625 - 00100'},
+                {phone:'+254 20 239 2140'},
+                {cell:'+254 700 015 440'},
+              ]
             }  ,{
               location:'Mombasa',
-              details:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium voluptate aut ea, voluptatem ut aspernatur assumenda dignissimos excepturi nam earum iste laboriosam nemo reiciendis cupiditate ullam sint labore incidunt.'
+              details:''
             } , {
               location:'Kisumu',
-              details:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium voluptate aut ea, voluptatem ut aspernatur assumenda dignissimos excepturi nam earum iste laboriosam nemo reiciendis cupiditate ullam sint labore incidunt.'
+              details:''
             }, {
               location:'Eldoret',
-              details:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium voluptate aut ea, voluptatem ut aspernatur assumenda dignissimos excepturi nam earum iste laboriosam nemo reiciendis cupiditate ullam sint labore incidunt.'
+              details:''
             }
           ],
           items: [
