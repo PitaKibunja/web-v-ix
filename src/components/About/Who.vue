@@ -117,9 +117,22 @@
       class="pa-1 "
       max-width="200"
     >
-      <v-expansion-panel-header>{{ location.location }}</v-expansion-panel-header>
+      <v-expansion-panel-header>{{ location.area }}</v-expansion-panel-header>
       <v-expansion-panel-content>
-          {{ location.details }}
+          <v-card elevation="4">
+            <v-card-text class="text-justify">
+                                    <v-list-item one-line v-for="address in location.list" :key="address.house">
+                                    <v-container>
+                                      <v-list-item-content class="pa-0 ma-0">
+                                        <v-list-item-title class="text-wrap">{{ address.house }}</v-list-item-title>
+                                        <v-list-item-title>{{ address.box }}</v-list-item-title>
+                                        <v-list-item-title>{{ address.phone }}</v-list-item-title>
+                                        <v-list-item-title>{{ address.cell }}</v-list-item-title>
+                                    </v-list-item-content>
+                                    </v-container>
+                                    </v-list-item>
+                            </v-card-text>
+          </v-card>
       </v-expansion-panel-content>
     </v-expansion-panel>
   </v-expansion-panels>
@@ -213,25 +226,35 @@ TVETA shall ensure that this quality policy is communicated, understood and appl
       return {
           dialog: false,
           locations:[
-            {
-              location:'Nairobi',
-              details:[
-                {building:'Utaliii House 8th Floor, Utalii Street'},
-                {box:'35625 - 00100'},
-                {phone:'+254 20 239 2140'},
-                {cell:'+254 700 015 440'},
-              ]
-            }  ,{
-              location:'Mombasa',
-              details:''
-            } , {
-              location:'Kisumu',
-              details:''
-            }, {
-              location:'Eldoret',
-              details:''
-            }
-          ],
+           {area:'Nairobi',list:[
+          {house:'Utaliii House 8th Floor, Utalii Street'},
+          {box:'P.O. Box 35625 - 00100'},
+          {phone:'Phone:+254 20 239 2140'},
+          {cell:'Cell: +254 700 015 440'},
+          {web:'Web: www.tveta.go.ke'},
+        ]},
+        {area:'Kisumu',list:[
+          {house:'Kenya Re Insurance building 2nd Floor Wing B, Oginga Odinga Street'},
+          {box:'P.O. Box 35625 - 00100'},
+          {phone:'Phone:+254 20 239 2140'},
+          {cell:'Cell: +254 700 015 440'},
+          {web:'Web: www.tveta.go.ke'},
+        ]},
+        {area:'Eldoret',list:[
+          {house:'KVDA Plaza 7th Floor Southern Wing, Oloo street'},
+          {box:'P.O. Box 35625 - 00100'},
+          {phone:'Phone:+254 20 239 2140'},
+          {cell:'Cell: +254 700 015 440'},
+          {web:'Web: www.tveta.go.ke'},
+        ]}, 
+         {area:'Mombasa',list:[
+          {house:'NSSF building Ground Floor, Nkurumah Road'},
+          {box:'P.O. Box 35625 - 00100'},
+          {phone:'Phone:+254 20 239 2140'},
+          {cell:'Cell: +254 700 015 440'},
+          {web:'Web: www.tveta.go.ke'},
+        ]},
+        ],
           items: [
         {
           text: 'About us',

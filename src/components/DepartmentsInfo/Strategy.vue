@@ -21,7 +21,7 @@
             
             <v-divider></v-divider>
             <v-container>
-            <v-card class="ma-4 pa-4">
+            <v-card class="bady white--text ma-4 pa-4">
                 <p class="text-justify pt-8">
                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia quaerat accusantium minima, tempora quibusdam repudiandae! Repellat aut eius fugiat, sequi, ut sed debitis, cum deleniti voluptatum tempore autem magnam iure.
                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia quaerat accusantium minima, tempora quibusdam repudiandae! Repellat aut eius fugiat, sequi, ut sed debitis, cum deleniti voluptatum tempore autem magnam iure.
