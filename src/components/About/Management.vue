@@ -52,7 +52,7 @@
                                john
                             </div>
                         </v-card-title>
-                        <v-img src="../../assets/board.png" width="200"></v-img>
+                        <v-img src="../../assets/board.png" width="200" class="ma-2 pa-2"></v-img>
                          <div class="d-flex justify-start">
                         <v-card-text>
                           Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
@@ -83,49 +83,49 @@
       return {
         members:[
           {
-            name:'Pita',
-            img:'https://i.ibb.co/3cwypTW/Dku.jpg',
+            name:'Jane Doe',
+            img:'https://ibb.co/yhm7JXy',
             position:'TVET Authority Chairperson',
             details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
           },  {
             name:'Dr. Margaret Wawuda Mwakima',
-            img:'https://i.ibb.co/3cwypTW/Dku.jpg',
+            img:'https://i.ibb.co/ymC6m6c/Dr-Margaret-Mwakima-2.jpg',
             position:'PS, State Department of Vocational and Technical Training (VTT) - Ministry of Education',
             details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
           },  {
             name:'CS. Dr. Davidson Mghanga Mwaisaka',
-            img:'https://i.ibb.co/3cwypTW/Dku.jpg',
+            img:'https://i.ibb.co/GPqqSGK/DR-DAVIDSOM-MGHANGA-MWAISAKA-PASSPORT-PHOTO-2.jpg',
             position:'Member',
             details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
           },  {
             name:'Mr. Sammy Milgo',
-            img:'https://i.ibb.co/3cwypTW/Dku.jpg',
+            img:'https://i.ibb.co/Jyk8Fs7/Milgo.jpg',
             position:'Member',
             details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
           },  {
             name:'Mrs. Jane Wambugu',
-            img:'https://i.ibb.co/3cwypTW/Dku.jpg',
+            img:'https://i.ibb.co/b1NMPF5/Jane.jpg',
             position:'Member',
             details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
           },  {
             name:'Mr. Burua Sanga Shumaa',
-            img:'https://i.ibb.co/3cwypTW/Dku.jpg',
+            img:'https://i.ibb.co/XSFdz3t/Burua-sanga-n.jpg',
             position:'Member',
             details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
           },  {
             name:'Esther Gacicio',
-            img:'https://i.ibb.co/3cwypTW/Dku.jpg',
+            img:'https://i.ibb.co/5R7NrGh/Esther-Gacicio-917x1024.jpg',
             position:'Member',
             details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
           },  {
             name:'Susan Aletia',
-            img:'https://i.ibb.co/3cwypTW/Dku.jpg',
+            img:'https://i.ibb.co/KKC2HK2/Susan-Aletia-1-954x1024.jpg',
             position:'Board Member',
             details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
           },
             {
             name:'Dr. Kipkirui Langat',
-            img:'https://i.ibb.co/3cwypTW/Dku.jpg',
+            img:'https://i.ibb.co/5vQ0RCD/Dr-Kipkirui-Langat-1.jpg',
             position:'Board Secretary',
             details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
           },
