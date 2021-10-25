@@ -20,10 +20,16 @@
             </div>
             
             <v-divider></v-divider>
+            <v-card>
+              <v-card-title class="bady white--text">
+                 <v-row cols="12 " class="d-flex justify-center">
+                    <div class="font-weight-medium">
+                
+                 <h4 class="d-flex text-h6 justify-center ma-1 pa-1">TVET fundamental standards and guidelines</h4>   
+                    </div>
+                    </v-row>
+            </v-card-title>
             
-            <div class="bady white--text">
-                <h4 class="d-flex text-h6 justify-center ma-1 pa-1">TVET fundamental standards and guidelines</h4>
-            </div>
             <v-divider></v-divider>
             <v-container fluid class="supu">
                <v-container fluid>
@@ -68,7 +74,8 @@
     <v-card-actions>
       <v-btn
         text
-        color="primary accent-4"
+        color="ttitle accent-4"
+        @click.stop="dialog = true"
       >
       <v-icon>mdi-cart-outline</v-icon>
         Buy Now 
@@ -80,7 +87,8 @@
     ></v-divider>
       <v-btn
         text
-        color="primary accent-4"
+        color="ttitle accent-4"
+        @click.stop="dialog = true"
       >
         Subscribe
       </v-btn>
@@ -88,10 +96,36 @@
     </v-card-actions>
     
                 </v-card>
+                <v-dialog
+                      v-model="dialog"
+                      max-width="500"
+                    >
+                   <v-container fluid>
+                        <v-card >
+          
+                         <div class="d-flex justify-center">
+                        <v-card-text>
+                          <h2>Feature coming Soon.</h2>
+                        </v-card-text>
+                         </div>
+                        <v-card-actions>
+                          <v-spacer></v-spacer>
+                          <v-btn
+                            color="green darken-1"
+                            text
+                            @click="dialog = false"
+                          >
+                            <v-icon >mdi-close</v-icon>
+                          </v-btn>
+                        </v-card-actions>
+                      </v-card>
+                   </v-container>
+                    </v-dialog>
                   </v-row>
                </v-container>
             
             </v-container>
+            </v-card>
           </v-card>
     </v-container>
 </template>
@@ -99,6 +133,7 @@
   export default {
     data () {
       return {
+        dialog: false,
           items: [
         {
           text: 'Home',

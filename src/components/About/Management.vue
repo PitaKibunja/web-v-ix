@@ -28,16 +28,17 @@
           </v-card-title>
           <v-divider></v-divider>
         </v-card>
-        <v-card class="bady white--text d-flex justify-space-between mb-6 pt-4" :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'" flat tile>
+        
+        <v-card class="bady white--text d-flex justify-space-between mb-1 pt-4" :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'" flat tile>
           <v-row cols="12" class="d-flex justify-center mb-1 pt-2">
           
             <v-card v-for="n in members" :key="n" class="pa-1 ma-1" elevation="4" tile>
               
               <div class="text-center">
-                <v-card @click.stop="dialog = true" width="230" v-bind="attrs" v-on="on" class="ma-4 pa-3">
+                <v-card @click.stop="dialog = true" width="230" height="400" v-bind="attrs" v-on="on" class="ma-4 pa-3">
                 <v-img :src="n.img"></v-img>
-                <v-card-text class="pt-1 mb-0">{{ n.name }}</v-card-text>
-                <v-card-text >{{ n.position }}</v-card-text>
+                <v-card-text>{{ n.name }}<br/><br/>{{ n.position }}</v-card-text>
+                
               </v-card>
               </div>
             </v-card>
@@ -73,6 +74,64 @@
                     </v-dialog>
           </v-row>
         </v-card>
+     
+        <v-card>
+          <v-card-title class="bady white--text">
+                <v-row cols="12" class="d-flex justify-center mb-1 ml-4 pt-2">
+                  <div class="font-weight-medium">
+                    <h5>Management</h5>
+                  </div>
+                </v-row>
+          </v-card-title>
+          <v-divider></v-divider>
+        </v-card>
+        
+        <v-card class="supu white--text d-flex justify-space-between mb-6 pt-4"  flat tile>
+          <v-row cols="12" class="d-flex justify-center mb-1 pt-2">
+          
+            <v-card v-for="n in 8" :key="n" class="pa-1 ma-1" elevation="4" tile>
+              
+              <div class="text-center">
+                <v-card @click.stop="dialog = true" width="230" v-bind="attrs" v-on="on" class="ma-4 pa-3">
+                <v-img src="../../assets/board.png"></v-img>
+                <v-card-text class="pt-1 mb-0">John Doe</v-card-text>
+                <v-card-text >Department</v-card-text>
+              </v-card>
+              </div>
+            </v-card>
+             <v-dialog
+                      v-model="dialog"
+                      max-width="500"
+                    >
+                   <v-container fluid>
+                        <v-card class="ma-2 pa-2">
+                        <v-card-title class="text-h5 grey lighten-4">
+                            <div class="d-flex justify-end">
+                               john
+                            </div>
+                        </v-card-title>
+                        <v-img src="../../assets/board.png" width="200" class="ma-2 pa-2"></v-img>
+                         <div class="d-flex justify-start">
+                        <v-card-text>
+                          Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
+                        </v-card-text>
+                         </div>
+                        <v-card-actions>
+                          <v-spacer></v-spacer>
+                          <v-btn
+                            color="green darken-1"
+                            text
+                            @click="dialog = false"
+                          >
+                            <v-icon >mdi-close</v-icon>
+                          </v-btn>
+                        </v-card-actions>
+                      </v-card>
+                   </v-container>
+                    </v-dialog>
+          </v-row>
+        </v-card>
+        <v-divider></v-divider>
       </v-container>
     </v-card>
   </v-container>
@@ -120,15 +179,9 @@
           },  {
             name:'Susan Aletia',
             img:'https://i.ibb.co/KKC2HK2/Susan-Aletia-1-954x1024.jpg',
-            position:'Board Member',
+            position:'Member',
             details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
-          },
-            {
-            name:'Dr. Kipkirui Langat',
-            img:'https://i.ibb.co/5vQ0RCD/Dr-Kipkirui-Langat-1.jpg',
-            position:'Board Secretary',
-            details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
-          },
+          }
 
         ],
           dialog: false,

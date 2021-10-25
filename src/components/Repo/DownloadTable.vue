@@ -36,6 +36,7 @@
             class="ma-2"
             outlined
             color="blue"
+            @click.stop="dialog = true"
             >
             <v-icon>mdi-download</v-icon>
             Download
@@ -45,12 +46,38 @@
       </tbody>
     </template>
   </v-simple-table>
+  <v-dialog
+                      v-model="dialog"
+                      max-width="500"
+                    >
+                   <v-container fluid>
+                        <v-card >
+          
+                         <div class="d-flex justify-center">
+                        <v-card-text>
+                          <h2>Feature coming Soon.</h2>
+                        </v-card-text>
+                         </div>
+                        <v-card-actions>
+                          <v-spacer></v-spacer>
+                          <v-btn
+                            color="green darken-1"
+                            text
+                            @click="dialog = false"
+                          >
+                            <v-icon >mdi-close</v-icon>
+                          </v-btn>
+                        </v-card-actions>
+                      </v-card>
+                   </v-container>
+                    </v-dialog>
   </v-card>
 </template>
 <script>
   export default {
     data () {
       return {
+        dialog: false,
         desserts: [
           {
             name: 'Frozen Yogurt',
