@@ -89,7 +89,7 @@
         <v-card class="supu white--text d-flex justify-space-between mb-6 pt-4"  flat tile>
           <v-row cols="12" class="d-flex justify-center mb-1 pt-2">
           
-            <v-card v-for="n in 8" :key="n" class="pa-1 ma-1" elevation="4" tile>
+            <v-card v-for="n in members" :key="n" class="pa-1 ma-1" elevation="4" tile>
               
               <div class="text-center">
                 <v-card @click.stop="dialog = true" width="230" v-bind="attrs" v-on="on" class="ma-4 pa-3">
@@ -137,53 +137,12 @@
   </v-container>
 </template>
 <script>
+const baseURL="http://localhost:3000/api_v_1"
   export default {
     data () {
       return {
-        members:[
-          {
-            name:'Jane Doe',
-            img:'https://ibb.co/yhm7JXy',
-            position:'TVET Authority Chairperson',
-            details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
-          },  {
-            name:'Dr. Margaret Wawuda Mwakima',
-            img:'https://i.ibb.co/ymC6m6c/Dr-Margaret-Mwakima-2.jpg',
-            position:'PS, State Department of Vocational and Technical Training (VTT) - Ministry of Education',
-            details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
-          },  {
-            name:'CS. Dr. Davidson Mghanga Mwaisaka',
-            img:'https://i.ibb.co/GPqqSGK/DR-DAVIDSOM-MGHANGA-MWAISAKA-PASSPORT-PHOTO-2.jpg',
-            position:'Member',
-            details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
-          },  {
-            name:'Mr. Sammy Milgo',
-            img:'https://i.ibb.co/Jyk8Fs7/Milgo.jpg',
-            position:'Member',
-            details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
-          },  {
-            name:'Mrs. Jane Wambugu',
-            img:'https://i.ibb.co/b1NMPF5/Jane.jpg',
-            position:'Member',
-            details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
-          },  {
-            name:'Mr. Burua Sanga Shumaa',
-            img:'https://i.ibb.co/XSFdz3t/Burua-sanga-n.jpg',
-            position:'Member',
-            details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
-          },  {
-            name:'Esther Gacicio',
-            img:'https://i.ibb.co/5R7NrGh/Esther-Gacicio-917x1024.jpg',
-            position:'Member',
-            details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
-          },  {
-            name:'Susan Aletia',
-            img:'https://i.ibb.co/KKC2HK2/Susan-Aletia-1-954x1024.jpg',
-            position:'Member',
-            details:'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
-          }
 
-        ],
+        members:[],
           dialog: false,
           items: [
         {
@@ -200,5 +159,46 @@
         
       }
     },
+     created(){
+      //fetch the data when the view is created and data is
+      //already being observed
+      this.fetchData()
+      console.log(this.fetchData())
+    },
+    watch:{
+      //call again the method if the route changes
+      '$route':'fetchData'
+    },
+    methods:{
+      formatResponse(res){
+        return JSON.stringify(res,null,2)
+      },
+      async fetchData(){
+        try{
+          const res=await fetch(`${baseURL}/board`)
+          if(!res.ok){
+            const message=`An error has occured:${res.status}-${res.statusText}`
+            throw new Error(message)
+          }
+          const data=await res.json()
+          // const result={
+          //   data:data,
+          //   status:res.status,
+          //   statusText:res.statusText,
+          //   headers:{
+          //     "Content-Type":res.headers.get("Content-Type"),
+          //     "Content-Length":res.headers.get("Content-Length")
+          //   },
+          // }
+          this.members=data
+          console.log(data)
+        }catch(err){
+          this.members=err.message
+        }
+      },
+      clearGetOutput(){
+        this.members=null
+      }
+    }
   }
 </script>

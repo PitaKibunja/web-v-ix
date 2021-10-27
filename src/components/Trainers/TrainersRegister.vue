@@ -28,7 +28,7 @@
     </v-card-title>
     <v-data-table
       :headers="headers"
-      :items="Trainers"
+      :items="trainers"
       :search="search"
     ></v-data-table>
   </v-card>
@@ -46,6 +46,7 @@
 
 </template>
 <script>
+const baseURL="http://localhost:3000/api_v_1"
   export default {
     data () {
       return {
@@ -59,64 +60,38 @@
           },
           
           { text: 'TVETA Reg. No', value: 'regno' },
-          { text: 'Full Name', value: 'name' },
-          { text: 'Area of Specialization', value: 'area' },
-          { text: 'Category', value: 'category' },
+          { text: 'Full Name', value: 'fullname' },
+          { text: 'Area of Specialization', value: 'specialization' },
+          { text: 'Category', value: 'cluster' },
           { text: 'KNQF Level', value: 'status' }
         ],
-        Trainers: [
-          {
-            name: 'Koech Kipkemboi Vincent',
-            regno:'TVETA/T1900001',
-            area:'Automotive Engineering',
-            category:'Trainer',
-            status:'Licensed to train upto level 6/ upto Diploma',
-          },{
-            name: 'Pita Kibunja',
-            regno:'TVETA/T15',
-            area:'Automotive Engineering',
-             category:'Trainer',
-            status:'Licensed to train upto level 6/ upto Diploma',
-          },{
-            name: 'Koech Kipkemboi Vincent',
-            regno:'TVETA/T1900001',
-            area:'Automotive Engineering',
-             category:'Trainer',
-            status:'Licensed to train upto level 6/ upto Diploma',
-          },{
-            name: 'Koech Kipkemboi Vincent',
-            regno:'TVETA/T1900001',
-            area:'Automotive Engineering',
-             category:'Trainer',
-            status:'Licensed to train upto level 6/ upto Diploma',
-          },{
-            name: 'Koech Kipkemboi Vincent',
-            regno:'TVETA/T1900001',
-            area:'Automotive Engineering',
-             category:'Trainer',
-            status:'Licensed to train upto level 6/ upto Diploma',
-          },{
-            name: 'Koech Kipkemboi Vincent',
-            regno:'TVETA/T1900001',
-            area:'Automotive Engineering',
-             category:'Trainer',
-            status:'Licensed to train upto level 6/ upto Diploma',
-          },{
-            name: 'Koech Kipkemboi Vincent',
-            regno:'TVETA/T1900001',
-            area:'Automotive Engineering',
-             category:'Trainer',
-            status:'Licensed to train upto level 6/ upto Diploma',
-          },{
-            name: 'Koech Kipkemboi Vincent',
-            regno:'TVETA/T1900001',
-            area:'Automotive Engineering',
-             category:'Trainer',
-            status:'Licensed to train upto level 6/ upto Diploma',
-          },
-
-        ]
+        trainers: []
       }
     },
+    created(){
+      this.fetchData()
+    },
+    watch:{
+      '$route':'fetchData'
+    },
+    methods:{
+      async fetchData(){
+        try{
+          const res=await fetch(`${baseURL}/trainers`)
+          if(!res.ok){
+            const message=`An error has occured:${res.status}-${res.statusText}`
+            throw new Error(message)
+          }
+          const data=await res.json()
+          this.trainers=data
+          console.log(data)
+        }catch(err){
+          this.trainers=err.message
+        }
+      },
+       clearGetOutput(){
+        this.trainers=null
+      }
+    }
   }
 </script>
