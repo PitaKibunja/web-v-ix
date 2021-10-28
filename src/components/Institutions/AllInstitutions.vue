@@ -31,6 +31,7 @@
       :search="search"
     >
       <template v-slot:[`item.details`]="{ value }">
+        
             <router-link :to="instituteLink">{{ value }}</router-link>
         </template>
     </v-data-table>
@@ -58,7 +59,7 @@ const baseURL="http://localhost:3000/api_v_1"
         instituteLink:'/institution',
         headers: [
           {
-            text: 'SN',
+            text: 'No',
             align: 'start',
             sortable: false,
             value: '1',
