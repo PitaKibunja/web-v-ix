@@ -29,7 +29,7 @@
           <v-divider></v-divider>
         </v-card>
         
-        <v-card class="bady white--text d-flex justify-space-between mb-1 pt-4" :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'" flat tile>
+        <v-card class="supu white--text d-flex justify-space-between mb-1 pt-4"  flat tile>
           <v-row cols="12" class="d-flex justify-center mb-1 pt-2">
           
             <v-card v-for="n in members" :key="n" class="pa-1 ma-1" elevation="4" tile>

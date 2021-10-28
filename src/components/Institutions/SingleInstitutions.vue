@@ -111,7 +111,7 @@
       </thead>
       <tbody>
         <tr
-          v-for="(item,i) in desserts"
+          v-for="(item,i) in institution"
           :key="item.name"
         >
           <td>{{i}}</td>
@@ -129,52 +129,35 @@
     </v-container>
 </template>
 <script>
+const baseURL="http://localhost:3000/api_v_1"
   export default {
     data () {
       return {
-        desserts: [
-          {
-            name: 'Frozen Yogurt Frozen Yogurt',
-            calories: 159,
-          },
-          {
-            name: 'Ice cream sandwich Frozen Yogurt',
-            calories: 237,
-          },
-          {
-            name: 'Eclair Frozen YogurtFrozen Yogurt',
-            calories: 262,
-          },
-          {
-            name: 'Cupcake Frozen YogurtFrozen Yogurt',
-            calories: 305,
-          },
-          {
-            name: 'Gingerbread Frozen YogurtFrozen Yogurt',
-            calories: 356,
-          },
-          {
-            name: 'Jelly bean Frozen YogurtFrozen Yogurt',
-            calories: 375,
-          },
-          {
-            name: 'Lollipop Frozen YogurtFrozen Yogurt',
-            calories: 392,
-          },
-          {
-            name: 'Honeycomb Frozen YogurtFrozen Yogurt',
-            calories: 408,
-          },
-          {
-            name: 'Donut Frozen YogurtFrozen Yogurt',
-            calories: 452,
-          },
-          {
-            name: 'KitKat Frozen YogurtFrozen Yogurt',
-            calories: 518,
-          },
-        ],
+        loading:false,
+        institution: [],
       }
     },
+    created(){
+      this.fetchData()
+    },
+    watch:{
+      '$route':'fetchData'
+    },
+     methods:{
+      async fetchData(){
+        try {
+          const res=await fetch(`${baseURL}/institution`)
+          if(!res.ok){
+            const message=`An error has occured:${res.status}-${res.statusText}`
+            throw new Error(message)
+          }
+          const data=await res.json()
+          this.Institutions=data
+          console.log(data)
+        } catch (error) {
+          this.Institutions
+        }
+      }
+    }
   }
 </script>

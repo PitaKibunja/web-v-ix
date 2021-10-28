@@ -13,7 +13,7 @@
   <v-divider></v-divider> 
  <template>
   <v-card>
-    <v-card-title>
+    <v-card-title class="bady accent-5 white--text">
       <v-spacer></v-spacer>
       <v-text-field
         v-model="search"
@@ -22,70 +22,18 @@
         dense
         single-line
         hide-details
+        dark
       ></v-text-field>
     </v-card-title>
-    <!-- <v-data-table
+    <v-data-table
       :headers="headers"
+      :items="Institutions"
       :search="search"
     >
-    
-    </v-data-table> -->
-    <v-card class="  mb-8  pt-2" >
-      <v-simple-table fixed-header height="500" class="pa-4 ma-2">
-    <template v-slot:default>
-      <thead >
-        <tr>
-          <th class="text-left">
-          SN
-          </th>
-          <th class="text-left">
-          Institution Name
-          </th>
-          <th class="text-left">
-           TVETA Reg. No
-          </th>
-            <th class="text-left">
-            County
-          </th>
-        <th class="text-left">
-            Reg.Date
-          </th>
-        <th class="text-left">
-           Expiry Date
-          </th> 
-          <th class="text-left">
-           Category
-          </th> 
-          <th class="text-left">
-           Type
-          </th> 
-          <th class="text-left">
-           Details
-          </th>
-
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="(institute,i) in Institutions"
-          :key="institute.name"
-        >
-          <td>{{ i }}</td>
-          <td>{{ institute.name }}</td>
-          <td>{{ institute.regno }}</td>
-          <td>{{ institute.county }}</td>
-          <td>{{ institute.regdate }}</td>
-          <td>{{ institute.expdate }}</td>
-          <td>{{ institute.category }}</td>
-          <td>{{ institute.type }}</td>
-          <td > <router-link :to="instituteLink">{{ institute.details }}</router-link></td>
-          <td>
-          </td>
-        </tr>
-      </tbody>
-    </template>
-  </v-simple-table>
-  </v-card>
+      <template v-slot:[`item.details`]="{ value }">
+            <router-link :to="instituteLink">{{ value }}</router-link>
+        </template>
+    </v-data-table>
   </v-card>
 </template>
   </v-card>
@@ -102,6 +50,7 @@
 
 </template>
 <script>
+const baseURL="http://localhost:3000/api_v_1"
   export default {
     data () {
       return {
@@ -123,246 +72,30 @@
           { text: 'Type', value: 'type' },
           { link: 'Details', value: 'details' },
         ],
-        Institutions: [
-          {
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },{
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },{
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },{
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },{
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },{
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },{
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },{
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },{
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },{
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },{
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },{
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },{
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },{
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },{
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },{
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },{
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },{
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },
-             {
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },   {
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },   {
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },   {
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },   {
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },   {
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },   {
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },   {
-            name: 'Kaimbaga Institute',
-            regno:'TVETA/PRIVATE/TVC/0045',
-            county:'Kiambu',
-            regdate:'22-09-2021',
-            expdate:'22-09-2026',
-            category:'TVC',
-            type:'PRIVATE',
-            details:'Details'
-          },
-
-        ],
+        Institutions: [],
       }
     },
+    created(){
+      this.fetchData()
+    },
+    watch:{
+      '$route':'fetchData'
+    },
+    methods:{
+      async fetchData(){
+        try {
+          const res=await fetch(`${baseURL}/institution`)
+          if(!res.ok){
+            const message=`An error has occured:${res.status}-${res.statusText}`
+            throw new Error(message)
+          }
+          const data=await res.json()
+          this.Institutions=data
+          console.log(data)
+        } catch (error) {
+          this.Institutions
+        }
+      }
+    }
   }
 </script>

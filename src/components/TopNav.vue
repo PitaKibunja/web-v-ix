@@ -289,11 +289,11 @@
         ]},
         {navl:'Institutions',list:[
           {submenu:'Institution Registration',linker:'/reginstitutions'},
-          {submenu:'Registred Institutions',linker:'/Allinstitution'}
+          {submenu:'Registered Institutions',linker:'/Allinstitution'}
         ]},
         {navl:'Trainers',list:[
           {submenu:'Trainer Registration',linker:'/trainerreg'},
-          {submenu:'Registred Trainers',linker:'/trainers'},
+          {submenu:'Registered Trainers',linker:'/trainers'},
         ]},
         {navl:'Curricula',list:[
           {submenu:'Approved Curricula',linker:'/curricula'},
