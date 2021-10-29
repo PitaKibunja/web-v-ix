@@ -19,7 +19,7 @@
                     </v-icon>
                     </v-btn>
            
-                 <h3 class="ml-4 pt-2">Kaimbaga Institute of Technology<v-icon class="mb-5"  color="green accent-5">mdi-check-circle-outline</v-icon> </h3>
+                 <h3 class="ml-4 pt-2">{{ institution.name }}<v-icon class="mb-5"  color="green accent-5">mdi-check-circle-outline</v-icon> </h3>
                   </v-row>      
                     </div>
 
@@ -34,39 +34,39 @@
   border-collapse: collapse;">
     <tr>
         <th>TVETA Reg No:</th>
-        <td>Bill Gates</td>
+        <td>{{ institution.regno }}</td>
         <th></th>
         <td></td>
   </tr>
       <tr>
         <th>Physical Location:</th>
-        <td>Downstreet Kiahuria</td>
+        <td>{{ institution.Location }}</td>
         <th>County:</th>
-        <td>Kiambu</td>
+        <td>{{ institution.county }}</td>
   </tr>
       <tr>
         <th>Category:</th>
-        <td>Technical and Vocational College</td>
+        <td>{{ institution.category }}</td>
         <th>Type:</th>
-        <td>Private</td>
+        <td>{{ institution.type}}</td>
   </tr>
       <tr>
         <th>Registration Date:</th>
-        <td>28/01/2016</td>
+        <td>{{ institution.regdate }}</td>
         <th>Expiry Date:</th>
-        <td>28/01/2021</td>
+        <td>{{ institution.expdate }}</td>
   </tr>
         <tr>
         <th>P.O Box:</th>
-        <td>P.O Box 10101-20100</td>
+        <td>{{ institution.po_box }}</td>
         <th>Phone no:</th>
-        <td>0712345678</td>
+        <td>{{ institution.phone_no }}</td>
   </tr>
      <tr>
         <th>Email</th>
-        <td>info@gmail.com</td>
+        <td>{{ institution.email }}</td>
         <th>Website:</th>
-        <td>www.abc.com</td>
+        <td>{{ institution.website}}</td>
   </tr>
   <tr></tr>
           </tbody>
@@ -111,14 +111,14 @@
       </thead>
       <tbody>
         <tr
-          v-for="(item,i) in institution"
-          :key="item.name"
+          v-for="(item,i) in institution.courses"
+          :key="item.id"
         >
-          <td>{{i}}</td>
-          <td>{{ item.name }}</td>
-          <td>{{ item.name }}</td>
-          <td>{{ item.name }}</td>
-          <td>{{ item.calories }}</td>
+          <td>{{i+1}}</td>
+          <td>{{ item.course }}</td>
+          <td>{{ item.body }}</td>
+          <td>{{ item.level }}</td>
+          <td>{{ item.enrollmentl }}</td>
         </tr>
       </tbody>
     </template>
@@ -134,11 +134,18 @@ const baseURL="http://localhost:3000/api_v_1"
     data () {
       return {
         loading:false,
+        institutionId:'',
         institution: [],
       }
     },
     created(){
-      this.fetchData()
+      const institutionselect=this.$route.params.institutionId
+      this.institutionId=institutionselect
+       this.fetchData()
+      console.log( this.institutionId)
+      // const selectedInstitution=this.readyInstitutions.find(institution=>institution.id===institutionId)
+      // this.institution=selectedInstitution
+      // console.log(this.institution)
     },
     watch:{
       '$route':'fetchData'
@@ -146,16 +153,17 @@ const baseURL="http://localhost:3000/api_v_1"
      methods:{
       async fetchData(){
         try {
-          const res=await fetch(`${baseURL}/institution`)
+          const res=await fetch(`${baseURL}/institution/${this.institutionId}`)
+          console.log(res)
           if(!res.ok){
             const message=`An error has occured:${res.status}-${res.statusText}`
             throw new Error(message)
           }
           const data=await res.json()
-          this.Institutions=data
-          console.log(data)
+          this.institution=data
+          console.log(this.institution.courses)
         } catch (error) {
-          this.Institutions
+          this.Institution
         }
       }
     }

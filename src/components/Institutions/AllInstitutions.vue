@@ -31,9 +31,12 @@
       :search="search"
     >
       <template v-slot:[`item.details`]="{ value }">
-        
-            <router-link :to="instituteLink">{{ value }}</router-link>
+          <v-btn @click="seeDetails(value)">
+            {{ value }}
+          </v-btn>
+          
         </template>
+        
     </v-data-table>
   </v-card>
 </template>
@@ -57,6 +60,7 @@ const baseURL="http://localhost:3000/api_v_1"
       return {
         search: '',
         instituteLink:'/institution',
+        institutionId:'',
         headers: [
           {
             text: 'No',
@@ -83,6 +87,9 @@ const baseURL="http://localhost:3000/api_v_1"
       '$route':'fetchData'
     },
     methods:{
+      seeDetails(shule){
+        this.$router.push(`/institution/${shule}`)
+      },
       async fetchData(){
         try {
           const res=await fetch(`${baseURL}/institution`)
