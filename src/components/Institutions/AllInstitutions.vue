@@ -30,9 +30,15 @@
       :items="Institutions"
       :search="search"
     >
-      <template v-slot:[`item.details`]="{ value }">
+      <!-- <template v-slot:[`item._id`]="{ value }">
           <v-btn @click="seeDetails(value)">
             {{ value }}
+          </v-btn>
+          
+        </template>  -->
+        <template v-slot:[`item.details`]="{ value }">
+          <v-btn @click="seeDetails(item._id)">
+            {{value}}
           </v-btn>
           
         </template>
@@ -82,6 +88,7 @@ const baseURL="http://localhost:3000/api_v_1"
     },
     created(){
       this.fetchData()
+      console.log(this.fetchData())
     },
     watch:{
       '$route':'fetchData'

@@ -40,7 +40,7 @@
   </tr>
       <tr>
         <th>Physical Location:</th>
-        <td>{{ institution.Location }}</td>
+        <td>{{ institution.location }}</td>
         <th>County:</th>
         <td>{{ institution.county }}</td>
   </tr>
@@ -118,7 +118,7 @@
           <td>{{ item.course }}</td>
           <td>{{ item.body }}</td>
           <td>{{ item.level }}</td>
-          <td>{{ item.enrollmentl }}</td>
+          <td>{{ item.enrollment }}</td>
         </tr>
       </tbody>
     </template>
