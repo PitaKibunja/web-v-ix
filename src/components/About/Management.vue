@@ -170,9 +170,6 @@ const baseURL="http://localhost:3000/api_v_1"
       '$route':'fetchData'
     },
     methods:{
-      formatResponse(res){
-        return JSON.stringify(res,null,2)
-      },
       async fetchData(){
         try{
           const res=await fetch(`${baseURL}/board`)
@@ -181,15 +178,6 @@ const baseURL="http://localhost:3000/api_v_1"
             throw new Error(message)
           }
           const data=await res.json()
-          // const result={
-          //   data:data,
-          //   status:res.status,
-          //   statusText:res.statusText,
-          //   headers:{
-          //     "Content-Type":res.headers.get("Content-Type"),
-          //     "Content-Length":res.headers.get("Content-Length")
-          //   },
-          // }
           this.members=data
           console.log(data)
         }catch(err){
