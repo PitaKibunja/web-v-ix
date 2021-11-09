@@ -86,6 +86,10 @@ const baseURL="http://localhost:3000/api_v_1"
         Institutions: [],
       }
     },
+     beforeCreate(){
+      this.fetchData()
+      console.log(this.fetchData())
+    },
     created(){
       this.fetchData()
       console.log(this.fetchData())

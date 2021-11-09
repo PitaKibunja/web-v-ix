@@ -172,62 +172,6 @@
     </v-dialog>
   </v-row>
 </template>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <v-menu
       open-on-hover
       offset-y
@@ -265,6 +209,7 @@
   </div>
 </template>
 <script>
+const baseURL="http://localhost:3000/api_v_1"
   export default {
     data: () => ({
       searchbar:false,
@@ -272,50 +217,39 @@
         { title: 'Home' ,link:'/home'},
         { title: 'Downloads',link:'/downloads'},
       ],
-      links:[    //'Home','About us','Services','Institutions','Trainers','Curricula','Downloads'
-        
-        {navl:'About Us',list:[
-          {submenu:'Who we are',linker:'/whoweare'},
-          {submenu:'Leadership',linker:'/management'},
-          {submenu:'History',linker:'/history'},
-        ]},
-        {navl:'Services',list:[
-          {submenu:'Accreditation',linker:'/accreditation'},
-          {submenu:'Compliance and Enforcement',linker:'/compliance'},
-          {submenu:'Outreach',linker:'/outreach'},
-          {submenu:'Standards Development',linker:'/standards'},
-          {submenu:'Research',linker:'/research'},
-          {submenu:'Policy and Strategy',linker:'/strategyandpolicy'},
-        ]},
-        {navl:'Institutions',list:[
-          {submenu:'Institution Registration',linker:'/reginstitutions'},
-          {submenu:'Registered Institutions',linker:'/Allinstitution'}
-        ]},
-        {navl:'Trainers',list:[
-          {submenu:'Trainer Registration',linker:'/trainerreg'},
-          {submenu:'Registered Trainers',linker:'/trainers'},
-        ]},
-        {navl:'Curricula',list:[
-          {submenu:'Approved Curricula',linker:'/curricula'},
-          {submenu:'Approved Short Courses',linker:'/shortcourses'},
-        ]},    
-        {navl:'Media',list:[
-          {submenu:'News and Updates',linker:'/allnews'},
-          
-        ]}
-      
-        
-      ]
+      links:[]
       ,
       quick:[
         {Staff:'Staff mail',link:'https://mail.tveta.go.ke'},
         {Staff:'Staff Portal',link:'https://staff.tveta.go.ke:8080'}
       ]
     }),
+    beforeCreate(){
+      this.fetchData()
+    },
+    created(){
+      this.fetchData()
+    },
+    watch:{
+      '$route':'fetchData'
+    },
     methods:{
       popSearch(){
         this.searchbar=!this.searchbar
-        console.log(this.searchbar)
+        
+      },
+      async fetchData(){
+        try{
+          const res=await fetch(`${baseURL}/navs`)
+          if(!res.ok){
+            const message=`An error has occured:${res.status}-${res.statusText}`
+            throw new Error(message)
+          }
+          const data=await res.json()
+          this.links=data
+        }catch(error){
+          this.links
+        }
       }
     }
   }
