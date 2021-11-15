@@ -1,7 +1,7 @@
 <template>
   <v-app id="inspire">
-      <Header/>
-      <Sidebar/>
+      <Header @handeDrawer="drawer=!drawer" />
+      <Sidebar :drawer="drawer"/>
  
     <v-main>
       <v-container
@@ -60,6 +60,7 @@ import Sidebar from './components/Sidebar.vue'
       },
     data: () => ({
       cards: ['Today', 'Yesterday'],
+      drawer:true
     }),
   }
 </script>
