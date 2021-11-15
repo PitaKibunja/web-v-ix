@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <TopNav/>
+    <!-- <TopNav/> -->
     <v-main class="mt-4 pt-4" style="margin: 0px; padding:0px; background: white;  width: 100%">
       <v-container fluid>
       <router-view/>
@@ -14,13 +14,13 @@
 <script>
 import Footer from './components/Footer.vue'
 // import TopBar from './components/TopBar.vue'
-import TopNav from './components/TopNav.vue'
+// import TopNav from './components/TopNav.vue'
 import Assistant from './components/Assistant.vue'
 export default {
   name: 'App',
   components:{
     Footer,
-    TopNav,
+    // TopNav,
     Assistant
   },
 

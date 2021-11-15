@@ -32,6 +32,11 @@ import CareerDetails from '../components/Repo/CareerDetails.vue'
 import Tenders from '../components/Repo/Tenders.vue'
 import Search from '../components/cards/Search.vue'
 
+//CMS import path starts here...
+import Login from '../components/CMS/login.vue'
+import Dashboard from '../components/CMS/Home.vue'
+
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -39,6 +44,10 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },  {
+    path: '/admin/login',
+    name: 'Login',
+    component:Login
   },{
     path: '/search',
     name: 'Search',
@@ -177,6 +186,13 @@ const routes = [
     path: '/institution/:institutionId',
     name: 'Institution',
     component: Institution
+  },
+   //cms paths goes here.
+
+  {
+    path: '/admin/dashboard',
+    name: 'Dashboard',
+    component:Dashboard
   }
 ]
 
