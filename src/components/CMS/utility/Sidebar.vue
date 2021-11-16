@@ -18,7 +18,7 @@
         
         </v-avatar>
         </div>
-        <div class="d-flex justify-center">john@vuetifyjs.com</div>
+        <div class="d-flex justify-center">Super Admin</div>
       </v-sheet>
       <v-divider></v-divider>
       <v-list shaped>

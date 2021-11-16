@@ -34,7 +34,7 @@ import Search from '../components/cards/Search.vue'
 
 //CMS import path starts here...
 import Login from '../components/CMS/login.vue'
-import Dashboard from '../components/CMS/Home.vue'
+import Dashboard from '../components/CMS/Dashboard.vue'
 
 
 Vue.use(VueRouter)
@@ -47,7 +47,10 @@ const routes = [
   },  {
     path: '/admin/login',
     name: 'Login',
-    component:Login
+    component: Login,
+    meta: {
+      hideNavbar: true,
+     }
   },{
     path: '/search',
     name: 'Search',
@@ -192,7 +195,10 @@ const routes = [
   {
     path: '/admin/dashboard',
     name: 'Dashboard',
-    component:Dashboard
+    component: Dashboard,
+    meta: {
+      hideNavbar: true,
+     }
   }
 ]
 
