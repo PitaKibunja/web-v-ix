@@ -106,10 +106,10 @@
   export default {
     data: () => ({
       menus:[
-        {title:'Profile', icon:'mdi-account'},
-        {title:'Change Password', icon:'mdi-key'},
-        {title:'Setting', icon:'mdi-cog'},
-        {title:'Logout', icon:'mdi-logout'},
+        {title:'Profile', icon:'mdi-account' ,link:'/profile'},
+        {title:'Change Password', icon:'mdi-key',link:'/password'},
+        {title:'Setting', icon:'mdi-cog',link:'/settings'},
+        {title:'Logout', icon:'mdi-logout',link:'/login'},
       ],
       items: [
         { header: 'Today' },

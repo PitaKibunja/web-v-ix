@@ -35,7 +35,10 @@ import Search from '../components/cards/Search.vue'
 //CMS import path starts here...
 import Login from '../components/CMS/login.vue'
 import Dashboard from '../components/CMS/Dashboard.vue'
-
+import Dash from '../components/CMS/components/DashHome.vue'
+import Profile from '../components/CMS/components/Admin Profile/Profile.vue'
+import Password from '../components/CMS/components/Admin Profile/Password.vue'
+import Settings from '../components/CMS/components/Admin Profile/Settings.vue'
 
 Vue.use(VueRouter)
 
@@ -44,14 +47,18 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
-  },  {
+    
+  },
+  {
     path: '/admin/login',
     name: 'Login',
     component: Login,
     meta: {
       hideNavbar: true,
-     }
-  },{
+    }
+    
+  },
+  {
     path: '/search',
     name: 'Search',
     component: Search
@@ -198,7 +205,36 @@ const routes = [
     component: Dashboard,
     meta: {
       hideNavbar: true,
-     }
+    },
+    children: [
+      {
+        path: 'dashhome',
+        component: Dash,
+        meta: {
+          hideNavbar: true,
+        },
+      },
+      {
+        path: 'profile',
+        component: Profile,
+        meta: {
+          hideNavbar: true,
+        },
+      },
+      {
+        path: 'settings',
+        component: Settings,
+        meta: {
+          hideNavbar: true,
+        },
+      },  {
+        path: 'password',
+        component: Password,
+        meta: {
+          hideNavbar: true,
+        },
+      }
+    ]
   }
 ]
 
