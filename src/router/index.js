@@ -36,6 +36,9 @@ import Search from '../components/cards/Search.vue'
 import Login from '../components/CMS/login.vue'
 import Dashboard from '../components/CMS/Dashboard.vue'
 import Dash from '../components/CMS/components/DashHome.vue'
+import Media from '../components/CMS/components/Media.vue'
+import Pages from '../components/CMS/components/Pages.vue'
+import Post from '../components/CMS/components/Posts.vue'
 import Profile from '../components/CMS/components/Admin Profile/Profile.vue'
 import Password from '../components/CMS/components/Admin Profile/Password.vue'
 import Settings from '../components/CMS/components/Admin Profile/Settings.vue'
@@ -214,6 +217,34 @@ const routes = [
           hideNavbar: true,
         },
       },
+      {
+        path: 'pages',
+      component: Pages,
+      meta: {
+        hideNavbar: true,
+      }
+     } , {
+      path: 'media',
+      component: Media,
+      meta: {
+        hideNavbar: true,
+      },
+      },
+      {
+        path: 'posts',
+        component: Post,
+        meta: {
+          hideNavbar: true,
+        },
+      },
+      {
+        path: 'settings',
+        component: Settings,
+        meta: {
+          hideNavbar: true,
+        },
+      },
+      
       {
         path: 'profile',
         component: Profile,

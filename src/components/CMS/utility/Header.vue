@@ -87,7 +87,7 @@
             </v-list-item-content>
           </v-list-item>
           <v-divider></v-divider>
-          <v-list-item v-for="(menu,index) in menus" :key="index" link>
+          <v-list-item v-for="(menu,index) in menus" :key="index" :to="menu.link">
              <v-list-item-icon>
                <v-icon>{{ menu.icon }}</v-icon>
              </v-list-item-icon>
@@ -106,10 +106,10 @@
   export default {
     data: () => ({
       menus:[
-        {title:'Profile', icon:'mdi-account' ,link:'/profile'},
-        {title:'Change Password', icon:'mdi-key',link:'/password'},
-        {title:'Setting', icon:'mdi-cog',link:'/settings'},
-        {title:'Logout', icon:'mdi-logout',link:'/login'},
+        {title:'Profile', icon:'mdi-account' ,link:'/admin/dashboard/profile'},
+        {title:'Change Password', icon:'mdi-key',link:'/admin/dashboard/password'},
+        {title:'Setting', icon:'mdi-cog',link:'/admin/dashboard/settings'},
+        {title:'Logout', icon:'mdi-logout',link:'/admin/login'},
       ],
       items: [
         { header: 'Today' },

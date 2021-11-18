@@ -23,9 +23,9 @@
       <v-divider></v-divider>
       <v-list shaped>
         <v-list-item
-          v-for="[icon, text] in links"
+          v-for="[icon, text,linked] in links"
           :key="icon"
-          link
+          :to="linked"
         >
           <v-list-item-icon>
             <v-icon>{{ icon }}</v-icon>
@@ -112,11 +112,11 @@
         ['Delete', 'mdi-delete'],
       ],
       links: [
-        ['mdi-view-dashboard', 'Dashboard'],
+        ['mdi-view-dashboard', 'Dashboard','/admin/dashboard/dashhome'],
         // ['mdi-account-group-outline', 'Users'],
-        ['mdi-text-box-plus-outline', 'Pages'],
-        ['mdi-folder-multiple-image', 'Media'],
-        ['mdi-file-document-edit-outline', 'Posts'],
+        ['mdi-text-box-plus-outline', 'Pages','/admin/dashboard/pages'],
+        ['mdi-folder-multiple-image', 'Media','/admin/dashboard/media'],
+        ['mdi-file-document-edit-outline', 'Posts','/admin/dashboard/posts'],
         ['mdi-cogs', 'Settings'],
         // ['mdi-logout', 'Logout'],
       ],
