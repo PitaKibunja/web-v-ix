@@ -29,19 +29,10 @@
       :headers="headers"
       :items="Institutions"
       :search="search"
+      :loading="true"
+      class="elevation-1"
     >
-      <!-- <template v-slot:[`item._id`]="{ value }">
-          <v-btn @click="seeDetails(value)">
-            {{ value }}
-          </v-btn>
-          
-        </template>  -->
-        <template v-slot:[`item.details`]="{ value }">
-          <v-btn @click="seeDetails(item._id)">
-            {{value}}
-          </v-btn>
-          
-        </template>
+      <v-progress-linear v-show="progressBar" slot="progress" color="#0082C6" indeterminate></v-progress-linear>
         
     </v-data-table>
   </v-card>
@@ -64,6 +55,7 @@ const baseURL="http://localhost:3000/api_v_1"
   export default {
     data () {
       return {
+        progressBar: true,
         search: '',
         instituteLink:'/institution',
         institutionId:'',
@@ -92,7 +84,7 @@ const baseURL="http://localhost:3000/api_v_1"
     },
     created(){
       this.fetchData()
-      console.log(this.fetchData())
+     
     },
     watch:{
       '$route':'fetchData'
@@ -110,7 +102,8 @@ const baseURL="http://localhost:3000/api_v_1"
           }
           const data=await res.json()
           this.Institutions=data
-          console.log(data)
+          this.progressBar= false
+        
         } catch (error) {
           this.Institutions
         }

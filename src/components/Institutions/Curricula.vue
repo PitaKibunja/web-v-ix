@@ -28,7 +28,12 @@
       :headers="headers"
       :items="Courses"
       :search="search"
-    ></v-data-table>
+      :loading="true"
+      class="elevation-1"
+    >
+    <v-progress-linear v-show="progressBar" slot="progress" color="#0082C6" indeterminate></v-progress-linear>
+    </v-data-table>
+    
   </v-card>
 </template>
 
@@ -40,6 +45,7 @@ const baseURL="http://localhost:3000/api_v_1"
   export default {
     data () {
       return {
+        progressBar: true,
         search: '',
         headers: [
           {
@@ -76,7 +82,7 @@ const baseURL="http://localhost:3000/api_v_1"
           }
           const data=await res.json()
           this.Courses=data
-          console.log(data)
+          this.progressBar= false
         }catch(err){
           this.Courses=err.message
         }
