@@ -115,63 +115,48 @@
 </template>
 <template>
   <v-row justify="center">
-    <v-dialog
-      v-model="dialog"
-      max-width="600px"
+     <div class="text-center">
+    <v-menu
+      v-model="menu"
+      :close-on-content-click="false"
+      :nudge-width="100"
+      offset-y
+      
     >
       <template v-slot:activator="{ on, attrs }">
         <v-btn
           icon
+          dark
           v-bind="attrs"
           v-on="on"
         >
           <v-icon>mdi-magnify</v-icon>
         </v-btn>
       </template>
-        <v-card elevation="4">
-                  <v-container class="supu" fixed>
-                     <v-card-title class=" d-flex justify-center ma-1 pt-4">
-                <v-row>
-                  <v-text-field
-                    placeholder="Search"
-                    prepend-inner-icon="mdi-magnify"
-                    dense
-                  ></v-text-field>
-            </v-row> 
-              </v-card-title>
-                  </v-container>
-            <v-divider></v-divider> 
-            <v-card>
-              <v-container fluid>
-                
-                  <div class="" v-for="i in 8" :key="i">
-                    <router-link class="pa-1 ma-1" style="text-decoration: none; color: inherit;" to="search">
-                    <v-card  class="ma-2 pa-2">
-                            
-                            <v-card-title>Lorem</v-card-title>
-                            <v-divider></v-divider>
-                            <v-card-text>
-                              <v-container fluid no-gutters>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga alias quo rem, beatae ea officia ipsum deserunt facere, nobis sequi omnis voluptas. Nemo blanditiis nam, excepturi enim laboriosam esse harum.</p>
-                              </v-container>
-                            </v-card-text>
-                            
-                          </v-card>
-                    </router-link>
-                 
-       
-                  
-                 </div>
-                
-                 <v-container fluid class="d-flex justify-center">
-                    <h4>No recent searches</h4>
-                  </v-container>
-              </v-container>
-            </v-card>
-        </v-card>
-    </v-dialog>
+
+        <v-list>
+          <v-list-item>
+           <v-list-item-content>
+                          <v-form class="mb-n8">
+            <v-text-field
+            persistent
+            rounded
+            outlined
+            dense
+            placeholder="Search..."
+            append-icon="mdi-magnify"
+            ></v-text-field>
+          </v-form>
+            
+            
+            </v-list-item-content>
+
+          </v-list-item>
+        </v-list>
+    </v-menu>
+  </div>
   </v-row>
-</template>
+</template>   
       <v-menu
       open-on-hover
       offset-y
