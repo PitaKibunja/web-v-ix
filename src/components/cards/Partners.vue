@@ -3,7 +3,7 @@
 <v-row class="mt-4">
     <v-card
     class="mx-auto pb-0"
-    max-width="100"
+    max-width="80"
      flat
   >
     <v-img
@@ -12,7 +12,7 @@
     ></v-img>
 </v-card><v-card
     class="mx-auto pb-0"
-    max-width="200"
+    max-width="180"
      flat
   >
     <v-img
@@ -22,7 +22,7 @@
     ></v-img>
 </v-card><v-card
     class="mx-auto pb-0"
-    max-width="100"
+    max-width="80"
      flat
   >
     <v-img
@@ -31,7 +31,7 @@
     ></v-img>
 </v-card><v-card
     class="mx-auto pb-0"
-    max-width="400"
+    max-width="380"
      flat
   >
     <v-img
@@ -41,13 +41,24 @@
     ></v-img>
 </v-card>
 <v-card
+    class="mx-auto pb-n4"
+    max-width="280"
+    flat
+  >
+    <v-img
+      src="../../assets/big4.jpg"
+      class="ma-2 pa-1 ml-4"
+     width="120"
+    ></v-img>
+</v-card>
+<v-card
     class="mx-auto pb-0"
-    max-width="300"
+    max-width="280"
     flat
   >
     <v-img
       src="../../assets/ws.jpg"
-      class="ma-4 pa-2 ml-4"
+      class="ma-4 pa-1 ml-4"
      width="100"
     ></v-img>
 </v-card>

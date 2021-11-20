@@ -71,56 +71,24 @@
       </div>
     </v-card-text>
           <v-divider></v-divider>
-    <v-card-actions>
-      <v-btn
+    <v-card-actions class="">
+    <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
+                    <div class="font-weight-medium">
+                
+                       <v-btn
         text
+        outlined
         color="ttitle accent-4"
-        @click.stop="dialog = true"
+        to="/standardsDetails"
       >
-      <v-icon>mdi-cart-outline</v-icon>
-        Buy Now 
-
-      </v-btn> 
-       <v-divider
-      class="mx-4"
-      vertical
-    ></v-divider>
-      <v-btn
-        text
-        color="ttitle accent-4"
-        @click.stop="dialog = true"
-      >
-        Subscribe
-      </v-btn>
-      
+      <v-icon>mdi-information-outline</v-icon>
+        More info/how to get it
+      </v-btn>      
+                    </div>
+                    </v-row>      
     </v-card-actions>
     
                 </v-card>
-                <v-dialog
-                      v-model="dialog"
-                      max-width="500"
-                    >
-                   <v-container fluid>
-                        <v-card >
-          
-                         <div class="d-flex justify-center">
-                        <v-card-text>
-                          <h2>Feature coming Soon.</h2>
-                        </v-card-text>
-                         </div>
-                        <v-card-actions>
-                          <v-spacer></v-spacer>
-                          <v-btn
-                            color="green darken-1"
-                            text
-                            @click="dialog = false"
-                          >
-                            <v-icon >mdi-close</v-icon>
-                          </v-btn>
-                        </v-card-actions>
-                      </v-card>
-                   </v-container>
-                    </v-dialog>
                   </v-row>
                </v-container>
             

@@ -19,8 +19,10 @@
                     </v-icon>
                     </v-btn>
             </v-col>
-            <div class="mt-0">
-                {{ link.text }}
+            <div class="mt-0 text-wrap">
+                <v-flex>
+                  {{ link.text }}
+                </v-flex>
             </div>
          
     </div>
@@ -38,12 +40,12 @@
         { text: 'Standards', icon: 'mdi-flag', where:'/standards'},
           
          
-         { text: 'TVET MIS', icon: 'mdi-login',where:'https://mis.tveta.go.ke/' },  
+         { text: 'TVET MIS', icon: 'mdi-login',where:'/mis' },  
         { text: 'FAQs', icon: 'mdi-frequently-asked-questions' ,where:'/faqs'},
 
-         { text: 'Strategic Plan', icon: 'mdi-file-document-multiple' },
-         { text: 'Service Charter', icon: 'mdi-file-document-multiple' },
-
+         { text: 'Strategic Plan', icon: 'mdi-file-document-multiple' ,where:'/strategic-plan'},
+         { text: 'Service Charter', icon: 'mdi-file-document-multiple', where:'/service-charter' },
+        { text: 'Cell: +254 700 015 440', icon: 'mdi-phone-classic Cell: +254 700 015 440' },
 
 
       ],

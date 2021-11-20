@@ -5,6 +5,7 @@
       dark
       app
       class="mb-2"
+      style="z-index:500"
     >
     <v-toolbar-title>
         <v-card elevation="2" width="100" color="white" class="pt-4 " outlined raised :to="defacto.link">

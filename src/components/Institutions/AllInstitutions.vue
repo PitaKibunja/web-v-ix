@@ -31,9 +31,33 @@
       :search="search"
       :loading="true"
       class="elevation-1"
+      primary-key="index"
+      loading-text="Loading Institutions... Please wait"
     >
       <v-progress-linear v-show="progressBar" slot="progress" color="#0082C6" indeterminate></v-progress-linear>
-        
+        <template v-slot:item="{item, index}">
+            <tr>
+              <td>{{index + 1}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.regno}}</td>
+              <td>{{item.county}}</td>
+              <td>{{item.regdate}}</td>
+              <td>{{item.expdate}}</td>
+              <td>{{item.category}}</td>
+              <td>{{item.type}}</td>
+              <td>
+                <a target="_blank" :href="`/institution/${item._id}`">
+                {{ item.details}}
+              </a></td>
+              
+              <!-- <router-link :to="{ name: '/sInst:inst', params: { id: item._id } }">
+                 <td >{{item.details}}</td>
+            </router-link> -->
+            <!-- <a :href="/sInst:inst">
+            </a> -->
+              <!-- <td >{{item.details}}</td> -->
+            </tr>
+        </template>
     </v-data-table>
   </v-card>
 </template>
@@ -60,11 +84,10 @@ const baseURL="http://localhost:3000/api_v_1"
         instituteLink:'/institution',
         institutionId:'',
         headers: [
-          {
-            text: 'No',
+            {
             align: 'start',
-            sortable: false,
-            value: '1',
+            value: 'index',
+            text: '#',
           },
           { text: 'Institution Name', value: 'name' },
           { text: 'TVETA Reg. No', value: 'regno' },
@@ -74,6 +97,7 @@ const baseURL="http://localhost:3000/api_v_1"
           { text: 'Category', value: 'category' },
           { text: 'Type', value: 'type' },
           { link: 'Details', value: 'details' },
+          { link: 'Details', value: '_id' },
         ],
         Institutions: [],
       }

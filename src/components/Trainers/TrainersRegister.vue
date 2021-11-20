@@ -32,8 +32,20 @@
       :loading="true"
       :search="search"
       class="elevation-1"
+      primary-key="index"
+      loading-text="Loading Trainers... Please wait"
     >
      <v-progress-linear v-show="progressBar" slot="progress" color="#0082C6" indeterminate></v-progress-linear>
+      <template v-slot:item="{item, index}">
+            <tr>
+              <td>{{index + 1}}</td>
+              <td>{{item.regno}}</td>
+              <td>{{item.fullname}}</td>
+              <td>{{item.specialization}}</td>
+              <td>{{item.cluster}}</td>
+              <td>{{item.status}}</td>
+            </tr>
+        </template>
     </v-data-table>
   </v-card>
 </template>
@@ -58,10 +70,9 @@ const baseURL="http://localhost:3000/api_v_1"
         search: '',
         headers: [
           {
-            text: 'SN',
             align: 'start',
-            sortable: false,
-            value: '1',
+            value: 'index',
+            text: '#',
           },
           
           { text: 'TVETA Reg. No', value: 'regno' },

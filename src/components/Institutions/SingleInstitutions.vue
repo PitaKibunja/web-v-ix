@@ -15,7 +15,7 @@
                     color="primary"
                     >
                     <v-icon size="45" dark>
-                        mdi-gavel
+                        mdi-school-outline
                     </v-icon>
                     </v-btn>
            

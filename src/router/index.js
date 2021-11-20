@@ -31,6 +31,7 @@ import Questions from '../components/FAQs/Questions.vue'
 import CareerDetails from '../components/Repo/CareerDetails.vue'
 import Tenders from '../components/Repo/Tenders.vue'
 import Search from '../components/cards/Search.vue'
+import MIS from '../components/TheLinks/MIS.vue'
 
 //CMS import path starts here...
 import Login from '../components/CMS/login.vue'
@@ -51,7 +52,12 @@ const routes = [
     name: 'Home',
     component: Home
     
-  },
+  },{
+    path: "/mis",
+    name:'MIS',
+    component: MIS,
+   
+},
   {
     path: '/admin/login',
     name: 'Login',
