@@ -32,6 +32,7 @@
       :loading="true"
       class="elevation-1"
       primary-key="index"
+      fixed-header
       loading-text="Loading Institutions... Please wait"
     >
       <v-progress-linear v-show="progressBar" slot="progress" color="#0082C6" indeterminate></v-progress-linear>
@@ -49,13 +50,6 @@
                 <a target="_blank" :href="`/institution/${item._id}`">
                 {{ item.details}}
               </a></td>
-              
-              <!-- <router-link :to="{ name: '/sInst:inst', params: { id: item._id } }">
-                 <td >{{item.details}}</td>
-            </router-link> -->
-            <!-- <a :href="/sInst:inst">
-            </a> -->
-              <!-- <td >{{item.details}}</td> -->
             </tr>
         </template>
     </v-data-table>
@@ -97,7 +91,7 @@ const baseURL="http://localhost:3000/api_v_1"
           { text: 'Category', value: 'category' },
           { text: 'Type', value: 'type' },
           { link: 'Details', value: 'details' },
-          { link: 'Details', value: '_id' },
+          // { link: 'View more', value: '_id' },
         ],
         Institutions: [],
       }

@@ -54,7 +54,8 @@ const routes = [
     
   },{
     path: "/mis",
-    name:'MIS',
+    name: 'MIS',
+    beforeEnter() {location.href = 'https://mis.tveta.go.ke/#/'},
     component: MIS,
    
 },

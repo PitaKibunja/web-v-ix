@@ -30,10 +30,19 @@
       :search="search"
       :loading="true"
       class="elevation-1"
+      primary-key="index"
+      loading-text="Loading Courses... Please wait"
     >
     <v-progress-linear v-show="progressBar" slot="progress" color="#0082C6" indeterminate></v-progress-linear>
+    <template v-slot:item="{item, index}">
+            <tr>
+              <td>{{index + 1}}</td>
+              <td>{{item.course}}</td>
+              <td>{{item.body}}</td>
+              <td>{{item.level}}</td>
+            </tr>
+        </template>
     </v-data-table>
-    
   </v-card>
 </template>
 
@@ -48,11 +57,10 @@ const baseURL="http://localhost:3000/api_v_1"
         progressBar: true,
         search: '',
         headers: [
-          {
-            text: 'SN',
+              {
             align: 'start',
-            sortable: false,
-            value: '1',
+            value: 'index',
+            text: '#',
           },
           { text: 'Course Title', value: 'course' },
           { text: 'Body', value: 'body' },
