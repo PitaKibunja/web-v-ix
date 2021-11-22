@@ -185,9 +185,9 @@
             v-for="n in quick"
             :key="n"
             @click="() => {}"
-            
+            :to="n.link"
           >
-            <v-list-item-title :redirect="n.link">{{ n.Staff }}</v-list-item-title>
+            <v-list-item-title>{{ n.Staff }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -206,8 +206,8 @@ const baseURL="http://localhost:3000/api_v_1"
       links:[]
       ,
       quick:[
-        {Staff:'Staff mail',link:'https://mail.tveta.go.ke'},
-        {Staff:'Staff Portal',link:'https://staff.tveta.go.ke:8080'}
+        {Staff:'Staff mail',link:'/staff mail'},
+        {Staff:'Staff Portal',link:'/staff portal'}
       ]
     }),
     beforeCreate(){

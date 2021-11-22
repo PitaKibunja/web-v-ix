@@ -32,6 +32,9 @@ import CareerDetails from '../components/Repo/CareerDetails.vue'
 import Tenders from '../components/Repo/Tenders.vue'
 import Search from '../components/cards/Search.vue'
 import MIS from '../components/TheLinks/MIS.vue'
+import SMail from '../components/TheLinks/SMail.vue'
+import SPortal from '../components/TheLinks/SPortal.vue'
+import SPlan from '../components/TheLinks/StrategicPlan.vue'
 
 //CMS import path starts here...
 import Login from '../components/CMS/login.vue'
@@ -57,6 +60,26 @@ const routes = [
     name: 'MIS',
     beforeEnter() {location.href = 'https://mis.tveta.go.ke/#/'},
     component: MIS,
+   
+  }
+  ,{
+    path: "/staff mail",
+    name: 'Staff Mail',
+    beforeEnter() {location.href = 'https://mail.tveta.go.ke'},
+    component: SMail,
+   
+  }
+  ,{
+    path: "/staff portal",
+    name: 'Staff Portal',
+    beforeEnter() {location.href = 'https://staff.tveta.go.ke:8080'},
+    component: SPortal,
+   
+  }
+  ,{
+    path: "/strategic-plan",
+    name: 'Strategic Plan',
+    component: SPlan,
    
 },
   {
