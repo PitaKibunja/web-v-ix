@@ -13,7 +13,7 @@
            
                 <v-card dense class="supu">
                     <v-divider></v-divider>
-                     <v-card-actions  v-for="n in 10" :key="n" >
+                     <v-card-actions  v-for="n in tenders" :key="n.refno" >
                          <v-container fluid >
                              <v-card elevation="2" dense color="grey lighten-5" class="d-flex justify-center " outlined no-gutters>
                              <v-row class="d-flex justify-center ma-2 pt-2"  outlined>
@@ -23,17 +23,17 @@
                                       <v-text class="font-weight-bold">Tender No</v-text>
                                    </v-col>
                                    <div class="mt-0" dense>
-                                     AM-SPIA-21
+                                     {{ n.refno }}
                                    </div>
                                 </div>
                                </v-col>
                                <v-col>
                                    <div class="text-center ">
                                    <v-col>
-                                      <v-text class="font-weight-medium">Tender Title</v-text>
+                                      <v-text class="font-weight-medium">Tender Name</v-text>
                                    </v-col>
                                    <div class="mt-0">
-                                      Assistant Manager – Digital Communication
+                                      {{ n.tname }}
                                    </div>
                                 </div>
                                </v-col>
@@ -43,14 +43,16 @@
                                       <v-text class="font-weight-medium">Closing Opening Date</v-text>
                                    </v-col>
                                    <div class="mt-0">
-                                     12-oct-2020 5:30 PM
+                                     {{ n.openingdate }}
                                    </div>
                                 </div>
                                </v-col>
                                <v-col>
                                    <div class="text-center">
                                        <v-col class="mb-0">
-                                           <v-text class="font-weight-medium">Tender Document</v-text>
+                                           <v-text class="font-weight-medium">
+                                              Tender Document
+                                           </v-text>
                                        </v-col>
                                    <v-col class="mt-0">
                                     
@@ -82,3 +84,34 @@
           </v-card>
     </v-container>
 </template>
+
+<script>
+const baseURL="http://localhost:3000/api_v_1"
+export default {
+   data:()=>({
+      tenders:[]
+   }),
+   beforeCreate(){
+      this.fetchData()
+   },
+   created(){
+      this.fetchData()
+   },
+   methods:{
+      async fetchData(){
+         try{
+            const res=await fetch(`${baseURL}/tenders`)
+            if(!res.ok){
+               const message=`An error has occured:${res.status}-${res.statusText}`
+               throw new Error(message)
+            }
+            const data=await res.json()
+            this.tenders=data
+         }catch(error){
+            this.tenders
+         }
+      }
+   }
+
+}
+</script>

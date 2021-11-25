@@ -32,13 +32,13 @@
     </v-card-actions>
     </v-card>
   </v-card>
-  <v-card class="mx-4 my-4" dark color="primary" style="position:absolute;float:right;top:200px;z-index:400">
+  <v-card v-if="tenderssize" class="mx-4 my-4" dark color="primary" style="position:absolute;float:right;top:200px;z-index:400">
     <v-card class="mx-auto" max-width="400" outlined>
           <v-card-actions>
       <v-btn
         outlined
         rounded
-       elevation="2"
+       elevation="3"
        color="#FFCE66"
       
       
@@ -46,7 +46,8 @@
         
            <v-badge
           color="#508F40"
-          content="6"
+          :content="tenderssize"
+          
         >
         <router-link to="/tenders" tag="span" style="cursor: pointer">
           TVET Authority Tenders
@@ -58,40 +59,16 @@
     </v-card-actions>
     </v-card>
   </v-card>
- <!-- <v-card class="mx-10" style="position:absolute;float:right;top:75px;z-index:400">
-        <v-card
-    class="mx-auto"
-    max-width="344"
-    outlined
-  >
-    <v-card-actions>
-      <v-btn
-        outlined
-        rounded
-        text
-      >
-        Careers
-      </v-btn>
-      
-    </v-card-actions>
-  </v-card>
-<v-card>
-
- -->
-
-
   <div class="ma-2 mb-4">
     <LinkShortcut/>
   </div>
-
-  <!-- Create the cards -->
-    <!-- <UtilityLinks /> -->
     <v-divider></v-divider>
 
 </v-container>
 
 </template>
 <script>
+const baseURL="http://localhost:3000/api_v_1"
 // import UtilityLinks from './UtilityLinks.vue'
 import LinkShortcut from './navs/LinkShortcut.vue'
   export default {
@@ -99,9 +76,12 @@ import LinkShortcut from './navs/LinkShortcut.vue'
           // UtilityLinks
           LinkShortcut
       },
-
     data () {
       return {
+        tenders:[],
+        jobs:[],
+        jobssize:0,
+        tenderssize:0,
           links: [
        
        { text: 'Customer Care', icon: 'mdi-face-agent' },
@@ -144,5 +124,47 @@ import LinkShortcut from './navs/LinkShortcut.vue'
         ],
       }
     },
+    beforeCreate(){
+      this.fetchTendersData()
+      this.tenderssize=this.tenders.length
+      this.fetchJobsData()
+      this.jobssize=this.jobs.length
+   },
+   created(){
+      this.fetchTendersData()
+      this.tenderssize=this.tenders.length
+      this.fetchJobsData()
+      this.jobssize=this.jobs.length
+   },
+   methods:{
+      async fetchTendersData(){
+         try{
+            const res=await fetch(`${baseURL}/tenders`)
+            if(!res.ok){
+               const message=`An error has occured:${res.status}-${res.statusText}`
+               throw new Error(message)
+            }
+            const data=await res.json()
+            this.tenders=data
+            this.tenderssize=this.tenders.length
+         }catch(error){
+            this.tenders
+         }
+      },
+         async fetchJobsData(){
+         try{
+            const res=await fetch(`${baseURL}/jobs`)
+            if(!res.ok){
+               const message=`An error has occured:${res.status}-${res.statusText}`
+               throw new Error(message)
+            }
+            const data=await res.json()
+            this.jobs=data
+            this.jobssize=this.jobs.length
+         }catch(error){
+            this.tenders
+         }
+      }
+   }
   }
 </script>
