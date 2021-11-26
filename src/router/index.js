@@ -160,7 +160,7 @@ const routes = [
     name: 'Questions',
     component: Questions
   },{
-    path: '/careerdetails',
+    path: '/careerdetails/:jobId',
     name: 'Career Details',
     component: CareerDetails
   },{

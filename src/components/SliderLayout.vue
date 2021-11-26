@@ -9,7 +9,7 @@
     <v-img :src="item.src" contain  width="auto"></v-img>
     </v-carousel-item>
   </v-carousel>
-  <v-card class="mx-4 mb-4" color="#508F40" style="position:absolute;float:right;top:75px;z-index:400">
+  <v-card v-if="jobssize" class="mx-4 mb-4" color="#508F40" style="position:absolute;float:right;top:75px;z-index:400">
     <v-card class="mx-auto" max-width="400" outlined>
           <v-card-actions>
       <v-btn
@@ -19,7 +19,7 @@
       >
        <v-badge
           color="#508F40"
-          content="2"
+          :content="jobssize"
         >
           <router-link to="/career" tag="span" style="cursor: pointer">
           Careers and Job Adverts
@@ -162,7 +162,7 @@ import LinkShortcut from './navs/LinkShortcut.vue'
             this.jobs=data
             this.jobssize=this.jobs.length
          }catch(error){
-            this.tenders
+            this.jobs
          }
       }
    }

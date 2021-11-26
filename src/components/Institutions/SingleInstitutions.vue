@@ -142,10 +142,6 @@ const baseURL="http://localhost:3000/api_v_1"
       const institutionselect=this.$route.params.institutionId
       this.institutionId=institutionselect
        this.fetchData()
-      console.log( this.institutionId)
-      // const selectedInstitution=this.readyInstitutions.find(institution=>institution.id===institutionId)
-      // this.institution=selectedInstitution
-      // console.log(this.institution)
     },
     watch:{
       '$route':'fetchData'

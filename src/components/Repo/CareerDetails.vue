@@ -29,7 +29,7 @@
                               <v-row  class="bady white--text d-flex justify-start mb-1  pt-1">
                                  <div class="font-weight-medium ma-1 pa-1">
                               
-                              <h4> Assistant Manager – Digital Communication (#AM-SPIA-21)</h4> <h3></h3>    
+                              <h4> {{jobDetails.jname}}({{jobDetails.jref }})</h4> <h3></h3>    
                                  </div>
                                  </v-row>
                            </v-card-title>
@@ -37,7 +37,7 @@
                    <v-container fluid>
                 <p class="text-h6">Job Summary</p>
                 <div class="d-flex justify-start ml-4 pa-2">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero placeat explicabo quae sed obcaecati unde, sapiente, modi natus excepturi, ut tempore molestias enim. Corporis magni inventore ullam delectus amet. Autem.</p>
+                    <p>{{ jobDetails.jdescription }}</p>
                 </div>
                 <p class="text-h6">Key Responsibilities:Roles and responsibilities</p>
                 <div class="d-flex justify-start ml-4 pa-2">
@@ -100,7 +100,9 @@
           :key="i"
         >
           <v-list-item-content >
-            <router-link :to="item.link" style="text-decoration: none; color: inherit;"><v-list-item-title class="black--text" v-text="item.text"></v-list-item-title></router-link>
+              <a :href="`/careerdetails/${item._id}`" style="text-decoration: none;color: inherit;">
+                  <v-list-item-title outlined class="black--text" v-text="item.jname"></v-list-item-title>
+               </a>
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>
@@ -114,18 +116,13 @@
     </v-container>
 </template>
 <script>
+const baseURL="http://localhost:3000/api_v_1"
 export default {
    data() {
       return{
           selectedItem: 1,
-      items: [
-        { text: 'Assistant Director-ICT', link: '/careerdetails' },
-        { text: 'HR-Intern', link: '/careerdetails'},
-        { text: 'ICT-Officer', link: '/careerdetails' },
-        { text: 'Accreditation-Officer', link: '/careerdetails' },
-        { text: 'Admin-Intern', link: '/careerdetails' },
-        { text: 'Admin', link: '/careerdetails' },
-      ],
+          jobDetails:[],
+      items: [],
           linkss: [
         {
           text: 'Home',
@@ -145,5 +142,43 @@ export default {
       }
       
    },
+   created(){
+      const jobselect=this.$route.params.jobId
+      this.jobId=jobselect
+      this.fetchData()
+      this.fetchAllData()
+   },
+   watch:{
+      '$route':'fetchData,fetchAllData'
+   },
+   methods:{
+      async fetchData(){
+         try{
+            const res=await fetch(`${baseURL}/jobs/${this.jobId}`)
+            if(!res.ok){
+            const message=`An error has occured:${res.status}-${res.statusText}`
+            throw new Error(message)
+            }
+            const data=await res.json()
+            this.jobDetails=data
+         }catch(error){
+            this.jobDetails
+         }
+      },
+      async fetchAllData(){
+             try{
+            const res=await fetch(`${baseURL}/jobs`)
+            if(!res.ok){
+            const message=`An error has occured:${res.status}-${res.statusText}`
+            throw new Error(message)
+            }
+            const data=await res.json()
+            this.items=data
+         }catch(error){
+            this.jobDetails
+         }
+   }
+   }
+
 }
 </script>

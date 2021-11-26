@@ -9,11 +9,20 @@
                     </div>
                     </v-row>
             </v-card-title>
+               <v-divider></v-divider>
+            
+             <div>
+                    <v-breadcrumbs :items="items">
+                        <template v-slot:divider>
+                            <v-icon>mdi-chevron-right</v-icon>
+                        </template>
+                    </v-breadcrumbs>
+            </div>
             <v-divider></v-divider>
            
                 <v-card dense class="supu">
                     <v-divider></v-divider>
-                     <v-card-actions  v-for="n in 10" :key="n" >
+                     <v-card-actions  v-for="n in jobs" :key="n.jref" >
                          <v-container fluid >
                              <v-card elevation="2" dense color="grey lighten-5" class="d-flex justify-center " outlined no-gutters>
                              <v-row class="d-flex justify-center ma-2 pt-2"  outlined>
@@ -23,7 +32,7 @@
                                       <v-text class="font-weight-bold">Ref</v-text>
                                    </v-col>
                                    <div class="mt-0" dense>
-                                     AM-SPIA-21
+                                     {{n.jref}}
                                    </div>
                                 </div>
                                </v-col>
@@ -33,7 +42,7 @@
                                       <v-text class="font-weight-medium">Job Title</v-text>
                                    </v-col>
                                    <div class="mt-0">
-                                      Assistant Manager – Digital Communication
+                                      {{ n.jname }}
                                    </div>
                                 </div>
                                </v-col>
@@ -43,7 +52,7 @@
                                       <v-text class="font-weight-medium">Closing Date</v-text>
                                    </v-col>
                                    <div class="mt-0">
-                                      04-10-2021
+                                      {{ n.jclose }}
                                    </div>
                                 </div>
                                </v-col>
@@ -56,10 +65,15 @@
                                        color="#0082C6"
                                        
                                       >
-                                       <router-link to="/careerdetails" tag="span" style="cursor: pointer">
+                                      <!-- <router-link :to="`/careerdetails/${n._id}`" tag="span" style="cursor: pointer">
                                           View Details
-                                       </router-link>
-                                         
+                                      </router-link> -->
+                                       <!-- <router-link to="`/careerdetails/${n._id}`" tag="span" style="cursor: pointer">
+                                          View Details
+                                       </router-link> -->
+                                          <a :href="`/careerdetails/${n._id}`" style="text-decoration: none;">
+                                             View Details
+                                          </a>
                                       </v-btn>
                                    </v-col>
                                 </div>
@@ -75,3 +89,45 @@
           </v-card>
     </v-container>
 </template>
+<script>
+const baseURL="http://localhost:3000/api_v_1"
+export default {
+   data:()=>({
+      jobs:[],
+       items: [
+        {
+          text: 'Home',
+          disabled: false,
+          href: '/',
+        },
+        {
+          text: 'Jobs',
+          disabled: true,
+          href: '/history',
+        }
+      ]
+   }),
+      beforeCreate(){
+      this.fetchJobsData()
+   },
+   created(){
+      this.fetchJobsData()
+     
+   },
+   methods:{
+         async fetchJobsData(){
+         try{
+            const res=await fetch(`${baseURL}/jobs`)
+            if(!res.ok){
+               const message=`An error has occured:${res.status}-${res.statusText}`
+               throw new Error(message)
+            }
+            const data=await res.json()
+            this.jobs=data
+         }catch(error){
+            this.jobs
+         }
+      }
+   }
+}
+</script>

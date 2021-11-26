@@ -9,8 +9,16 @@
                     </div>
                     </v-row>
             </v-card-title>
+                  <v-divider></v-divider>
+            
+             <div>
+                    <v-breadcrumbs :items="items">
+                        <template v-slot:divider>
+                            <v-icon>mdi-chevron-right</v-icon>
+                        </template>
+                    </v-breadcrumbs>
+            </div>
             <v-divider></v-divider>
-           
                 <v-card dense class="supu">
                     <v-divider></v-divider>
                      <v-card-actions  v-for="n in tenders" :key="n.refno" >
@@ -89,7 +97,19 @@
 const baseURL="http://localhost:3000/api_v_1"
 export default {
    data:()=>({
-      tenders:[]
+      tenders:[],
+      items: [
+        {
+          text: 'Home',
+          disabled: false,
+          href: '/',
+        },
+        {
+          text: 'Tenders',
+          disabled: true,
+          href: '/history',
+        }
+      ]
    }),
    beforeCreate(){
       this.fetchData()
