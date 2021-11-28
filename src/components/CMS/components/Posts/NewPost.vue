@@ -1,181 +1,73 @@
 <template>
-    <v-container fluid>
-        <v-row>
-            <v-col cols="12">
-                <v-card>
-                    <v-card-title class="white--text">
-                 <v-row cols="12 " class="d-flex justify-start mb-1 ml-4  pt-2">
-                       <v-text-field
-                        label="Add Tittle"
-                        :rules="rules"
-                        hide-details="auto"
-                        ></v-text-field>
-                    </v-row>
-            </v-card-title>
-              <v-container fluid>
-    <v-textarea
-      clearable
-      clear-icon="mdi-close-circle"
-      label="Text"
-      value="This is clearable text."
-    ></v-textarea>
-  </v-container>
-                </v-card>
-            </v-col>
-
-            <!-- <v-col cols="12">
-            <v-card-title class="ttitle white--text">
-                 <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
-                   <v-col><a href="#" style="text-decoration: none;">All(59)</a></v-col>
-                       <v-divider
-                        class="mx-4"
-                        dark
-                        vertical
-                        ></v-divider>
-                    <v-col><a href="#" style="text-decoration: none;">Published(11)</a></v-col>
-                        <v-divider
-                        class="mx-4"
-                        dark
-                        vertical
-                        ></v-divider>
-                     <v-col><a href="#" style="text-decoration: none;">Drafts(23)</a></v-col>
-                       <v-divider
-                        class="mx-4"
-                        dark
-                        vertical
-                        ></v-divider>
-                      <v-col><a href="#" style="text-decoration: none;">Mine(4)</a></v-col>
-                    </v-row>
-            </v-card-title>
-            <v-divider></v-divider>
-                  <v-data-table
-                    :headers="headers"
-                    :items="desserts"
-                    class="elevation-1"
-                >
-                    <template v-slot:item.calories="{ item }">
-                    <v-chip
-                        :color="getColor(item.calories)"
-                        dark
-                    >
-                        {{ item.calories }}
-                    </v-chip>
-                    </template>
-                </v-data-table>
-            </v-col> -->
-        </v-row>
-    </v-container>
+<v-container>
+  <v-card height="700px">
+    <v-card-title>
+             <v-row cols="12 " class="d-flex justify mb-1 ml-4  pt-2">             
+          <v-col class="d-flex">
+            <v-text-field
+            ref="name"
+            v-model="name"
+            :rules="[() => !!name || 'This field is required']"
+            :error-messages="errorMessages"
+            label="Add title"
+            placeholder="John Doe"
+            required
+          ></v-text-field>
+          </v-col>
+             <v-col
+        class="d-flex"
+        cols="4"
+        sm="6"
+      >
+        <v-select
+          :items="categories"
+          label="Select the category"
+        ></v-select>
+      </v-col>
+            </v-row>
+    </v-card-title>
+    <ckeditor :editor="editor" v-model="editorData" :config="editorConfig" ></ckeditor>
+  </v-card>
+</v-container>
 </template>
+
 <script>
-  export default {
-    data () {
-      return {
-                rules: [
-        value => !!value || 'Required.',
-        value => (value && value.length >= 3) || 'Min 3 characters',
-      ],
-        headers: [
-          {
-            text: '#',
-            align: 'start',
-            sortable: false,
-            value: 'name',
-          },
-          { text: 'Status', value: 'calories' },
-          { text: 'Author', value: 'fat' },
-          { text: 'Date', value: 'carbs' },
-          { text: 'Edit', value: 'edit' }
-        ],
-        desserts: [
-          {
-            name: 'Frozen Yogurt Frozen Yogurt Frozen',
-            calories: 159,
-            fat: 6.0,
-            carbs: 24,
-            protein: 4.0,
-            iron: '1%',
-          },
-          {
-            name: 'Ice cream sandwich',
-            calories: 237,
-            fat: 9.0,
-            carbs: 37,
-            protein: 4.3,
-            iron: '1%',
-          },
-          {
-            name: 'Eclair',
-            calories: 262,
-            fat: 16.0,
-            carbs: 23,
-            protein: 6.0,
-            iron: '7%',
-          },
-          {
-            name: 'Cupcake',
-            calories: 305,
-            fat: 3.7,
-            carbs: 67,
-            protein: 4.3,
-            iron: '8%',
-          },
-          {
-            name: 'Gingerbread',
-            calories: 356,
-            fat: 16.0,
-            carbs: 49,
-            protein: 3.9,
-            iron: '16%',
-          },
-          {
-            name: 'Jelly bean',
-            calories: 375,
-            fat: 0.0,
-            carbs: 94,
-            protein: 0.0,
-            iron: '0%',
-          },
-          {
-            name: 'Lollipop',
-            calories: 392,
-            fat: 0.2,
-            carbs: 98,
-            protein: 0,
-            iron: '2%',
-          },
-          {
-            name: 'Honeycomb',
-            calories: 408,
-            fat: 3.2,
-            carbs: 87,
-            protein: 6.5,
-            iron: '45%',
-          },
-          {
-            name: 'Donut',
-            calories: 452,
-            fat: 25.0,
-            carbs: 51,
-            protein: 4.9,
-            iron: '22%',
-          },
-          {
-            name: 'KitKat',
-            calories: 518,
-            fat: 26.0,
-            carbs: 65,
-            protein: 7,
-            iron: '6%',
-          },
-        ],
-      }
-    },
-    methods: {
-      getColor (calories) {
-        if (calories > 400) return 'red'
-        else if (calories > 200) return 'orange'
-        else return 'green'
+const baseURL="http://localhost:3000/api_v_1"
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+    export default {        
+        data() {
+            return {
+                categories:[],
+                editor: ClassicEditor,
+                editorData: '<p>Content of the editor.</p>',
+                editorConfig: {
+                    // The configuration of the editor.
+                }
+            };
+        },
+        beforeCreate(){
+         this.fetchCategories()
       },
-    },
-  }
+      created(){
+      this.fetchCategories()  
+   },
+   methods:{
+     async fetchCategories(){
+       try{
+         const res=await fetch(`${baseURL}/Admin/posts/category`)
+         if(!res.ok){
+           const message=`An error has occured:${res.status}-${res.statusText}`
+           throw new Error(message)
+         }
+         const data=await res.json()
+         this.categories=data
+         console.log(this.categories)
+       }catch(error){
+         this.categories
+       }
+     }
+   }
+
+    }
 </script>

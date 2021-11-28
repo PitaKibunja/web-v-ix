@@ -4,9 +4,10 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 import Vuetify from "vuetify";
+import ckeditor from "@ckeditor/ckeditor5-vue2"
 import BaseLayout from './components/BaseComponents/BaseLayout'
 Vue.config.productionTip = false
-
+Vue.use(ckeditor)
 new Vue({
   router,
   store,
