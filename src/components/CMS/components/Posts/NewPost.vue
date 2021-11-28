@@ -3,15 +3,27 @@
         <v-row>
             <v-col cols="12">
                 <v-card>
-                    <v-card-title class="ttitle white--text">
+                    <v-card-title class="white--text">
                  <v-row cols="12 " class="d-flex justify-start mb-1 ml-4  pt-2">
-                   <v-btn to="/admin/dashboard/newpost">Add a new post</v-btn>
+                       <v-text-field
+                        label="Add Tittle"
+                        :rules="rules"
+                        hide-details="auto"
+                        ></v-text-field>
                     </v-row>
             </v-card-title>
-
+              <v-container fluid>
+    <v-textarea
+      clearable
+      clear-icon="mdi-close-circle"
+      label="Text"
+      value="This is clearable text."
+    ></v-textarea>
+  </v-container>
                 </v-card>
             </v-col>
-            <v-col cols="12">
+
+            <!-- <v-col cols="12">
             <v-card-title class="ttitle white--text">
                  <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
                    <v-col><a href="#" style="text-decoration: none;">All(59)</a></v-col>
@@ -50,7 +62,7 @@
                     </v-chip>
                     </template>
                 </v-data-table>
-            </v-col>
+            </v-col> -->
         </v-row>
     </v-container>
 </template>
@@ -58,6 +70,10 @@
   export default {
     data () {
       return {
+                rules: [
+        value => !!value || 'Required.',
+        value => (value && value.length >= 3) || 'Min 3 characters',
+      ],
         headers: [
           {
             text: '#',

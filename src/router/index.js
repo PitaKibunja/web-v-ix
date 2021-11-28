@@ -46,6 +46,7 @@ import Post from '../components/CMS/components/Posts.vue'
 import Profile from '../components/CMS/components/Admin Profile/Profile.vue'
 import Password from '../components/CMS/components/Admin Profile/Password.vue'
 import Settings from '../components/CMS/components/Admin Profile/Settings.vue'
+import NewPost from '../components/CMS/components/Posts/NewPost.vue'
 
 Vue.use(VueRouter)
 
@@ -253,7 +254,13 @@ const routes = [
       meta: {
         hideNavbar: true,
       }
-     } , {
+     } ,{
+      path: 'newpost',
+    component: NewPost,
+    meta: {
+      hideNavbar: true,
+    }
+   }, {
       path: 'media',
       component: Media,
       meta: {

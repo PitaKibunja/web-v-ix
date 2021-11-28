@@ -24,6 +24,7 @@
                     <v-divider></v-divider>
                      <v-card-actions  v-for="n in jobs" :key="n.jref" >
                          <v-container fluid >
+                            
                              <v-card elevation="2" dense color="grey lighten-5" class="d-flex justify-center " outlined no-gutters>
                              <v-row class="d-flex justify-center ma-2 pt-2"  outlined>
                                <v-col>

@@ -24,6 +24,7 @@
                <v-row  no-gutters class="d-flex justify-start">
                   <v-col cols="9" no-gutters>
                      <v-container>
+                          
                         <v-card >
                            <v-card-title class="bady">
                               <v-row  class="bady white--text d-flex justify-start mb-1  pt-1">
@@ -118,6 +119,8 @@
 <script>
 const baseURL="http://localhost:3000/api_v_1"
 export default {
+      
+
    data() {
       return{
           selectedItem: 1,
