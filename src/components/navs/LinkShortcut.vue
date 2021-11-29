@@ -1,8 +1,8 @@
 <template>
     <div class="text-center">
     <v-spacer></v-spacer>
-    <v-row  class="text-center ml-8">
-         <div class="mx-12 flex-d  mt-0"  v-for="link in links"    :key="link">
+    <v-row  class="text-center ml-8" style="z-index:700">
+         <div class="mx-8 flex-d  mt-n1"  v-for="link in links"    :key="link">
             <v-spacer></v-spacer>
             <v-col>
                 <v-btn
@@ -14,7 +14,7 @@
                     color="#0082C6"
                     :to="link.where"
                     >
-                    <v-icon size="30" dark>
+                    <v-icon size="25" dark>
                         {{ link.icon }}
                     </v-icon>
                     </v-btn>
@@ -45,7 +45,7 @@
 
          { text: 'Strategic Plan', icon: 'mdi-file-document-multiple' ,where:'/strategic-plan'},
          { text: 'Service Charter', icon: 'mdi-file-document-multiple', where:'/service-charter' },
-        { text: 'Cell: +254 700 015 440', icon: 'mdi-phone-classic Cell: +254 700 015 440' },
+        { text: '+254 700 015 440 | +254-20 2392140', icon: 'mdi-phone-classic Cell: +254 700 015 440/254 700 015 440' },
 
 
       ],

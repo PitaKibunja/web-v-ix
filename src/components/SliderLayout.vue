@@ -1,6 +1,6 @@
 <template>
 <v-container fluid>
-      <v-carousel height="600" cycle class="mt-0 pt-0" :show-arrows="false">
+      <v-carousel height="510" cycle class="mt-0 pt-0" :show-arrows="false">
     <v-carousel-item
       v-for="(item,i) in items"
       :key="i"
