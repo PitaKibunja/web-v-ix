@@ -6,6 +6,8 @@ import vuetify from './plugins/vuetify'
 import Vuetify from "vuetify";
 import ckeditor from "@ckeditor/ckeditor5-vue2"
 import BaseLayout from './components/BaseComponents/BaseLayout'
+import Axios from 'axios'
+Vue.prototype.$http = Axios;
 Vue.config.productionTip = false
 Vue.use(ckeditor)
 new Vue({
