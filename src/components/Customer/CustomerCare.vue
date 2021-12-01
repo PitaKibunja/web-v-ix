@@ -200,9 +200,10 @@
       ],
       select: null,
       items: [
-            'General Feedback',
+            'General Enquiry',
           'Corruption Reporting',
-          'Complain'
+          'Complain',
+          'Customer Feedback'
       ],
       checkbox: false,
 
