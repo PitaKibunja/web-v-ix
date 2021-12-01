@@ -68,7 +68,7 @@
                                     label="Type of Feedback"
                                     required
                                     ></v-select>
-
+                                    
                                     <v-text-field
                                     v-model="customerFeedback.name"
                                     :counter="10"
@@ -96,12 +96,29 @@
                                     class="mr-4"
                                     dark
                                     type="submit"
-                                    
+                                    @click="snackbar= true"
                                     >
                                     Submit
                                     </v-btn>
                                 </v-form>
                                 </template>
+                                    <v-snackbar
+                                      v-model="snackbar"
+                                      :timeout="timeout"
+                                    >
+                                      {{ text }}
+
+                                      <template v-slot:action="{ attrs }">
+                                        <v-btn
+                                          color="blue"
+                                          text
+                                          v-bind="attrs"
+                                          @click="snackbar = false"
+                                        >
+                                          Close
+                                        </v-btn>
+                                      </template>
+                                    </v-snackbar>
                         </v-card>
                     </v-container>
                     <v-divider></v-divider>
@@ -154,6 +171,9 @@
   export default {
     data () {
       return {
+      snackbar: false,
+      text: 'Sent successfully',
+      timeout: 2000,
         customerFeedback:{
           feedbacktype:null,
           name:null,
@@ -206,7 +226,7 @@
       items: [
             'General Enquiry',
           'Corruption Reporting',
-          'Complain',
+          'Complaints',
           'Customer Feedback'
       ],
       checkbox: false,
