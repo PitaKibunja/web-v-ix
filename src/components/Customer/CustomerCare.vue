@@ -57,10 +57,12 @@
                                     ref="form"
                                     v-model="valid"
                                     lazy-validation
+                                    @submit.prevent="saveFeedback"
+                                    
                                 >
                                 
                                     <v-select
-                                    v-model="select"
+                                    v-model="customerFeedback.feedbacktype"
                                     :items="items"
                                     :rules="[v => !!v || 'Item is required']"
                                     label="Type of Feedback"
@@ -68,7 +70,7 @@
                                     ></v-select>
 
                                     <v-text-field
-                                    v-model="name"
+                                    v-model="customerFeedback.name"
                                     :counter="10"
                                     :rules="nameRules"
                                     label="Name*"
@@ -76,30 +78,25 @@
                                     ></v-text-field>
 
                                     <v-text-field
-                                    v-model="email"
+                                    v-model="customerFeedback.email"
                                     :rules="emailRules"
                                     label="E-mail*"
                                     required
                                     ></v-text-field>
                                     <v-textarea
+                                      v-model="customerFeedback.feedbackMsg"
                                         clearable
                                         clear-icon="mdi-close-circle"
                                         label="Message"
                                         
                                         ></v-textarea>
-
-                                    <v-checkbox
-                                    v-model="checkbox"
-                                    :rules="[v => !!v || 'You must agree to continue!']"
-                                    label="Do you agree?"
-                                    required
-                                    ></v-checkbox>
-
                                     <v-btn
-                                    :disabled="!valid"
+                                    
                                     color="#508F40"
                                     class="mr-4"
-                                    @click="validate"
+                                    dark
+                                    type="submit"
+                                    
                                     >
                                     Submit
                                     </v-btn>
@@ -157,6 +154,13 @@
   export default {
     data () {
       return {
+        customerFeedback:{
+          feedbacktype:null,
+          name:null,
+          email:null,
+          feedbackMsg:null
+
+        },
             locations:[
            {area:'Nairobi',list:[
           {house:'Utaliii House 8th Floor, Utalii Street'},
@@ -238,6 +242,15 @@
       resetValidation () {
         this.$refs.form.resetValidation()
       },
+      saveFeedback(){
+        console.warn(this.customerFeedback)
+        this.$http.post('http://localhost:3000/api_v_1/feedback',this.customerFeedback)
+        .then((result)=>{
+          console.warn(result)
+        })
+       
+        
+      }
     },
   }
 </script>
