@@ -1,6 +1,13 @@
 <template>
 <v-container>
-  <v-card height="700px">
+                            <v-form
+                                    ref="form"
+                                    v-model="valid"
+                                    lazy-validation
+                                    @submit.prevent="saveFeedback"
+                                    
+                                >
+                                 <v-card height="700px">
     <v-card-title>
              <v-row cols="12 " class="d-flex justify mb-1 ml-4  pt-2">             
           <v-col class="d-flex">
@@ -26,8 +33,11 @@
       </v-col>
             </v-row>
     </v-card-title>
-    <ckeditor :editor="editor" v-model="editorData" :config="editorConfig" ></ckeditor>
+    <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
   </v-card>
+                                
+                                </v-form>
+ 
 </v-container>
 </template>
 
