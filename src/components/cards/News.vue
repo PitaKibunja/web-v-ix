@@ -19,10 +19,10 @@
       src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
     ></v-img>
 
-    <v-card-title>Cafe Badilico</v-card-title>
+    <v-card-title>{{ news.title }}</v-card-title>
 
     <v-card-text>
-      <div>Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
+      <div>{{ news.body }}</div>
     </v-card-text>
 
     <v-divider class="mx-4"></v-divider>
@@ -31,19 +31,35 @@
 </router-link>
 </template>
 <script>
-
+const baseURL="http://localhost:3000/api_v_1"
   export default {
     data: () => ({
       loading: false,
       selection: 1,
+      news:[]
     }),
-
+    beforeCreate(){
+          this.getNews()
+        },
+        created(){
+          this.getNews()
+        },
+        watch:{
+          '$route':'fetchData'
+        },
     methods: {
       reserve () {
         this.loading = true
 
         setTimeout(() => (this.loading = false), 2000)
       },
+      async getNews(){
+        this.$http.get(`${baseURL}/Admin/posts/post`)
+        .then((res)=>{
+          this.news = res
+          console.log(this.news)
+        })
+      }
     },
   }
 </script>
