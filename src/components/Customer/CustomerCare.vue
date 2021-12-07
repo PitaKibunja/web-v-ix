@@ -263,7 +263,6 @@
         this.$refs.form.resetValidation()
       },
       saveFeedback(){
-        console.warn(this.customerFeedback)
         this.$http.post('http://localhost:3000/api_v_1/feedback',this.customerFeedback)
         .then((result)=>{
           console.warn(result)

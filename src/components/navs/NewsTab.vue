@@ -8,8 +8,6 @@
       flat 
       
     >
-
-
         <v-tabs
           v-model="tab"
           class="bady white--text d-flex justify-center"
@@ -20,7 +18,7 @@
 
           <v-tab
             v-for="item in items"
-            :key="item"
+            :key="item._id"
            dark
           >
           <span class="white--text text-center justify-center p-4" >
@@ -59,6 +57,7 @@
   </v-card>
 </template>
 <script>
+const baseURL="http://localhost:3000/api_v_1"
 import News from '../cards/News.vue'
   export default {
     components:{
@@ -67,11 +66,33 @@ import News from '../cards/News.vue'
     data () {
       return {
         tab: null,
-        items: [
-          'All', 'Notices', 'News', 'KJ of TVET'
-        ],
+        items: [],
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       }
     },
+     beforeCreate(){
+      this.fetchTabs()
+      console.log(this.fetchTabs())
+    },
+    created(){
+      this.fetchTabs()
+     
+    },
+    watch:{
+      '$route':'fetchTabs'
+    },
+    methods:{
+      async fetchTabs(){
+        try{
+          this.$http.get(`${baseURL}/Admin/posts/category`)
+          .then((res)=>{
+            this.items=res.data
+            console.log(res.data)
+          })
+        }catch(err){
+          this.news
+        }
+      }
+    }
   }
 </script>
