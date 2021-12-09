@@ -32,24 +32,18 @@
 
     <v-tabs-items v-model="tab">
       <v-tab-item
-        v-for="item in posts"
-        :key="item"
       >
-        <v-card flat>
-        <v-row
+        <v-card  flat>
+        <v-col
         :align="center"
         no-gutters
         style="height: auto;"
+        v-for="item in posts"  :key="item"
       >
-        <v-col
-        v-for="n in 8"
-        :key="n"
-        >
-            <News />
-
-        </v-col>
-              
-      </v-row> 
+            
+              <News :id="item._id" :title="item.title" :body="item.body" />
+                   
+      </v-col> 
           
         </v-card>
       </v-tab-item>
