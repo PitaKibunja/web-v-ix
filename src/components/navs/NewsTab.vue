@@ -24,7 +24,6 @@
           <span class="white--text text-center justify-center p-4" >
              {{ item }}
           </span>
-           
           </v-tab>
         </v-tabs>
 
