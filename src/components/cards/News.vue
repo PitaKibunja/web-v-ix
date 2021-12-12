@@ -1,5 +1,8 @@
 <template>
-<router-link to="singlePost">
+
+ <a target="_blank" :href="`/singlePost/${id}`">
+                
+           
     <v-card
     :loading="loading"
     class="mx-11 my-11"
@@ -31,7 +34,7 @@
     <v-divider class="mx-4"></v-divider>
 
   </v-card>
-</router-link>
+   </a>
 </template>
 <script>
   export default {

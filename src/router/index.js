@@ -48,6 +48,7 @@ import Password from '../components/CMS/components/Admin Profile/Password.vue'
 import Settings from '../components/CMS/components/Admin Profile/Settings.vue'
 import NewPost from '../components/CMS/components/Posts/NewPost.vue'
 
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -189,7 +190,7 @@ const routes = [
     component: AllNews,
   },
   {
-      path:'/singlePost',
+      path:'/singlePost/:postId',
       name:'Single Post',
       component:SingleNews
   },

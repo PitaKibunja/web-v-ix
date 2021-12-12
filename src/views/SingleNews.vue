@@ -12,7 +12,7 @@
           outlined
           tile
         >
-           <Post/>
+           <Post :heading="selectedPost.title" :post="selectedPost.body" />
            <v-divider></v-divider>
         </v-card>
       </v-col>
@@ -26,24 +26,26 @@
           outlined
           tile
         >
-        <h5 class="mb-6">Related Posts</h5>
+        <h5 class="mb-6">Related Posts({{ spCategory }})</h5>
         <v-divider></v-divider>
          
-             <v-card
+    <v-card
     class="mx-auto mt-2 mb-2"
     max-width="344"
     outlined
-    v-for="n in 6" :key="n"
+    v-for="related in relatedPost" :key="related._id"
   >
     <v-list-item three-line>
       <v-list-item-content>
         <div class="text-overline mb-4">
-          TVETA NEWS
+          {{ related.title }}
         </div>
         <v-list-item-title class="text-h5 mb-1">
-          World Skills Show
+          {{ related.title }}
         </v-list-item-title>
-        <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
+        <v-list-item-subtitle>
+          {{ related.body }}
+        </v-list-item-subtitle>
       </v-list-item-content>
 
       <v-list-item-avatar
@@ -73,9 +75,61 @@
 </template>
 <script>
 import Post from '../components/Posts/Post.vue'
+const baseURL="http://localhost:3000/api_v_1"
 export default {
 components:{
   Post
-}
+},
+data(){
+  return{
+    selectedPost:[],
+    spCategory:'',
+    relatedPost:[],
+    postId:''
+  }
+},
+     beforeCreate(){
+      this.fetchSinglePost()
+      this.fetchRelatedPosts()
+      console.log(this.fetchRelatedPosts())
+    },
+    created(){
+      const poId=this.$route.params.postId
+      this.postId=poId
+      this.fetchSinglePost()
+      this.fetchRelatedPosts()
+     
+    },
+    watch:{
+      '$route':'fetchSinglePost()'
+    },
+    methods:{
+      async fetchSinglePost(){
+        try{
+          this.$http.get(`${baseURL}/Admin/posts/post/${this.postId}`)
+          .then((res)=>{
+            this.selectedPost=res.data
+            this.spCategory=res.data.category
+            this.fetchRelatedPosts(this.spCategory)
+           
+          })
+        }catch(err){
+          this.selectedPost
+        }
+      },
+      async fetchRelatedPosts(scate){
+        try{
+           this.$http.get(`${baseURL}/Admin/posts/post/post?scategory=${scate}`)
+          .then((res)=>{
+            this.relatedPost=res.data
+            console.log(this.relatedPost)
+          })
+        }catch(err){
+          this.relatedPost
+      
+        }
+      }
+    }
+
 }
 </script>
