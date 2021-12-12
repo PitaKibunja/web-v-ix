@@ -31,24 +31,18 @@
 
     <v-tabs-items v-model="tab">
       <v-tab-item
-        v-for="item in items"
-        :key="item"
       >
-        <v-card flat>
-        <v-row
+        <v-card  flat>
+        <v-col
         :align="center"
         no-gutters
         style="height: auto;"
+        v-for="item in posts"  :key="item"
       >
-        <v-col
-        v-for="n in 8"
-        :key="n"
-        >
-            <News/>
-
-        </v-col>
-              
-      </v-row> 
+            
+              <News :id="item._id" :title="item.title" :body="item.body" />
+                   
+      </v-col> 
           
         </v-card>
       </v-tab-item>
@@ -66,21 +60,36 @@ import News from '../cards/News.vue'
       return {
         tab: null,
         items: [],
+        posts:[],
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       }
     },
      beforeCreate(){
       this.fetchTabs()
+      this.fetchPosts()
       console.log(this.fetchTabs())
+      console.log(this.fetchPosts())
     },
     created(){
       this.fetchTabs()
+      this.fetchPosts()
      
     },
     watch:{
-      '$route':'fetchTabs'
+      '$route':'fetchTabs,fetchPosts'
     },
     methods:{
+      async fetchPosts(){
+          try{
+          this.$http.get(`${baseURL}/Admin/posts/post`)
+          .then((res)=>{
+            this.posts=res.data
+            console.log(res.data)
+          })
+        }catch(err){
+          this.news
+        }
+      },
       async fetchTabs(){
         try{
           this.$http.get(`${baseURL}/Admin/posts/category`)
