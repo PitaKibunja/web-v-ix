@@ -33,7 +33,7 @@
     class="mx-auto mt-2 mb-2"
     max-width="344"
     outlined
-    v-for="related in relatedPost" :key="related._id"
+    v-for="post in Posts" :key="post.title"
   >
     <v-list-item three-line>
       <v-list-item-content>
@@ -85,13 +85,14 @@ data(){
     selectedPost:[],
     spCategory:'',
     relatedPost:[],
+    Posts:[],
     postId:''
   }
 },
      beforeCreate(){
       this.fetchSinglePost()
       this.fetchRelatedPosts()
-      console.log(this.fetchRelatedPosts())
+      
     },
     created(){
       const poId=this.$route.params.postId
@@ -110,19 +111,31 @@ data(){
           .then((res)=>{
             this.selectedPost=res.data
             this.spCategory=res.data.category
-            this.fetchRelatedPosts(this.spCategory)
+            
            
           })
         }catch(err){
           this.selectedPost
         }
       },
-      async fetchRelatedPosts(scate){
+      async fetchPosts(){
+          try{
+          this.$http.get(`${baseURL}/Admin/posts/post`)
+          .then((res)=>{
+            this.posts=res.data
+            console.log(res.data)
+          })
+        }catch(err){
+          this.news
+        }
+      }
+      ,
+      async fetchRelatedPosts(){
         try{
-           this.$http.get(`${baseURL}/Admin/posts/post/post?scategory=${scate}`)
+           this.$http.get(`${baseURL}/Admin/posts/post/post`)
           .then((res)=>{
             this.relatedPost=res.data
-            console.log(this.relatedPost)
+            
           })
         }catch(err){
           this.relatedPost
