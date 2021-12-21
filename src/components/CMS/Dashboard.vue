@@ -5,7 +5,7 @@
  
     <v-main>
       <v-container
-        class="py-8 px-6"
+        class="mt-n8"
         fluid
       >
       <router-view></router-view>

@@ -1,46 +1,76 @@
 <template>
     <v-container fluid class="mt-0">
-        <v-card elevation="4">
-            <v-card-title>
-                <span>This is the home screen</span>
-            </v-card-title>
-            <v-container fluid>
-                <v-row>
-                    <v-col cols="12" md="6" v-for="i in 10" :key="i">
-                        <v-card
+       <v-row >
+         <v-col v-for="item in dashItems" :key="item">
+        <v-card
     class="mx-auto"
-    max-width="344"
+    max-width="250"
   >
     <v-card-text>
-      <div>Word of the Day</div>
       <p class="text-h4 text--primary">
-        be•nev•o•lent
+        10
       </p>
-      <p>adjective</p>
-      <div class="text--primary">
-        well meaning and kindly.<br>
-        "a benevolent smile"
+      <hr>
+      <div class="text--primary pa-2">
+        <h2>{{item}}</h2>
       </div>
     </v-card-text>
-    <v-card-actions>
-      <v-btn
-        text
-        color="deep-purple accent-4"
-      >
-        Learn More
-      </v-btn>
-    </v-card-actions>
   </v-card>
-                    </v-col>
-                </v-row>
-            </v-container>
-        </v-card>
+         </v-col>
+       </v-row>
+       <v-row>
+         <v-col>
+            <v-card>
+              <v-card-title class="bady white--text">
+            <v-row cols="12" class="d-flex justify-center mb-1 ml-4 pt-2">
+              <div class="font-weight-medium">
+                <h3>User Statistics</h3>
+              </div>
+            </v-row>
+      </v-card-title>
+      <v-divider></v-divider>
+      <div class="ma-2 pa-1">
+        <p>
+          List of activities in chronological order. The activities can be update of posts,  updating of pages
+
+        </p>
+      </div>
+           </v-card>
+         </v-col>
+         <v-col>
+          <v-card>
+              <v-card-title class="bady white--text">
+            <v-row cols="12" class="d-flex justify-center mb-1 ml-4 pt-2">
+              <div class="font-weight-medium">
+                <h3>Recent Activities</h3>
+              </div>
+            </v-row>
+      </v-card-title>
+      <v-divider></v-divider>
+      <div class="ma-2 pa-1">
+        <p>
+          List of activities in chronological order. The activities can be update of posts,  updating of pages
+
+        </p>
+      </div>
+           </v-card>
+         </v-col>
+       </v-row>
     </v-container>
 </template>
 <script>
-export default {
-    name:'DashHome'
-}
+  export default {
+    data: () => ({
+      reveal: false,
+      dashItems:[
+        'Pages',
+        'Posts',
+        'Downloads',
+        'Users'
+
+      ]
+    }),
+  }
 </script>
 <style scoped>
 

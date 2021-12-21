@@ -47,7 +47,7 @@ import Profile from '../components/CMS/components/Admin Profile/Profile.vue'
 import Password from '../components/CMS/components/Admin Profile/Password.vue'
 import Settings from '../components/CMS/components/Admin Profile/Settings.vue'
 import NewPost from '../components/CMS/components/Posts/NewPost.vue'
-
+import userManagement from '../components/CMS/components/Users.vue'
 
 Vue.use(VueRouter)
 
@@ -233,7 +233,6 @@ const routes = [
     component: Institution
   },
    //cms paths goes here.
-
   {
     path: '/admin/dashboard',
     name: 'Dashboard',
@@ -302,6 +301,13 @@ const routes = [
         meta: {
           hideNavbar: true,
         },
+      },
+      {
+        path: 'management',
+        component: userManagement,
+        meta: {
+          hideNavbar:true
+        }
       }
     ]
   }
