@@ -30,7 +30,7 @@
     <v-divider></v-divider>
     <div class="ma-2 pa-2">
         <v-spacer></v-spacer>
-        <v-btn>Add new User</v-btn>
+        <v-btn to="/NewUser">Add new User</v-btn>
     </div>
     <v-divider></v-divider>
     <v-data-table
@@ -47,14 +47,16 @@
         <template v-slot:item="{item, index}">
             <tr>
               <td>{{index + 1}}</td>
-              <td>{{item.name}}</td>
-              <td>{{item.regno}}</td>
-              <td>{{item.county}}</td>
-              <td>{{item.regdate}}</td>
-              <td>{{item.regdate}}</td>
+              <td>{{item.fullName}}</td>
+              <td>{{item.email}}</td>
+              <td>{{item.roles}}</td>
+              <td>{{item.twofactorAuth}}</td>
+              <td>{{item.createdAt}}</td>
               <td>
                 <a target="_blank" :href="`/institution/${item._id}`">
-                {{ item.details}}
+                <v-icon aria-hidden="false">
+                  mdi-pencil-outline
+                </v-icon>
               </a></td>
             </tr>
         </template>
@@ -89,15 +91,15 @@ const baseURL="http://localhost:3000/api_v_1"
             value: 'index',
             text: '#',
           },
-          { text: 'Name', value: 'name' },
-          { text: 'Email', value: 'regno' },
-          { text: 'Role', value: 'county' },
-          { text: '2-Step Verification', value: 'regdate' },
-          { text: 'Last Login', value: 'expdate' },
+          { text: 'Name', value: 'fullname' },
+          { text: 'Email', value: 'email' },
+          { text: 'Role', value: 'roles' },
+          { text: '2-Step Verification', value: 'twofactorAuth' },
+          { text: 'Last Login', value: 'createdAt' },
           {text:'Edit User Details'}
           // { link: 'View more', value: '_id' },
         ],
-        Institutions: [],
+        Users: [],
       }
     },
      beforeCreate(){
@@ -117,17 +119,17 @@ const baseURL="http://localhost:3000/api_v_1"
       },
       async fetchData(){
         try {
-          const res=await fetch(`${baseURL}/institution`)
+          const res=await fetch(`${baseURL}/Admin/dashboard/management`)
           if(!res.ok){
             const message=`An error has occured:${res.status}-${res.statusText}`
             throw new Error(message)
           }
           const data=await res.json()
-          this.Institutions=data
+          this.Users=data
           this.progressBar= false
         
         } catch (error) {
-          this.Institutions
+          this.Users
         }
       }
     }

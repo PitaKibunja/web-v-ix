@@ -48,6 +48,7 @@ import Password from '../components/CMS/components/Admin Profile/Password.vue'
 import Settings from '../components/CMS/components/Admin Profile/Settings.vue'
 import NewPost from '../components/CMS/components/Posts/NewPost.vue'
 import userManagement from '../components/CMS/components/Users.vue'
+import newUser from '../components/CMS/components/Users/NewUser.vue'
 
 Vue.use(VueRouter)
 
@@ -306,7 +307,22 @@ const routes = [
         path: 'management',
         component: userManagement,
         meta: {
-          hideNavbar:true
+          hideNavbar: true
+        }
+        , children: [
+          {
+            path: 'newUser',
+            component: newUser,
+            meta: {
+              hideNavbar: true,
+            }
+          }]
+      },
+      {
+        path: 'newUser',
+        component: newUser,
+        meta: {
+          hideNavbar: true,
         }
       }
     ]
