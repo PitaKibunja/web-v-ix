@@ -28,49 +28,20 @@
                                     v-model="customerFeedback.name"
                                     :counter="10"
                                     :rules="nameRules"
-                                    label="Full Name*"
+                                    label="Title*"
                                     required
                                     class="input-group--focused  pa-2 ma-2"
                                     ></v-text-field>
 
-                                    <v-text-field
-                                    v-model="customerFeedback.email"
-                                    :rules="emailRules"
-                                    label="E-mail*"
-                                    required
-                                    class="input-group--focused  pa-2 ma-2"
-                                    ></v-text-field>
                                        <v-select
                                     v-model="customerFeedback.feedbacktype"
                                     :items="items"
                                     :rules="[v => !!v || 'Item is required']"
-                                    label="Role"
+                                    label="Category"
                                     required
                                     class="input-group--focused  pa-2 ma-2"
                                     ></v-select>
 
-                                          <v-text-field
-                                        :append-icon="show3 ? 'mdi-eye' : 'mdi-eye-off'"
-                                        :rules="[rules.required, rules.min]"
-                                        :type="show3 ? 'text' : 'password'"
-                                        name="input-10-2"
-                                        label="New Password"
-                                        value=""
-                                        hint="At least 8 characters"
-                                        class="input-group--focused pa-2 ma-2"
-                                        @click:append="show3 = !show3"
-                                    ></v-text-field>
-                                                                <v-text-field
-                                        :append-icon="show3 ? 'mdi-eye' : 'mdi-eye-off'"
-                                        :rules="[rules.required, rules.min]"
-                                        :type="show3 ? 'text' : 'password'"
-                                        name="input-10-2"
-                                        label="Confrim Password"
-                                        value=""
-                                        hint="At least 8 characters"
-                                        class="input-group--focused pa-2 ma-2"
-                                        @click:append="show3 = !show3"
-                                    ></v-text-field>
                                     
                                     <v-btn
                                     
