@@ -4,7 +4,10 @@
                 <v-card>
                                       <v-card-title class="dark pb-6">
                  <v-row cols="12 " class="d-flex justify-start mb-1 ml-4  pt-2">
-                   <h3>User Profile</h3>
+                   <h3>
+                     Media upload <v-icon >mdi-upload</v-icon>
+                      <v-icon >mdi-image</v-icon>
+                   </h3>
                     </v-row>
             </v-card-title>
             <v-divider></v-divider>

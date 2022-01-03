@@ -49,6 +49,7 @@ import Settings from '../components/CMS/components/Admin Profile/Settings.vue'
 import NewPost from '../components/CMS/components/Posts/NewPost.vue'
 import userManagement from '../components/CMS/components/Users.vue'
 import newUser from '../components/CMS/components/Users/NewUser.vue'
+import addMedia from '../components/CMS/components/downloads/addMedia.vue'
 
 Vue.use(VueRouter)
 
@@ -321,6 +322,13 @@ const routes = [
       {
         path: 'newUser',
         component: newUser,
+        meta: {
+          hideNavbar: true,
+        }
+      },
+      {
+        path: 'newMedia',
+        component: addMedia,
         meta: {
           hideNavbar: true,
         }
