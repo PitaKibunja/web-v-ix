@@ -13,11 +13,17 @@
             <v-divider></v-divider>
                     <v-card-title class="ttitle white--text">
                  <v-row cols="12 " class="d-flex justify-start mb-1 ml-4  pt-2">
-                   New User
+                   New Media
                     </v-row>
             </v-card-title>
                 <v-container>
-                    <v-card class="ma-4 pa-2">
+                    <v-row no-gutters>
+                      <v-col 
+                            cols="12"
+                            sm="6"
+                            md="8"
+                      >
+                        <v-card class="ma-4 pa-2">
                          <template>
                                 <v-form
                                 class="pa-2 ma-2"
@@ -45,6 +51,37 @@
                                     class="input-group--focused  pa-2 ma-2"
                                     ></v-select>
 
+
+                                    <v-file-input
+    v-model="files"
+    color="deep-purple accent-4"
+    counter
+    label="File input"
+    multiple
+    placeholder="Select your files"
+    prepend-icon="mdi-paperclip"
+    outlined
+    :show-size="1000"
+  >
+    <template v-slot:selection="{ index, text }">
+      <v-chip
+        v-if="index < 2"
+        color="deep-purple accent-4"
+        dark
+        label
+        small
+      >
+        {{ text }}
+      </v-chip>
+
+      <span
+        v-else-if="index === 2"
+        class="text-overline grey--text text--darken-3 mx-2"
+      >
+        +{{ files.length - 2 }} File(s)
+      </span>
+    </template>
+  </v-file-input>
                                     
                                     <v-btn
                                     
@@ -59,6 +96,26 @@
                                 </v-form>
                                 </template>
                 </v-card>
+                      </v-col>
+                      <v-col 
+                      cols="6"
+                      md="4"
+                      >
+                        <v-card>
+                          <v-card-title>
+                            <h4>Page Attributes</h4>
+                          </v-card-title>
+                              <v-btn
+                              class="ma-2"
+                              outlined
+                              color="indigo"
+                            >
+                              Add Categories
+                              <v-icon>mdi-plus</v-icon>
+                            </v-btn>
+                        </v-card>
+                      </v-col>
+                    </v-row>
                 </v-container>
                 </v-card>
 
@@ -69,6 +126,7 @@
  export default {
     data () {
       return {
+        files: [],
          show1: false,
         show2: true,
         show3: false,

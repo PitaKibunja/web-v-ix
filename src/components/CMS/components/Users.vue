@@ -30,7 +30,7 @@
     <v-divider></v-divider>
     <div class="ma-2 pa-2">
         <v-spacer></v-spacer>
-        <v-btn to="/NewUser">Add new User</v-btn>
+        <v-btn to="/admin/dashboard/NewUser">Add new User</v-btn>
     </div>
     <v-divider></v-divider>
     <v-data-table
