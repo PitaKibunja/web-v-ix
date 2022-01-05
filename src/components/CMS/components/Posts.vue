@@ -38,26 +38,59 @@
             <v-divider></v-divider>
                   <v-data-table
                     :headers="headers"
-                    :items="desserts"
+                    :items="Posts"
+                    :search="search"
+                    :loading="true"
                     class="elevation-1"
+                    primary-key="index"
+                    fixed-header
+                    loading-text="Loading Posts... Please wait"
                 >
-                    <template v-slot:item.calories="{ item }">
-                    <v-chip
-                        :color="getColor(item.calories)"
-                        dark
-                    >
-                        {{ item.calories }}
-                    </v-chip>
-                    </template>
+                <v-progress-linear v-show="progressBar" slot="progress" color="#0082C6" indeterminate></v-progress-linear>
+                    <template v-slot:item="{item, index}">
+                      <tr>
+                        <td>{{index + 1}}</td>
+                        <td>{{item.title}}</td>
+                        <td>{{item.status}}</td>
+                        <td>{{item.author}}</td>
+                        <td>{{item.createdAt}}</td>
+                        <td>{{item.category}}</td>
+                        <td>
+                          <v-btn  icon color="green">
+                             <a target="_blank" :href="`/institution/${item._id}`">
+                              <v-icon small>mdi-pencil</v-icon>
+                            </a>
+                            
+                          </v-btn>
+                          <v-btn icon color="green">
+                             <a target="_blank" :href="`/institution/${item._id}`">
+                              <v-icon small>mdi-eye</v-icon>
+                            </a>
+                            
+                          </v-btn>
+                          <v-btn  icon  color="pink" style="text-decoration: none">
+                             <a target="_blank" :href="`/institution/${item._id}`">
+                              <v-icon small>mdi-delete-forever</v-icon>
+                            </a>
+                            
+                          </v-btn>
+                          
+
+                        </td>
+                      </tr>
+                  </template>
+                    
                 </v-data-table>
             </v-col>
         </v-row>
     </v-container>
 </template>
 <script>
+const baseURL="http://localhost:3000/api_v_1"
   export default {
     data () {
       return {
+        progressBar: true,
         headers: [
           {
             text: '#',
@@ -65,101 +98,37 @@
             sortable: false,
             value: 'name',
           },
+          { text: 'Post Title', value: 'title' },
           { text: 'Status', value: 'calories' },
           { text: 'Author', value: 'fat' },
           { text: 'Date', value: 'carbs' },
+          { text: 'Category', value: 'carbs' },
           { text: 'Edit', value: 'edit' }
         ],
-        desserts: [
-          {
-            name: 'Frozen Yogurt Frozen Yogurt Frozen',
-            calories: 159,
-            fat: 6.0,
-            carbs: 24,
-            protein: 4.0,
-            iron: '1%',
-          },
-          {
-            name: 'Ice cream sandwich',
-            calories: 237,
-            fat: 9.0,
-            carbs: 37,
-            protein: 4.3,
-            iron: '1%',
-          },
-          {
-            name: 'Eclair',
-            calories: 262,
-            fat: 16.0,
-            carbs: 23,
-            protein: 6.0,
-            iron: '7%',
-          },
-          {
-            name: 'Cupcake',
-            calories: 305,
-            fat: 3.7,
-            carbs: 67,
-            protein: 4.3,
-            iron: '8%',
-          },
-          {
-            name: 'Gingerbread',
-            calories: 356,
-            fat: 16.0,
-            carbs: 49,
-            protein: 3.9,
-            iron: '16%',
-          },
-          {
-            name: 'Jelly bean',
-            calories: 375,
-            fat: 0.0,
-            carbs: 94,
-            protein: 0.0,
-            iron: '0%',
-          },
-          {
-            name: 'Lollipop',
-            calories: 392,
-            fat: 0.2,
-            carbs: 98,
-            protein: 0,
-            iron: '2%',
-          },
-          {
-            name: 'Honeycomb',
-            calories: 408,
-            fat: 3.2,
-            carbs: 87,
-            protein: 6.5,
-            iron: '45%',
-          },
-          {
-            name: 'Donut',
-            calories: 452,
-            fat: 25.0,
-            carbs: 51,
-            protein: 4.9,
-            iron: '22%',
-          },
-          {
-            name: 'KitKat',
-            calories: 518,
-            fat: 26.0,
-            carbs: 65,
-            protein: 7,
-            iron: '6%',
-          },
-        ],
+        Posts:[]
+        
       }
     },
+    beforeCreate(){
+      this.fetchPosts()
+
+    },
+    created(){
+      this.fetchPosts()
+    },
+    watch:{
+      '$route':'fetchPosts'
+    },
     methods: {
-      getColor (calories) {
-        if (calories > 400) return 'red'
-        else if (calories > 200) return 'orange'
-        else return 'green'
-      },
+      async fetchPosts(){
+        try {
+         const rawPostsData=await this.$http.get(`${baseURL}/Admin/posts/post`)
+         this.Posts=rawPostsData.data
+         this.progressBar= false
+        } catch (error) {
+          this.Posts
+        }
+      }
     },
   }
 </script>

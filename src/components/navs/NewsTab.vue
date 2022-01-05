@@ -98,11 +98,8 @@ import News from '../cards/News.vue'
       },
       async fetchTabs(){
         try{
-          this.$http.get(`${baseURL}/Admin/posts/category`)
-          .then((res)=>{
-            this.items=res.data
-            console.log(res.data)
-          })
+          const rawData=await this.$http.get(`${baseURL}/Admin/posts/category`)   
+          this.items= rawData.data
         }catch(err){
           this.news
         }

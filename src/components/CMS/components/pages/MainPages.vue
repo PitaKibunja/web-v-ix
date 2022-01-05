@@ -14,7 +14,7 @@
  <template>
   <v-card>
     <v-card-title class="bady accent-5 white--text">
-      <h3>Pages</h3>
+      <h3>Media</h3>
       <v-spacer></v-spacer>
       <v-btn to="/admin/dashboard/newMedia">Add New</v-btn>
       <v-spacer></v-spacer>
@@ -89,9 +89,10 @@
             sortable: false,
             value: 'name',
           },
-          { text: 'Title', value: 'calories' },
+          { text: 'File', value: 'calories' },
           { text: 'Author', value: 'fat' },
-          { text: 'Date', value: 'fat' },
+          { text: 'Type', value: 'fat' },
+          { text: 'Date', value: 'carbs' },
           { text: 'Action', value: 'edit' }
         ],
         desserts: [
