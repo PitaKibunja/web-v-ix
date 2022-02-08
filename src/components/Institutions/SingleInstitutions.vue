@@ -18,14 +18,14 @@
                         mdi-school
                     </v-icon>
                     </v-btn>
-           
+
                  <h3 class="ml-4 pt-2">{{ institution.name }}<v-icon class="mb-5"  color="green accent-5">mdi-check-circle-outline</v-icon> </h3>
-                  </v-row>      
+                  </v-row>
                     </div>
 
    </v-row>
    </v-card-title>
-  <v-divider></v-divider> 
+  <v-divider></v-divider>
 <v-card class="supu pt-4 mb-4" dense>
     <v-simple-table class=""  style="  border: 1px solid green;
   border-collapse: collapse;">
@@ -75,12 +75,12 @@
 </v-card>
   <!-- The second table goes here -->
 
-    <v-divider></v-divider> 
+    <v-divider></v-divider>
   <v-card class="white--text mb-4">
     <v-card-title  class="bady white--text" >
         <v-row cols="12 " class="bady white--text d-flex justify-left  pt-4">
      <div class=" font-weight-medium">
-                 <h3>Licensed Courses</h3>      
+                 <h3>Licensed Courses</h3>
     </div>
    </v-row>
     </v-card-title>
@@ -103,10 +103,10 @@
           </th>
           <th class="text-left">
             Level
-          </th> 
+          </th>
         <th class="text-left">
             Max Enrollment
-          </th> 
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -129,7 +129,7 @@
     </v-container>
 </template>
 <script>
-const baseURL="http://localhost:3000/api_v_1"
+const baseURL="https://tveta-backend.herokuapp.com/api_v_1"
   export default {
     data () {
       return {

@@ -4,11 +4,11 @@
             <v-card-title class="ttitle accent-5 white--text">
                  <v-row cols="12 " class="d-flex justify-center mb-1">
      <div class="font-weight-medium">
-                 <h3> Approved CBET Curricula <v-icon class="mb-5" medium color="white">mdi-check-circle-outline</v-icon> </h3>      
+                 <h3> Approved CBET Curricula <v-icon class="mb-5" medium color="white">mdi-check-circle-outline</v-icon> </h3>
                     </div>
                     </v-row>
             </v-card-title>
-  <v-divider></v-divider> 
+  <v-divider></v-divider>
  <template>
   <v-card>
     <v-card-title class="bady accent-5 white--text">
@@ -50,7 +50,7 @@
     </v-container>
 </template>
 <script>
-const baseURL="http://localhost:3000/api_v_1"
+const baseURL="https://tveta-backend.herokuapp.com/api_v_1"
   export default {
     data () {
       return {
@@ -65,7 +65,7 @@ const baseURL="http://localhost:3000/api_v_1"
           { text: 'Course Title', value: 'course' },
           { text: 'Body', value: 'body' },
           { text: 'Level', value: 'level' },
-       
+
         ],
         Courses: []
       }

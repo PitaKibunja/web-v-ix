@@ -5,13 +5,13 @@
             <v-card-title class="ttitle white--text">
                  <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
      <div class="font-weight-medium">
-                
-                 <h3> TVET Registered and Licensed Trainers 2021 <v-icon class="mb-5" medium color="green">mdi-check-circle-outline</v-icon> </h3>      
+
+                 <h3> TVET Registered and Licensed Trainers 2021 <v-icon class="mb-5" medium color="green">mdi-check-circle-outline</v-icon> </h3>
                     </div>
                     </v-row>
             </v-card-title>
-        
-  <v-divider></v-divider> 
+
+  <v-divider></v-divider>
  <template>
   <v-card>
     <v-card-title class="bady accent-5 white--text">
@@ -49,20 +49,20 @@
     </v-data-table>
   </v-card>
 </template>
-      
 
-   </v-card>  
+
+   </v-card>
 </v-container>
 
-<!-- 
+<!--
 <v-container>
 
-      
+
 </v-container> -->
 
 </template>
 <script>
-const baseURL="http://localhost:3000/api_v_1"
+const baseURL="https://tveta-backend.herokuapp.com/api_v_1"
   export default {
     data () {
       return {
@@ -74,7 +74,7 @@ const baseURL="http://localhost:3000/api_v_1"
             value: 'index',
             text: '#',
           },
-          
+
           { text: 'TVETA Reg. No', value: 'regno' },
           { text: 'Full Name', value: 'fullname' },
           { text: 'Area of Specialization', value: 'specialization' },
@@ -86,7 +86,7 @@ const baseURL="http://localhost:3000/api_v_1"
     },
     created(){
       this.fetchData()
-      
+
     },
     watch:{
       '$route':'fetchData'

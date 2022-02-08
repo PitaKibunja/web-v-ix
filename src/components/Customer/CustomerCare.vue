@@ -1,12 +1,12 @@
 <template>
     <v-container class="mt-8">
           <v-card elevation="2" >
-               
+
             <v-card-title class="custom-color white--text" >
                  <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
                     <div class="font-weight-medium">
-                
-                 <h3>Customer Care</h3>      
+
+                 <h3>Customer Care</h3>
                     </div>
                     </v-row>
             </v-card-title>
@@ -18,15 +18,15 @@
                     </div>
             <v-divider></v-divider>
             <div>
-               
+
                             <v-breadcrumbs :items="linkss">
                         <template v-slot:divider>
                             <v-icon>mdi-chevron-right</v-icon>
                         </template>
                     </v-breadcrumbs>
-    
+
             </div>
-            
+
             <v-divider></v-divider>
             <v-container>
              <v-row no-gutters>
@@ -58,9 +58,9 @@
                                     v-model="valid"
                                     lazy-validation
                                     @submit.prevent="saveFeedback"
-                                    
+
                                 >
-                                
+
                                     <v-select
                                     v-model="customerFeedback.feedbacktype"
                                     :items="items"
@@ -68,7 +68,7 @@
                                     label="Type of Feedback"
                                     required
                                     ></v-select>
-                                    
+
                                     <v-text-field
                                     v-model="customerFeedback.name"
                                     :counter="10"
@@ -88,10 +88,10 @@
                                         clearable
                                         clear-icon="mdi-close-circle"
                                         label="Message"
-                                        
+
                                         ></v-textarea>
                                     <v-btn
-                                    
+
                                     color="#508F40"
                                     class="mr-4"
                                     dark
@@ -122,7 +122,7 @@
                         </v-card>
                     </v-container>
                     <v-divider></v-divider>
-                    </v-card>  
+                    </v-card>
                  </v-col>
                  <v-col class="ml-4 pb-4">
                      <v-card max-width="360">
@@ -130,7 +130,7 @@
                               <v-card-title class="custom-color justify center">
                                     <div class="font-weight-medium">
                                     <p class="white--text font-weight-medium mb-0">
-                                      CONTACT US 
+                                      CONTACT US
                                     </p>
                                     </div>
                             </v-card-title>
@@ -138,13 +138,13 @@
                             <v-divider></v-divider>
                             <v-card  v-for="location in locations" :key="location.area" tile class="body-color white--text mx-auto " >
                                <v-card-title class="justify center">
-                                    
+
                                     <p class="font-weight-medium justify-center">
                                       {{ location.area }} <router-link to=""><v-icon color="white">mdi-map-marker</v-icon></router-link>
                                       <v-divider></v-divider>
                                     </p>
-                                    
-                                    
+
+
                             </v-card-title >
                                 <v-card-text class="text-justify">
                                     <v-list-item one-line v-for="address in location.list" :key="address.house">
@@ -202,7 +202,7 @@
           {phone:'Phone:+254 20 239 2140'},
           {cell:'Cell: +254 700 015 440'},
           {web:'Web: www.tveta.go.ke'},
-        ]}, 
+        ]},
          {area:'Mombasa',list:[
           {house:'NSSF building Ground Floor, Nkurumah Road'},
           {box:'P.O. Box 35625 - 00100'},
@@ -246,8 +246,8 @@
         departments: [
           {
             dep: 'Accreditation',
-            mandate:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium voluptate aut ea, voluptatem ut aspernatur assumenda dignissimos excepturi nam earum iste laboriosam nemo reiciendis cupiditate ullam sint labore incidunt.', 
-          
+            mandate:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium voluptate aut ea, voluptatem ut aspernatur assumenda dignissimos excepturi nam earum iste laboriosam nemo reiciendis cupiditate ullam sint labore incidunt.',
+
           }
         ],
       }
@@ -263,12 +263,12 @@
         this.$refs.form.resetValidation()
       },
       saveFeedback(){
-        this.$http.post('http://localhost:3000/api_v_1/feedback',this.customerFeedback)
+        this.$http.post('https://tveta-backend.herokuapp.com/api_v_1/feedback',this.customerFeedback)
         .then((result)=>{
           console.warn(result)
         })
-       
-        
+
+
       }
     },
   }

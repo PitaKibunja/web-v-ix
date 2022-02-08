@@ -1,6 +1,6 @@
 <template>
    <v-container fluid class="d-flex justify-center mb-2  mt-1 " >
-        
+
     <v-row no-gutters class="mt-10">
       <v-col
         cols="12"
@@ -19,7 +19,7 @@
       <v-col
         cols="2"
         md="4"
-        
+
       >
         <v-card
           class="pa-2"
@@ -28,7 +28,7 @@
         >
         <h5 class="mb-6">Related Posts({{ spCategory }})</h5>
         <v-divider></v-divider>
-         
+
     <v-card
     class="mx-auto mt-2 mb-2"
     max-width="344"
@@ -65,8 +65,8 @@
       </v-btn>
     </v-card-actions>
   </v-card>
-          
-   
+
+
         </v-card>
       </v-col>
     </v-row>
@@ -75,7 +75,7 @@
 </template>
 <script>
 import Post from '../components/Posts/Post.vue'
-const baseURL="http://localhost:3000/api_v_1"
+const baseURL="https://tveta-backend.herokuapp.com/api_v_1"
 export default {
 components:{
   Post
@@ -92,14 +92,14 @@ data(){
      beforeCreate(){
       this.fetchSinglePost()
       this.fetchRelatedPosts()
-      
+
     },
     created(){
       const poId=this.$route.params.postId
       this.postId=poId
       this.fetchSinglePost()
       this.fetchRelatedPosts()
-     
+
     },
     watch:{
       '$route':'fetchSinglePost()'
@@ -111,8 +111,8 @@ data(){
           .then((res)=>{
             this.selectedPost=res.data
             this.spCategory=res.data.category
-            
-           
+
+
           })
         }catch(err){
           this.selectedPost
@@ -135,11 +135,11 @@ data(){
            this.$http.get(`${baseURL}/Admin/posts/post/post`)
           .then((res)=>{
             this.relatedPost=res.data
-            
+
           })
         }catch(err){
           this.relatedPost
-      
+
         }
       }
     }

@@ -5,8 +5,8 @@
       color="white"
      class=" pt-0"
       center-active
-      flat 
-      
+      flat
+
     >
         <v-tabs
           v-model="tab"
@@ -35,28 +35,28 @@
         <v-card  :key="item" flat>
            <v-row no-gutters>
       <v-col
-        v-for="item in posts" 
+        v-for="item in posts"
         :key="item._id"
         cols="12"
         sm="4"
       >
-       
+
            <News :id="item._id" :title="item.title" :body="item.body" />
-        
+
       </v-col>
     </v-row>
-            
-             
-                   
-    
-          
+
+
+
+
+
         </v-card>
       </v-tab-item>
     </v-tabs-items>
   </v-card>
 </template>
 <script>
-const baseURL="http://localhost:3000/api_v_1"
+const baseURL="https://tveta-backend.herokuapp.com/api_v_1"
 import News from '../cards/News.vue'
   export default {
     components:{
@@ -79,7 +79,7 @@ import News from '../cards/News.vue'
     created(){
       this.fetchTabs()
       this.fetchPosts()
-     
+
     },
     watch:{
       '$route':'fetchTabs,fetchPosts'
@@ -98,7 +98,7 @@ import News from '../cards/News.vue'
       },
       async fetchTabs(){
         try{
-          const rawData=await this.$http.get(`${baseURL}/Admin/posts/category`)   
+          const rawData=await this.$http.get(`${baseURL}/Admin/posts/category`)
           this.items= rawData.data
         }catch(err){
           this.news
