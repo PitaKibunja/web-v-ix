@@ -4,33 +4,33 @@
             <v-card-title class="ttitle white--text">
                  <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
                     <div class="font-weight-medium">
-                
-                 <h3> Career Details</h3>      
+
+                 <h3> Career Details</h3>
                     </div>
                     </v-row>
             </v-card-title>
             <v-divider></v-divider>
                    <div>
-               
+
                             <v-breadcrumbs :items="linkss">
                         <template v-slot:divider>
                             <v-icon>mdi-chevron-right</v-icon>
                         </template>
                     </v-breadcrumbs>
-    
+
             </div>
             <v-divider></v-divider>
             <v-container fluid no-gutters>
                <v-row  no-gutters class="d-flex justify-start">
                   <v-col cols="9" no-gutters>
                      <v-container>
-                          
+
                         <v-card >
                            <v-card-title class="bady">
                               <v-row  class="bady white--text d-flex justify-start mb-1  pt-1">
                                  <div class="font-weight-medium ma-1 pa-1">
-                              
-                              <h4> {{jobDetails.jname}}({{jobDetails.jref }})</h4> <h3></h3>    
+
+                              <h4> {{jobDetails.jname}}({{jobDetails.jref }})</h4> <h3></h3>
                                  </div>
                                  </v-row>
                            </v-card-title>
@@ -48,7 +48,7 @@
                         3.Lorem ipsum dolor sit amet, consectetur adipiscing elit<br/>
                         4.Lorem ipsum dolor sit amet, consectetur adipiscing elit<br/>
                         5.Lorem ipsum dolor sit amet, consectetur adipiscing elit<br/>
-                        </p>                   
+                        </p>
                 </div>
                 <p class="text-h6 ">Academic Qualifications</p>
                 <p>
@@ -76,7 +76,7 @@
                         2.<router-link to="/">Form template</router-link><br/>
                     </p>
                 </div>
-               
+
             </v-container>
                         </v-card>
                      </v-container>
@@ -89,8 +89,8 @@
                      tile
                   >
                      <v-list class="bady">
-                  
-                  <h3 class="white--text ml-2 d-flex justify-center"> More Careers</h3>  
+
+                  <h3 class="white--text ml-2 d-flex justify-center"> More Careers</h3>
                   <v-divider></v-divider>
                   <v-list-item-group
                   class="supu"
@@ -117,7 +117,7 @@
     </v-container>
 </template>
 <script>
-const baseURL="http://localhost:3000/api_v_1"
+const baseURL="https://tveta-backend.herokuapp.com/api_v_1"
 export default {
       
 
@@ -143,7 +143,7 @@ export default {
         }
       ],
       }
-      
+
    },
    created(){
       const jobselect=this.$route.params.jobId

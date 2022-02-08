@@ -4,7 +4,7 @@
     <v-carousel-item
       v-for="(item,i) in items"
       :key="i"
-      
+
     >
     <v-img :src="item.src" contain  width="auto"></v-img>
     </v-carousel-item>
@@ -24,11 +24,11 @@
           <router-link to="/career" tag="span" style="cursor: pointer">
           Careers and Job Adverts
         </router-link>
-       
+
         </v-badge>
-        
+
       </v-btn>
-      
+
     </v-card-actions>
     </v-card>
   </v-card>
@@ -40,22 +40,22 @@
         rounded
        elevation="3"
        color="#FFCE66"
-      
-      
+
+
       >
-        
+
            <v-badge
           color="#508F40"
           :content="tenderssize"
-          
+
         >
         <router-link to="/tenders" tag="span" style="cursor: pointer">
           TVET Authority Tenders
         </router-link>
-        
+
         </v-badge>
       </v-btn>
-      
+
     </v-card-actions>
     </v-card>
   </v-card>
@@ -68,7 +68,7 @@
 
 </template>
 <script>
-const baseURL="http://localhost:3000/api_v_1"
+const baseURL="https://tveta-backend.herokuapp.com/api_v_1"
 // import UtilityLinks from './UtilityLinks.vue'
 import LinkShortcut from './navs/LinkShortcut.vue'
   export default {
@@ -83,12 +83,12 @@ import LinkShortcut from './navs/LinkShortcut.vue'
         jobssize:0,
         tenderssize:0,
           links: [
-       
+
        { text: 'Customer Care', icon: 'mdi-face-agent' },
         { text: 'Standards', icon: 'mdi-flag' },
-          
-         
-         { text: 'MIS', icon: 'mdi-login'},  
+
+
+         { text: 'MIS', icon: 'mdi-login'},
         { text: 'FAQs', icon: 'mdi-frequently-asked-questions' },
 
          { text: 'Strategic Plan', icon: 'mdi-strategy' },

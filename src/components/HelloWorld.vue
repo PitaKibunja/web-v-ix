@@ -95,6 +95,6 @@
   export default {
     name: 'HelloWorld',
 
-    
+
   }
 </script>

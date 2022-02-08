@@ -4,13 +4,13 @@
             <v-card-title class="ttitle white--text">
                  <v-row cols="12 " class="d-flex justify-center mb-1 ml-4  pt-2">
                     <div class="font-weight-medium">
-                
-                 <h3>Tenders</h3>      
+
+                 <h3>Tenders</h3>
                     </div>
                     </v-row>
             </v-card-title>
                   <v-divider></v-divider>
-            
+
              <div>
                     <v-breadcrumbs :items="items">
                         <template v-slot:divider>
@@ -63,38 +63,38 @@
                                            </v-text>
                                        </v-col>
                                    <v-col class="mt-0">
-                                    
-                                      
-                                   
-                                      <v-btn 
+
+
+
+                                      <v-btn
                                        class="font-weight-medium"
                                        outlined
                                        color="#0082C6"
-                                       
+
                                       >
                                        <router-link to="/careerdetails" tag="span" style="cursor: pointer">
                                        <v-icon>mdi-download</v-icon>
                                           Download
                                        </router-link>
-                                         
+
                                       </v-btn>
                                    </v-col>
                                 </div>
                                </v-col>
-                        
-                        
+
+
                            </v-row>
                          </v-card>
                          </v-container>
                      </v-card-actions>
-                
+
                 </v-card>
           </v-card>
     </v-container>
 </template>
 
 <script>
-const baseURL="http://localhost:3000/api_v_1"
+const baseURL="https://tveta-backend.herokuapp.com/api_v_1"
 export default {
    data:()=>({
       tenders:[],

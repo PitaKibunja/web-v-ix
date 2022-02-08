@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar 
+    <v-app-bar
       color="#0082C6"
       dark
       app
@@ -17,7 +17,7 @@
             <p class="text-h5 ml-4 pt-6 mb-n2">TVET</p>
             <p class="text-h5 ml-1">Authority</p>
           </v-container>
-      </div> 
+      </div>
       <v-spacer></v-spacer>
       <template>
   <div class="text-center justify-between">
@@ -32,10 +32,10 @@
 
           :key="navItem"
     >
-     <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">  
+     <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">
        <v-btn
           color="white lighten-4"
-          large  
+          large
           text
           v-bind="attrs"
           v-on="on"
@@ -61,11 +61,11 @@
            v-for="navItem in links"
           :key="navItem"
     >
-      
-      <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">  
+
+      <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">
        <v-btn
           color="white lighten-4"
-          large  
+          large
           text
           v-bind="attrs"
           v-on="on"
@@ -96,12 +96,12 @@
       transition="scale-transition"
             :rounded="rounded"
           :key="navItem"
-          
+
     >
-     <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">  
+     <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">
        <v-btn
           color="white lighten-4"
-          large  
+          large
           text
           v-bind="attrs"
           v-on="on"
@@ -122,7 +122,7 @@
       :close-on-content-click="false"
       :nudge-width="100"
       offset-y
-      
+
     >
       <template v-slot:activator="{ on, attrs }">
         <v-btn
@@ -148,8 +148,8 @@
             append-icon="mdi-magnify"
             ></v-text-field>
           </v-form>
-            
-            
+
+
             </v-list-item-content>
 
           </v-list-item>
@@ -157,24 +157,24 @@
     </v-menu>
   </div>
   </v-row>
-</template>   
+</template>
       <v-menu
       open-on-hover
       offset-y
       tile
-      
+
       origin="center center"
       transition="scale-transition"
       :rounded="rounded"
       bottom
       >
-      
+
         <template v-slot:activator="{ on, attrs }">
           <v-btn
             icon
             v-bind="attrs"
             v-on="on"
-          
+
           >
             <v-icon>mdi-dots-vertical</v-icon>
           </v-btn>
@@ -195,7 +195,7 @@
   </div>
 </template>
 <script>
-const baseURL="http://localhost:3000/api_v_1"
+const baseURL="https://tveta-backend.herokuapp.com/api_v_1"
   export default {
     data: () => ({
       searchbar:false,
@@ -222,7 +222,7 @@ const baseURL="http://localhost:3000/api_v_1"
     methods:{
       popSearch(){
         this.searchbar=!this.searchbar
-        
+
       },
       async fetchData(){
         try{
