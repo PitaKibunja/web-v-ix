@@ -263,7 +263,7 @@
         this.$refs.form.resetValidation()
       },
       saveFeedback(){
-        this.$http.post('https://tveta-backend.herokuapp.com/api_v_1/feedback',this.customerFeedback)
+        this.$http.post('https://tveta-web-backend.onrender.com/api_v_1/feedback',this.customerFeedback)
         .then((result)=>{
           console.warn(result)
         })

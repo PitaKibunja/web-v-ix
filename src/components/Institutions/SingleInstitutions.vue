@@ -129,7 +129,7 @@
     </v-container>
 </template>
 <script>
-const baseURL="https://tveta-backend.herokuapp.com/api_v_1"
+const baseURL="https://tveta-web-backend.onrender.com/api_v_1"
   export default {
     data () {
       return {
