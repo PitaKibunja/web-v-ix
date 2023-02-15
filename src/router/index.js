@@ -35,6 +35,7 @@ import MIS from '../components/TheLinks/MIS.vue'
 import SMail from '../components/TheLinks/SMail.vue'
 import SPortal from '../components/TheLinks/SPortal.vue'
 import SPlan from '../components/TheLinks/StrategicPlan.vue'
+import SearchPage from '../components/Search/Search.vue'
 
 //CMS import path starts here...
 import Login from '../components/CMS/login.vue'
@@ -99,7 +100,14 @@ const routes = [
     path: '/search',
     name: 'Search',
     component: Search
-  },{
+  },
+  {
+    path: '/SearchPage',
+    name: 'SearchPage',
+    component: SearchPage
+  }
+  ,
+  {
     path: '/tenders',
     name: 'Tenders',
     component: Tenders

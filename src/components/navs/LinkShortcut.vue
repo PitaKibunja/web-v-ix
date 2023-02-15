@@ -1,32 +1,17 @@
 <template>
-
-    <div class="text-center">
+  <div class="text-center">
     <v-spacer></v-spacer>
-    <v-row  class="text-center ml-8" style="z-index:700">
-         <div class="mx-8 flex-d  mt-n1"  v-for="link in links"    :key="link">
-            <v-spacer></v-spacer>
-            <v-col>
-                <v-btn
-                    class=" mb-0"
-                    fab
-                    dark
-                    small
-                    elevation="2"
-                    color="#0082C6"
-                    :to="link.where"
-                    >
-                    <v-icon size="25" dark>
-                        {{ link.icon }}
-                    </v-icon>
-                    </v-btn>
-            </v-col>
-            <div class="mt-0 text-wrap">
-                <v-flex>
-                  {{ link.text }}
-                </v-flex>
-            </div>
-         
-    </div>
+    <v-row class="ml-auto mr-auto" style="z-index:700">
+      <div class="d-flex justify-center" v-for="link in links" :key="link">
+        <v-col cols="auto">
+          <v-btn class="mb-0" fab dark small elevation="2" color="#0082C6" :to="link.where">
+            <v-icon size="25" dark>{{ link.icon }}</v-icon>
+          </v-btn>
+        </v-col>
+        <div class="mt-5 text-wrap">
+          <v-flex>{{ link.text }}</v-flex>
+        </div>
+      </div>
     </v-row>
   </div>
 </template>
@@ -46,7 +31,7 @@
 
          { text: 'Strategic Plan', icon: 'mdi-file-document-multiple' ,where:'/strategic-plan'},
          { text: 'Service Charter', icon: 'mdi-file-document-multiple', where:'/service-charter' },
-        { text: '+254 700 015 440 | +254-20 2392140', icon: 'mdi-phone-classic Cell: +254 700 015 440/254 700 015 440' },
+        
 
 
       ],

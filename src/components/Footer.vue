@@ -35,6 +35,18 @@
                     <v-list-item-title class="pa-1 ma-1">Phone:+254 20 239 2140</v-list-item-title>
                     <v-list-item-title class="pa-1 ma-1">Cell: +254 700 015 440</v-list-item-title>
                     <v-list-item-title class="pa-1 ma-1">Web: www.tveta.go.ke</v-list-item-title>
+                    <v-list-item-title class="pa-1 ma-1">Careers and Opportunity </v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+              </v-container>
+            </v-col>
+            <v-col>
+              <v-container>
+                        
+                  <h4 class="d-flex justify-start">Careers and Opportunity</h4>
+                 <v-list-item>
+                  <v-list-item-content>
+                    <v-list-item-title class="pa-1 ma-1"> <router-link class="text-decoration: none" to="/">Careers and Opportunity</router-link> </v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
               </v-container>

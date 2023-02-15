@@ -75,7 +75,7 @@
 </v-card>
   <!-- The second table goes here -->
 
-    <v-divider></v-divider>
+<v-divider></v-divider>
   <v-card class="white--text mb-4">
     <v-card-title  class="bady white--text" >
         <v-row cols="12 " class="bady white--text d-flex justify-left  pt-4">

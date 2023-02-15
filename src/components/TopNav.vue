@@ -1,113 +1,102 @@
 <template>
   <div>
-    <v-app-bar
-      color="#0082C6"
-      dark
-      app
-      class="mb-2"
-      style="z-index:500"
-    >
-    <v-toolbar-title>
-        <v-card elevation="2" width="100" color="white" class="pt-4 " outlined raised :to="defacto.link">
+    <v-app-bar color="#0082C6" dark app class="mb-2" style="z-index:500">
+      <v-toolbar-title>
+        <v-card elevation="2" width="100" color="white" class="pt-4" outlined raised :to="defacto.link">
           <v-img class="ml-0" src="../assets/tveta_logo.png"></v-img>
         </v-card>
       </v-toolbar-title>
-        <div class="d-flex justify-start mb-2">
-          <v-container fluid>
-            <p class="text-h5 ml-4 pt-6 mb-n2">TVET</p>
-            <p class="text-h5 ml-1">Authority</p>
-          </v-container>
+      <div class="d-flex justify-start mb-2">
+        <v-container fluid>
+          <p class="text-h5 ml-4 pt-6 mb-n2">TVET</p>
+          <p class="text-h5 ml-1">Authority</p>
+        </v-container>
       </div>
       <v-spacer></v-spacer>
       <template>
-  <div class="text-center justify-between">
-        <v-menu
-      open-on-hover
-      offset-y
-      tile
+        <div class="text-center justify-between">
+          <v-menu
+            open-on-hover
+            offset-y
+            tile
             bottom
-      origin="center center"
-      transition="scale-transition"
+            origin="center center"
+            transition="scale-transition"
             :rounded="rounded"
-
-          :key="navItem"
-    >
-     <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">
-       <v-btn
-          color="white lighten-4"
-          large
-          text
-          v-bind="attrs"
-          v-on="on"
-          class="pa-2 ma-2 mr-2"
-          :to="defacto.link"
-        >
-          <router-link to="/" tag="span" style="cursor: pointer">
-           <v-icon>mdi-home</v-icon>
-          Home
-        </router-link>
-        </v-btn>
-      </template>
-        </v-menu>
-    <v-menu
-      open-on-hover
-      offset-y
-      tile
-            bottom
-      origin="center center"
-      transition="scale-transition"
-            :rounded="rounded"
-
-           v-for="navItem in links"
-          :key="navItem"
-    >
-
-      <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">
-       <v-btn
-          color="white lighten-4"
-          large
-          text
-          v-bind="attrs"
-          v-on="on"
-          class="pa-4 ma-2 mr-2"
-        >
-        <v-icon>{{ navItem.icon }}</v-icon>
-          {{ navItem.navl }}
-        </v-btn>
-      </template>
-
-      <v-list>
-          <v-list-item
-            v-for="n in navItem.list"
-            :key="n"
-            @click="() => {}"
-            :to="n.linker"
+            :key="navItem"
           >
-            <v-list-item-title>{{ n.submenu }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-    </v-menu>
-  </div>
-   <v-menu
-      offset-y
-      tile
+            <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">
+              <v-btn
+                color="white lighten-4"
+                large
+                text
+                v-bind="attrs"
+                v-on="on"
+                class="pa-2 ma-2 mr-2"
+                :to="defacto.link"
+              >
+                <router-link to="/" tag="span" style="cursor: pointer">
+                  <v-icon>mdi-home</v-icon>
+                  Home
+                </router-link>
+              </v-btn>
+            </template>
+          </v-menu>
+          <v-menu
+            open-on-hover
+            offset-y
+            tile
             bottom
-      origin="center center"
-      transition="scale-transition"
+            origin="center center"
+            transition="scale-transition"
             :rounded="rounded"
-          :key="navItem"
-
-    >
-     <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">
-       <v-btn
-          color="white lighten-4"
-          large
-          text
-          v-bind="attrs"
-          v-on="on"
-          class="pa-2 mr-4"
-        >
-          <router-link to="/downloads" tag="span" style="cursor: pointer">
+            v-for="navItem in links"
+            :key="navItem"
+          >
+            <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">
+              <v-btn
+                color="white lighten-4"
+                large
+                text
+                v-bind="attrs"
+                v-on="on"
+                class="pa-4 ma-2 mr-2"
+              >
+                <v-icon>{{ navItem.icon }}</v-icon>
+                {{ navItem.navl }}
+              </v-btn>
+            </template>
+            <v-list>
+              <v-list-item
+                v-for="n in navItem.list"
+                :key="n"
+                @click="() => {}"
+                :to="n.linker"
+              >
+                <v-list-item-title>{{ n.submenu }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+  </div>
+  <v-menu
+            offset-y
+            tile
+            bottom
+            origin="center center"
+            transition="scale-transition"
+            :rounded="rounded"
+            :key="navItem"
+          >
+            <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">
+              <v-btn
+                color="white lighten-4"
+                large
+                text
+                v-bind="attrs"
+                v-on="on"
+                class="pa-2 mr-4"
+              >
+                <router-link to="/downloads" tag="span" style="cursor: pointer">
           Downloads
         </router-link>
         </v-btn>
