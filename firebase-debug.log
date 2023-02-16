@@ -1,0 +1,121 @@
+[debug] [2023-02-16T12:31:43.216Z] ----------------------------------------------------------------------
+[debug] [2023-02-16T12:31:43.219Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\RG\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-02-16T12:31:43.220Z] CLI Version:   11.23.1
+[debug] [2023-02-16T12:31:43.220Z] Platform:      win32
+[debug] [2023-02-16T12:31:43.220Z] Node Version:  v16.13.0
+[debug] [2023-02-16T12:31:43.221Z] Time:          Thu Feb 16 2023 15:31:43 GMT+0300 (East Africa Time)
+[debug] [2023-02-16T12:31:43.222Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-16T12:31:43.374Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-16T12:31:43.374Z] > authorizing via signed-in user (pitakibunja@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\RG\Desktop\TVETA WEBSITE\web-v-ix
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-02-16T12:31:56.541Z] Using project from CLI flag: tveta-website
+[debug] [2023-02-16T12:31:56.545Z] > refreshing access token with scopes: []
+[debug] [2023-02-16T12:31:56.547Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-02-16T12:31:56.547Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-02-16T12:31:58.177Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2023-02-16T12:31:58.177Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-02-16T12:31:58.178Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/tveta-website [none]
+[debug] [2023-02-16T12:32:00.283Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/tveta-website 401
+[debug] [2023-02-16T12:32:00.283Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/tveta-website {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2023-02-16T12:32:00.284Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2023-02-16T12:32:02.367Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at responseToError (C:\Users\RG\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\RG\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project tveta-website. Please make sure the project exists and your account has permission to access it.
+[debug] [2023-02-16T12:32:28.295Z] ----------------------------------------------------------------------
+[debug] [2023-02-16T12:32:28.299Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\RG\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-02-16T12:32:28.300Z] CLI Version:   11.23.1
+[debug] [2023-02-16T12:32:28.301Z] Platform:      win32
+[debug] [2023-02-16T12:32:28.301Z] Node Version:  v16.13.0
+[debug] [2023-02-16T12:32:28.305Z] Time:          Thu Feb 16 2023 15:32:28 GMT+0300 (East Africa Time)
+[debug] [2023-02-16T12:32:28.305Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-16T12:32:28.509Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-16T12:32:28.509Z] > authorizing via signed-in user (pitakibunja@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\RG\Desktop\TVETA WEBSITE\web-v-ix
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-02-16T12:34:34.067Z] Using project from CLI flag: tveta-website
+[debug] [2023-02-16T12:34:34.071Z] > refreshing access token with scopes: []
+[debug] [2023-02-16T12:34:34.075Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-02-16T12:34:34.075Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-02-16T12:34:35.212Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2023-02-16T12:34:35.213Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-02-16T12:34:35.214Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/tveta-website [none]
+[debug] [2023-02-16T12:34:36.945Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/tveta-website 401
+[debug] [2023-02-16T12:34:36.945Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/tveta-website {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2023-02-16T12:34:36.946Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2023-02-16T12:34:39.034Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at responseToError (C:\Users\RG\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\RG\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project tveta-website. Please make sure the project exists and your account has permission to access it.
+[debug] [2023-02-16T12:36:15.631Z] ----------------------------------------------------------------------
+[debug] [2023-02-16T12:36:15.634Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\RG\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js use --add
+[debug] [2023-02-16T12:36:15.635Z] CLI Version:   11.23.1
+[debug] [2023-02-16T12:36:15.635Z] Platform:      win32
+[debug] [2023-02-16T12:36:15.635Z] Node Version:  v16.13.0
+[debug] [2023-02-16T12:36:15.637Z] Time:          Thu Feb 16 2023 15:36:15 GMT+0300 (East Africa Time)
+[debug] [2023-02-16T12:36:15.638Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-16T12:36:15.816Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-16T12:36:15.817Z] > authorizing via signed-in user (pitakibunja@gmail.com)
+[debug] [2023-02-16T12:36:15.819Z] > refreshing access token with scopes: []
+[debug] [2023-02-16T12:36:15.820Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-02-16T12:36:15.821Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-02-16T12:36:17.597Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2023-02-16T12:36:17.598Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-02-16T12:36:17.600Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2023-02-16T12:36:19.334Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 401
+[debug] [2023-02-16T12:36:19.334Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2023-02-16T12:36:19.338Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2023-02-16T12:36:20.634Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at responseToError (C:\Users\RG\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\RG\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to list Firebase projects. See firebase-debug.log for more info.

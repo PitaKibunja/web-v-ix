@@ -28,13 +28,13 @@
         md="8"
       >
         <v-card
-          class="body-color  mb-8 ma-2"
+          class="supu  mb-8 ma-2"
           outlined
           tile
-          height="483"
+          height="auto"
 
         >
-        <v-card-title class="white--text custom-color">
+        <v-card-title class="white--text body-color">
                  <v-row cols="12 " class="  d-flex justify-center mb-1 ma-2">
                     <div class="font-weight-medium">
                       <p class="font-weight-medium mb-0">
@@ -46,18 +46,13 @@
             </v-card-title>
             <v-divider></v-divider>
 
-                                <v-container fluid class="ma-4" >
-                                <v-card
-                        class=" d-flex justify-space-between mb-6 pt-4 "
-                        :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
-                        flat
-                        tile
-                        >
+                                <v-container fluid class="ma-0.5" >
+
                         
                         <v-card
                             v-for="n in statements"
                             :key="n"
-                            class="d-flex justify-center  pa-1 ma-1"
+                            class="d-flex justify-center  pa-0.5 ma-1"
                             elevation="2"
                             tile
                             
@@ -66,7 +61,7 @@
                         <v-container fluid no-gutters>
                           <v-card-title >
                             
-                        <v-row color="grey darken-2" cols="12 " class="d-flex justify-center pa-4">
+                        <v-row color="grey darken-2" cols="12 " class="d-flex justify-center pa-3">
                             <h5>{{ n.text }} <v-divider></v-divider> </h5> 
                             
                     </v-row>     
@@ -82,7 +77,7 @@
                         
                         </v-card>
                         
-                        </v-card>
+                        
                       </v-container>
         </v-card>
       </v-col>
@@ -92,12 +87,12 @@
         
       >
         <v-card
-          class="body-color mb-8"
-          height="482"
+          class="supu mb-8"
+          height="auto"
           
         >
          <v-divider></v-divider>
-            <v-card-title class="custom-color white--text mb-2">
+            <v-card-title class="body-color white--text mb-2">
                  <v-row cols="12 " class="d-flex justify-center mb-1">
                     <div class="font-weight-medium">
                       <p class="font-weight-medium mb-0">
@@ -109,34 +104,37 @@
                     
             </v-card-title>
             <v-divider></v-divider>
-                 <template>
-  <v-expansion-panels focusable>
+            <template>
+  <v-expansion-panels focusable v-model="openPanelIndex" class="pa-1">
     <v-expansion-panel
-      v-for="location in locations"
-      :key="location"
-      class="pa-1 "
+      v-for="(location, index) in locations"
+      :key="index"
+      class="pa-0.5"
       max-width="200"
     >
       <v-expansion-panel-header>{{ location.area }}</v-expansion-panel-header>
       <v-expansion-panel-content>
-          <v-card elevation="4">
-            <v-card-text class="text-justify">
-                                    <v-list-item one-line v-for="address in location.list" :key="address.house">
-                                    <v-container>
-                                      <v-list-item-content class="pa-0 ma-0">
-                                        <v-list-item-title class="text-wrap">{{ address.house }}</v-list-item-title>
-                                        <v-list-item-title>{{ address.box }}</v-list-item-title>
-                                        <v-list-item-title>{{ address.phone }}</v-list-item-title>
-                                        <v-list-item-title>{{ address.cell }}</v-list-item-title>
-                                    </v-list-item-content>
-                                    </v-container>
-                                    </v-list-item>
-                            </v-card-text>
-          </v-card>
+        <v-card elevation="4">
+          <v-card-text class="text-justify">
+            <v-list-item
+              one-line
+              v-for="address in location.list"
+              :key="address.house"
+            >
+              <v-container>
+                <v-list-item-content class="pa-0 ma-0">
+                  <v-list-item-title class="text-wrap">{{ address.house }}</v-list-item-title>
+                  <v-list-item-title>{{ address.box }}</v-list-item-title>
+                  <v-list-item-title>{{ address.phone }}</v-list-item-title>
+                  <v-list-item-title>{{ address.cell }}</v-list-item-title>
+                </v-list-item-content>
+              </v-container>
+            </v-list-item>
+          </v-card-text>
+        </v-card>
       </v-expansion-panel-content>
     </v-expansion-panel>
   </v-expansion-panels>
-
 </template>
         </v-card>
       </v-col>
@@ -224,7 +222,8 @@ TVETA shall ensure that this quality policy is communicated, understood and appl
   export default {
     data () {
       return {
-          dialog: false,
+        dialog: false,
+        openPanelIndex: 0, // set the first panel to be open by default
           locations:[
            {area:'Nairobi',list:[
           {house:'Utaliii House 8th Floor, Utalii Street'},

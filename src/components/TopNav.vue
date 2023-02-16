@@ -43,40 +43,41 @@
             </template>
           </v-menu>
           <v-menu
-            open-on-hover
-            offset-y
-            tile
-            bottom
-            origin="center center"
-            transition="scale-transition"
-            :rounded="rounded"
-            v-for="navItem in links"
-            :key="navItem"
-          >
-            <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">
-              <v-btn
-                color="white lighten-4"
-                large
-                text
-                v-bind="attrs"
-                v-on="on"
-                class="pa-4 ma-2 mr-2"
-              >
-                <v-icon>{{ navItem.icon }}</v-icon>
-                {{ navItem.navl }}
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item
-                v-for="n in navItem.list"
-                :key="n"
-                @click="() => {}"
-                :to="n.linker"
-              >
-                <v-list-item-title>{{ n.submenu }}</v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-menu>
+  :open-on-hover="$vuetify.breakpoint.lgAndUp"
+  :offset-y="$vuetify.breakpoint.lgAndUp ? undefined : 0"
+  tile
+  bottom
+  origin="center center"
+  transition="scale-transition"
+  :rounded="rounded"
+  v-for="navItem in links"
+  :key="navItem"
+>
+  <template v-slot:activator="{ on, attrs }" class="hidden-xs-only">
+    <v-btn
+      color="white lighten-4"
+      large
+      text
+      v-bind="attrs"
+      v-on="on"
+      class="pa-4 ma-2 mr-2"
+    >
+      <v-icon>{{ navItem.icon }}</v-icon>
+      {{ navItem.navl }}
+    </v-btn>
+  </template>
+  <v-list>
+    <v-list-item
+      v-for="n in navItem.list"
+      :key="n"
+      @click="() => {}"
+      :to="n.linker"
+    >
+      <v-list-item-title>{{ n.submenu }}</v-list-item-title>
+    </v-list-item>
+  </v-list>
+</v-menu>
+
   </div>
   <v-menu
             offset-y

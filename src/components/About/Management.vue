@@ -137,7 +137,7 @@
   </v-container>
 </template>
 <script>
-const baseURL="http://localhost:3000/api_v_1"
+const baseURL="https://tveta-web-backend.onrender.com/api_v_1"
   export default {
     data () {
       return {
