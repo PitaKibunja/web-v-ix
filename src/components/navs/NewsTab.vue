@@ -45,11 +45,6 @@
 
       </v-col>
     </v-row>
-
-
-
-
-
         </v-card>
       </v-tab-item>
     </v-tabs-items>

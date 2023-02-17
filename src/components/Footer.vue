@@ -26,30 +26,70 @@
             </v-col>    
             <v-col>
               <v-container>
-                        
-                  <h4 class="d-flex justify-start">CONTACT US</h4>
-                 <v-list-item>
-                  <v-list-item-content>
-                   <v-list-item-title class="pa-1 ma-1">Utaliii House 8th Floor, Utalii Street</v-list-item-title>
-                   <v-list-item-title class="pa-1 ma-1">P.O. Box 35625 - 00100</v-list-item-title>
-                    <v-list-item-title class="pa-1 ma-1">Phone:+254 20 239 2140</v-list-item-title>
-                    <v-list-item-title class="pa-1 ma-1">Cell: +254 700 015 440</v-list-item-title>
-                    <v-list-item-title class="pa-1 ma-1">Web: www.tveta.go.ke</v-list-item-title>
-                    <v-list-item-title class="pa-1 ma-1">Careers and Opportunity </v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
+        <v-col cols="12">
+        <h4 class="mb-2">CONTACT US</h4>
+        <v-row>
+          <v-col cols="12">
+            <v-card class="pa-2" flat>
+              <v-card-text>
+                Utaliii House 8th Floor, Utalii Street<br>
+                P.O. Box 35625 - 00100<br>
+                Phone: +254 20 239 2140<br>
+                Cell: +254 700 015 440<br>
+                Email: info@tveta.go.ke
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="12" class="d-flex justify-center">
+            <a href="https://www.facebook.com/TVETAKenya/" class="text-decoration-none">
+              <v-icon size="25" dark>mdi-facebook</v-icon>
+            </a>
+            <a href="https://twitter.com/TVETAKenya" class="text-decoration-none ml-3">
+              <v-icon size="25" dark>mdi-twitter</v-icon>
+            </a>
+            <a href="https://www.instagram.com/tvetauthoritykenya/?hl=en" class="text-decoration-none ml-3">
+              <v-icon size="25" dark>mdi-instagram</v-icon>
+            </a>
+          </v-col>
+        </v-row>
+      </v-col>
               </v-container>
             </v-col>
             <v-col>
               <v-container>
-                        
-                  <h4 class="d-flex justify-start">Careers and Opportunity</h4>
+                  <h4 class="d-flex justify-start">CAREERS</h4>
                  <v-list-item>
                   <v-list-item-content>
-                    <v-list-item-title class="pa-1 ma-1"> <router-link class="text-decoration: none" to="/">Careers and Opportunity</router-link> </v-list-item-title>
+                    <v-list-item-title class="pa-1 ma-1"> <router-link class="text-decoration: none" to="/">
+                      Careers and Opportunity
+                    </router-link> </v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
               </v-container>
+              <v-container>                        
+                        <h4 class="d-flex justify-start">PARTNERS</h4>
+                       <v-list-item  class="text-decoration: none">
+                        <v-list-item-content  class="text-decoration: none">
+                          <v-list-item-title class="pa-1 ma-1"> <router-link class="text-decoration: none" to="/">
+                            WorldSkills Kenya
+                          </router-link> </v-list-item-title>
+                          <v-list-item-title class="pa-1 ma-1"> <router-link class="text-decoration: none" to="/">
+                            KEBS
+                          </router-link> </v-list-item-title>
+                          <v-list-item-title class="pa-1 ma-1"> <router-link class="text-decoration: none" to="/">
+                            Vision 2030
+                          </router-link> </v-list-item-title>
+                          <v-list-item-title class="pa-1 ma-1"> <router-link class="text-decoration: none" to="/">
+                            UNEVOC
+                          </router-link> </v-list-item-title>
+                          <v-list-item-title class="pa-1 ma-1"> <router-link class="text-decoration: none" to="/">
+                            Hands on the Future
+                          </router-link> </v-list-item-title>
+                        </v-list-item-content>
+                      </v-list-item>
+                    </v-container>
             </v-col>
           </v-row>
         </v-col>
@@ -60,6 +100,7 @@
     </v-footer>
   </v-container>
 </template>
+
 <script>
   export default {
     data: () => ({

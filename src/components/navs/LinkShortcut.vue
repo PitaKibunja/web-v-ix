@@ -24,9 +24,10 @@
        
        { text: 'Customer Care', icon: 'mdi-face-agent' ,where:'/customercare' },
         { text: 'Standards', icon: 'mdi-flag', where:'/standards'},
-          
-         
-         { text: 'TVET MIS', icon: 'mdi-login',where:'/mis' },  
+        
+          { text: 'TVET MIS', icon: 'mdi-login',where:'/mis' }, 
+          { text: 'Institutions Register', icon: 'mdi-town-hall', where: '/Allinstitution' },
+          { text: 'Trainers Register', icon: 'mdi-account-circle-outline',where:'/trainers' }, 
         { text: 'FAQs', icon: 'mdi-frequently-asked-questions' ,where:'/faqs'},
 
          { text: 'Strategic Plan', icon: 'mdi-file-document-multiple' ,where:'/strategic-plan'},
