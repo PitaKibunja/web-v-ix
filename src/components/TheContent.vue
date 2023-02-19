@@ -26,26 +26,37 @@
       </v-col>
     </v-row>
   </v-container>
+  <!-- <v-container class="fluid"> -->
+<!-- <CountInst/> -->
+<v-card class="mx-auto" max-width="auto">
+  <v-card-title class="text-center" style="background-color: #0082C6; color: white">
+    <div class="mx-auto">
+      Accredited Institutions
+    </div>
+  </v-card-title>
+  <v-card-text>
+    <v-container fluid>
+      <CountCard/>
+    </v-container>
+  </v-card-text>
+</v-card>
 
+  <!-- </v-container> -->
 
-      <v-card class="mb-4">
-          <v-divider></v-divider>
-        <v-card-title>
-          <v-row cols="12 " class="d-flex justify-center mb-4 ml-4  pt-2">
-              <div class="font-weight-medium">
-                 <h3>News and Updates</h3>      
-              </div>
-          </v-row>
-        </v-card-title>
-        <v-divider></v-divider>
-        <v-card-body>
-          <NewsTab/>
-        </v-card-body>
-           
-        <v-card class="pt-2 pb-8">
-            <ReadMore/>
-        </v-card>             
-      </v-card>
+  <v-card class="mx-auto" max-width="auto">
+    <v-card-title class="text-center" style="background-color: #0082C6; color: white">
+    <div class="mx-auto">
+      News and Updates
+    </div>
+  </v-card-title>
+    <v-card-text>
+      <v-container fluid>
+        <NewsTab/>
+      </v-container>
+    </v-card-text>
+  </v-card>
+
+     
     </v-card>
   </v-container>
 </div>
@@ -54,14 +65,16 @@
 
 // import Media from '../components/cards/Media.vue'
 // import Partners from '../components/cards/Partners.vue'
-import ReadMore from '../components/Buttons/ReadMore.vue'
+// import ReadMore from '../components/Buttons/ReadMore.vue'
 import NewsTab from '../components/navs/NewsTab.vue'
+import CountCard from '../components/cards/countInst.vue'
   export default {
       components:{
        
           // Media,
           //  Partners,
-           ReadMore,
+      // ReadMore,
+      CountCard,
            NewsTab
       },
     data: () => ({
@@ -70,6 +83,9 @@ import NewsTab from '../components/navs/NewsTab.vue'
         'center',
         'end',
       ],
+      vtcCount: 10,
+    tvcCount: 20,
+    npCount: 5,
       cards: [
         {
           id: 1,
@@ -111,3 +127,9 @@ import NewsTab from '../components/navs/NewsTab.vue'
     }),
   }
 </script>
+<style scoped>
+.v-card {
+  background-color: #f7f7f7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+</style>
