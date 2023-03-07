@@ -13,6 +13,7 @@ import InstReg from '../components/Institutions/InstitutionRegistration.vue'
 import TrainersReg from '../components/Institutions/TrainerRegistration.vue'
 import Curricula from '../components/Institutions/Curricula.vue'
 import Trainers from '../components/Trainers/TrainersRegister.vue'
+import Recognition from '../components/DepartmentsInfo/Recognition.vue'
 import Downloads from '../components/Repo/Downloads.vue'
 import Career from '../components/Repo/Career.vue'
 import FAQ from '../components/FAQs/FAQ.vue'
@@ -139,7 +140,14 @@ const routes = [
     path: '/accreditation',
     name: 'Accreditation',
     component: Accreditation
-  },{
+  },
+  {
+    path: '/recognition',
+    name: 'Recognition',
+    component: Recognition
+
+  },
+  {
     path: '/strategyandpolicy',
     name: 'Strategy and Policy',
     component: Strategy

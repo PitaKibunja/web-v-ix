@@ -22,9 +22,9 @@
             <v-divider></v-divider>
                     
             <v-divider></v-divider>
-            <v-container class="bady white--text">
+            <v-container class="pa-1">
                 <p>The Authority accredits institutions and approves managers of institutions and new programmes.</p>
-                <p class="text-h6">Business registration certificate</p>
+                <p class="text-h6">Business registration certificate(Applicable to private institution only)</p>
                 <div class="d-flex justify-start ml-4 pa-2">
                     <p>1. <a href="">Click Here</a> to obtain letter of no objection on the suitability of the name from TVETA <br/>
                      2.Register the Company or Business name with the Registrar of companies via <a href="">Ecitizen</a></p>

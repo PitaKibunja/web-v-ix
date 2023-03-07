@@ -127,6 +127,7 @@
                   <v-list-item-title>{{ address.box }}</v-list-item-title>
                   <v-list-item-title>{{ address.phone }}</v-list-item-title>
                   <v-list-item-title>{{ address.cell }}</v-list-item-title>
+                  <v-list-item-title>{{ address.email }}</v-list-item-title>
                 </v-list-item-content>
               </v-container>
             </v-list-item>
@@ -229,28 +230,32 @@ TVETA shall ensure that this quality policy is communicated, understood and appl
           {house:'Utaliii House 8th Floor, Utalii Street'},
           {box:'P.O. Box 35625 - 00100'},
           {phone:'Phone:+254 20 239 2140'},
-          {cell:'Cell: +254 700 015 440'},
+          { cell: 'Cell: +254 700 015 440' },
+          {email:'Email: info@tveta.go.ke'},
           {web:'Web: www.tveta.go.ke'},
         ]},
         {area:'Kisumu',list:[
           {house:'Kenya Re Insurance building 2nd Floor Wing B, Oginga Odinga Street'},
           {box:'P.O. Box 35625 - 00100'},
           {phone:'Phone:+254 20 239 2140'},
-          {cell:'Cell: +254 700 015 440'},
+          { cell: 'Cell: +254 700 015 440' },
+          {email:'Email: info@tveta.go.ke'},
           {web:'Web: www.tveta.go.ke'},
         ]},
         {area:'Eldoret',list:[
           {house:'KVDA Plaza 7th Floor Southern Wing, Oloo street'},
           {box:'P.O. Box 35625 - 00100'},
           {phone:'Phone:+254 20 239 2140'},
-          {cell:'Cell: +254 700 015 440'},
+          { cell: 'Cell: +254 700 015 440' },
+          {email:'Email:info@tveta.go.ke'},
           {web:'Web: www.tveta.go.ke'},
         ]}, 
          {area:'Mombasa',list:[
           {house:'NSSF building Ground Floor, Nkurumah Road'},
           {box:'P.O. Box 35625 - 00100'},
           {phone:'Phone:+254 20 239 2140'},
-          {cell:'Cell: +254 700 015 440'},
+           { cell: 'Cell: +254 700 015 440' },
+           {email:'Email:info@tveta.go.ke'},
           {web:'Web: www.tveta.go.ke'},
         ]},
         ],
